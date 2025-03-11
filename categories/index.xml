@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on NonoNoe</title>
-    <link>NonoNoe.github.io/categories/</link>
+    <link>https://NonoNoe.github.io/categories/</link>
     <description>Recent content in Categories on NonoNoe</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="NonoNoe.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NonoNoe.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
