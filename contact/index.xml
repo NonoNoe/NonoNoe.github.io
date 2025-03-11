@@ -7,7 +7,14 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Tue, 11 Mar 2025 20:30:33 +0800</lastBuildDate>
     <atom:link href="https://NonoNoe.github.io/contact/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>联系方式</title>
+      <link>https://NonoNoe.github.io/contact/contactme/</link>
+      <pubDate>Tue, 11 Mar 2025 20:30:33 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/contact/contactme/</guid>
+      <description>&lt;h2 id=&#34;qq与邮箱&#34;&gt;&#xA;  QQ与邮箱&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#qq%e4%b8%8e%e9%82%ae%e7%ae%b1&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;QQ:897595335&lt;/p&gt;&#xA;&lt;p&gt;邮箱:897595335@qq.com&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
