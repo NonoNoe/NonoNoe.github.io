@@ -2,68 +2,64 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://NonoNoe.github.io/posts/test/</loc>
-  </url><url>
-    <loc>https://NonoNoe.github.io/authors/</loc>
+    <loc>https://NonoNoe.github.io/en/authors/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt-br"
-                href="https://NonoNoe.github.io/pt-br/authors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
+                hreflang="zh-CN"
                 href="https://NonoNoe.github.io/authors/"
                 />
-  </url><url>
-    <loc>https://NonoNoe.github.io/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://NonoNoe.github.io/pt-br/categories/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://NonoNoe.github.io/en/authors/"
+                />
+  </url><url>
+    <loc>https://NonoNoe.github.io/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
                 href="https://NonoNoe.github.io/categories/"
                 />
-  </url><url>
-    <loc>https://NonoNoe.github.io/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://NonoNoe.github.io/pt-br/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://NonoNoe.github.io/en/categories/"
+                />
+  </url><url>
+    <loc>https://NonoNoe.github.io/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
                 href="https://NonoNoe.github.io/"
                 />
-  </url><url>
-    <loc>https://NonoNoe.github.io/posts/</loc>
-  </url><url>
-    <loc>https://NonoNoe.github.io/series/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://NonoNoe.github.io/pt-br/series/"
-                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
+                href="https://NonoNoe.github.io/en/"
+                />
+  </url><url>
+    <loc>https://NonoNoe.github.io/en/series/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
                 href="https://NonoNoe.github.io/series/"
                 />
-  </url><url>
-    <loc>https://NonoNoe.github.io/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="pt-br"
-                href="https://NonoNoe.github.io/pt-br/tags/"
+                hreflang="en"
+                href="https://NonoNoe.github.io/en/series/"
+                />
+  </url><url>
+    <loc>https://NonoNoe.github.io/en/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://NonoNoe.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://NonoNoe.github.io/tags/"
+                href="https://NonoNoe.github.io/en/tags/"
                 />
   </url>
 </urlset>
