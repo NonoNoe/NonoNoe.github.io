@@ -17,11 +17,11 @@
       <description>&lt;h2 id=&#34;个人简历&#34;&gt;&#xA;  个人简历&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e4%b8%aa%e4%ba%ba%e7%ae%80%e5%8e%86&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;姓名：&#xA;联系电话：&#xA;电子邮件：&lt;/p&gt;</description>
     </item>
     <item>
-      <title>测试文档</title>
+      <title>Markdown语言测试文档</title>
       <link>https://NonoNoe.github.io/posts/test/</link>
       <pubDate>Mon, 29 Apr 2024 09:43:55 +0800</pubDate>
       <guid>https://NonoNoe.github.io/posts/test/</guid>
-      <description>&lt;h2 id=&#34;简介&#34;&gt;&#xA;  简介&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%ae%80%e4%bb%8b&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;这是 &lt;strong&gt;粗体&lt;/strong&gt; 文本，这是 &lt;em&gt;斜体&lt;/em&gt; 文本。&lt;/p&gt;&#xA;&lt;p&gt;访问 &lt;a href=&#34;https://runoops.com&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;runoops&lt;/a&gt; 网站！&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;简介-text&#34;&gt;&#xA;  简介（## text）&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%ae%80%e4%bb%8b-text&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;这是 &lt;strong&gt;粗体&lt;/strong&gt; 文本，这是 &lt;em&gt;斜体&lt;/em&gt; 文本。&lt;/p&gt;&#xA;&lt;p&gt;Markdown语言的默认图片排版超巨大，请欣赏超巨&lt;em&gt;星&lt;/em&gt;（型）老广&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/NonoNoe/imgTest/master//hirochan.jpg&#34; alt=&#34;如果能加载出来，这是一张情人节老广&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;以html格式改变图片排版（改变图片大小+改变排版位置为靠右）：&#xA;&lt;img src=&#34;https://raw.githubusercontent.com/NonoNoe/imgTest/master//hirochan.jpg&#34; align = &#34;right&#34; width=&#34;300&#34; /&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
