@@ -14,7 +14,7 @@
       <link>https://NonoNoe.github.io/projects/unity/</link>
       <pubDate>Tue, 11 Mar 2025 21:31:05 +0800</pubDate>
       <guid>https://NonoNoe.github.io/projects/unity/</guid>
-      <description>&lt;h2 id=&#34;foxtale-unity2d横板游戏制作&#34;&gt;&#xA;  FoxTale-Unity2d横板游戏制作&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#foxtale-unity2d%e6%a8%aa%e6%9d%bf%e6%b8%b8%e6%88%8f%e5%88%b6%e4%bd%9c&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/NonoNoe/FoxTale&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github游戏打包链接&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;部分游戏内容预览：&lt;/p&gt;&#xA;&lt;img src=&#34;https://raw.githubusercontent.com/NonoNoe/imgTest/master//filp.gif&#34; align = &#34;center&#34; width=&#34;300&#34; /&gt;&#xA;&lt;img src=&#34;https://raw.githubusercontent.com/NonoNoe/imgTest/master//hurt.gif&#34; align = &#34;center&#34; width=&#34;300&#34; /&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/av485109249&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考教程&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;flappybird-unity2d游戏制作&#34;&gt;&#xA;  FlappyBird-Unity2d游戏制作&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#flappybird-unity2d%e6%b8%b8%e6%88%8f%e5%88%b6%e4%bd%9c&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/NonoNoe/FlappyBird&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github游戏打包链接&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;foxtale&#34;&gt;&#xA;  FoxTale&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#foxtale&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/NonoNoe/FoxTale&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github游戏打包链接&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Unity2d项目初尝试，横板平台跳跃类小游戏，其中的美术素材源自网络&lt;/p&gt;&#xA;&lt;p&gt;目前版本完成了两个关卡的制作，实现了角色基本移动跳跃，生命值检测，敌人逻辑，存档点，收集物和机关（如弹簧和单向平台）等功能&lt;/p&gt;</description>
     </item>
     <item>
       <title>联系我</title>
@@ -24,18 +24,18 @@
       <description>&lt;h2 id=&#34;qq与邮箱&#34;&gt;&#xA;  QQ与邮箱&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#qq%e4%b8%8e%e9%82%ae%e7%ae%b1&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;QQ:897595335&lt;/p&gt;&#xA;&lt;p&gt;邮箱:897595335@qq.com&lt;/p&gt;&#xA;&lt;hr&gt;</description>
     </item>
     <item>
-      <title>小白网站搭建参考 1.0</title>
-      <link>https://NonoNoe.github.io/about/mytest/</link>
+      <title>小白网站搭建参考大全 1.0</title>
+      <link>https://NonoNoe.github.io/about/</link>
       <pubDate>Tue, 11 Mar 2025 20:19:28 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/about/mytest/</guid>
+      <guid>https://NonoNoe.github.io/about/</guid>
       <description>&lt;hr&gt;&#xA;&lt;p&gt;本网站搭建参考总教程:&lt;a href=&#34;https://www.yuque.com/liyanzhang/thinking/ge0yfi?#hSxdG&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;技术小白如何建立个人博客/作品集&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;注：使用edge浏览器测试时记得清除浏览器缓存，不然可能看不到网站变化……&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;搭建过程中看过的教程遇到的问题与解决方式&#34;&gt;&#xA;  搭建过程中看过的教程、遇到的问题与解决方式：&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e6%90%ad%e5%bb%ba%e8%bf%87%e7%a8%8b%e4%b8%ad%e7%9c%8b%e8%bf%87%e7%9a%84%e6%95%99%e7%a8%8b%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98%e4%b8%8e%e8%a7%a3%e5%86%b3%e6%96%b9%e5%bc%8f&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h2 id=&#34;markdown语言学习&#34;&gt;&#xA;  &lt;strong&gt;Markdown语言学习&lt;/strong&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#markdown%e8%af%ad%e8%a8%80%e5%ad%a6%e4%b9%a0&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Markdown教程:&lt;a href=&#34;https://markdown.com.cn/basic-syntax/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown 基本语法&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>个人简历测试</title>
+      <title>测试用文档</title>
       <link>https://NonoNoe.github.io/posts/myresume/</link>
       <pubDate>Tue, 11 Mar 2025 19:34:48 +0800</pubDate>
       <guid>https://NonoNoe.github.io/posts/myresume/</guid>
-      <description>&lt;h2 id=&#34;个人简历&#34;&gt;&#xA;  个人简历&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e4%b8%aa%e4%ba%ba%e7%ae%80%e5%8e%86&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;姓名：&#xA;联系电话：&#xA;电子邮件：&lt;/p&gt;</description>
+      <description></description>
     </item>
     <item>
       <title>Markdown语言测试文档</title>
