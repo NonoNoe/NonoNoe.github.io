@@ -14,10 +14,10 @@
       <link>https://NonoNoe.github.io/posts/1/</link>
       <pubDate>Thu, 20 Mar 2025 17:47:59 +0800</pubDate>
       <guid>https://NonoNoe.github.io/posts/1/</guid>
-      <description>&lt;h2 id=&#34;总结一下自己初识unity时犯的错误和遇到的一些小bug&#34;&gt;&#xA;  总结一下自己初识Unity时犯的错误和遇到的一些小bug&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e6%80%bb%e7%bb%93%e4%b8%80%e4%b8%8b%e8%87%aa%e5%b7%b1%e5%88%9d%e8%af%86unity%e6%97%b6%e7%8a%af%e7%9a%84%e9%94%99%e8%af%af%e5%92%8c%e9%81%87%e5%88%b0%e7%9a%84%e4%b8%80%e4%ba%9b%e5%b0%8fbug&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;1,unity新建项目后出现闪屏现象&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;进入project setting修改：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;edit &amp;ndash;&amp;gt; project Settings &amp;ndash;&amp;gt; player &amp;ndash;&amp;gt; other settings &amp;ndash;&amp;gt; color space &amp;ndash;&amp;gt; Linear&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;可参考：&lt;a href=&#34;https://blog.csdn.net/WzTernary/article/details/131504879&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;unity3d莫名出现闪屏现象&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;总结一下自己初识unity时犯的基础错误和遇到的一些小bug&#34;&gt;&#xA;  总结一下自己初识Unity时犯的基础错误和遇到的一些小bug&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e6%80%bb%e7%bb%93%e4%b8%80%e4%b8%8b%e8%87%aa%e5%b7%b1%e5%88%9d%e8%af%86unity%e6%97%b6%e7%8a%af%e7%9a%84%e5%9f%ba%e7%a1%80%e9%94%99%e8%af%af%e5%92%8c%e9%81%87%e5%88%b0%e7%9a%84%e4%b8%80%e4%ba%9b%e5%b0%8fbug&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;1,unity新建项目后出现闪屏现象&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;进入project setting修改：&lt;/p&gt;</description>
     </item>
     <item>
-      <title>非常个人向的音MAD制作心得总结</title>
+      <title>非常个人向的音MAD制作心得总结 1.0</title>
       <link>https://NonoNoe.github.io/posts/%E9%9F%B3%E7%A0%81/</link>
       <pubDate>Tue, 11 Mar 2025 19:34:48 +0800</pubDate>
       <guid>https://NonoNoe.github.io/posts/%E9%9F%B3%E7%A0%81/</guid>
