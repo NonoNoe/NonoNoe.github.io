@@ -3,7 +3,7 @@
 
 <head>
   <title>
-  Hugo文章写作指南 · NonoNoe
+  Unity新手容易遇到的问题 1.0 · NonoNoe
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,25 +13,35 @@
 
 
 <meta name="author" content="NonoNoe">
-<meta name="description" content="1.0">
+<meta name="description" content="
+  总结一下自己初识Unity时犯的基础错误和遇到的一些小bug
+  
+    
+    链接到标题
+  
+
+1,unity新建项目后出现闪屏现象
+进入project setting修改：">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hugo文章写作指南">
-  <meta name="twitter:description" content="1.0">
+  <meta name="twitter:title" content="Unity新手容易遇到的问题 1.0">
+  <meta name="twitter:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity新建项目后出现闪屏现象
+进入project setting修改：">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/1/">
   <meta property="og:site_name" content="NonoNoe">
-  <meta property="og:title" content="Hugo文章写作指南">
-  <meta property="og:description" content="1.0">
+  <meta property="og:title" content="Unity新手容易遇到的问题 1.0">
+  <meta property="og:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity新建项目后出现闪屏现象
+进入project setting修改：">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-04-26T20:21:01+08:00">
-    <meta property="article:modified_time" content="2024-04-26T20:21:01+08:00">
-    <meta property="article:tag" content="Hugo">
+    <meta property="article:published_time" content="2025-03-20T17:47:59+08:00">
+    <meta property="article:modified_time" content="2025-03-20T17:47:59+08:00">
+    <meta property="article:tag" content="Unity">
 
 
 
@@ -166,7 +176,7 @@
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="https://NonoNoe.github.io/posts/1/">
-              Hugo文章写作指南
+              Unity新手容易遇到的问题 1.0
             </a>
           </h1>
         </div>
@@ -174,8 +184,8 @@
           <div class="date">
             <span class="posted-on">
               <i class="fa-solid fa-calendar" aria-hidden="true"></i>
-              <time datetime="2024-04-26T20:21:01&#43;08:00">
-                April 26, 2024
+              <time datetime="2025-03-20T17:47:59&#43;08:00">
+                March 20, 2025
               </time>
             </span>
             <span class="reading-time">
@@ -191,7 +201,7 @@
           <div class="tags">
   <i class="fa-solid fa-tag" aria-hidden="true"></i>
     <span class="tag">
-      <a href="/tags/hugo/">Hugo</a>
+      <a href="/tags/unity/">Unity</a>
     </span></div>
 
         </div>
@@ -199,125 +209,38 @@
 
       <div class="post-content">
         
-        <h2 id="no0-markdown基本语法">
-  NO.0 Markdown基本语法
-  <a class="heading-link" href="#no0-markdown%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95">
+        <h2 id="总结一下自己初识unity时犯的基础错误和遇到的一些小bug">
+  总结一下自己初识Unity时犯的基础错误和遇到的一些小bug
+  <a class="heading-link" href="#%e6%80%bb%e7%bb%93%e4%b8%80%e4%b8%8b%e8%87%aa%e5%b7%b1%e5%88%9d%e8%af%86unity%e6%97%b6%e7%8a%af%e7%9a%84%e5%9f%ba%e7%a1%80%e9%94%99%e8%af%af%e5%92%8c%e9%81%87%e5%88%b0%e7%9a%84%e4%b8%80%e4%ba%9b%e5%b0%8fbug">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
-<hr>
-<h2 id="no1-认识hugo文章开头的各项参数">
-  NO.1 认识Hugo文章开头的各项参数
-  <a class="heading-link" href="#no1-%e8%ae%a4%e8%af%86hugo%e6%96%87%e7%ab%a0%e5%bc%80%e5%a4%b4%e7%9a%84%e5%90%84%e9%a1%b9%e5%8f%82%e6%95%b0">
-    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
-    <span class="sr-only">链接到标题</span>
-  </a>
-</h2>
-<p><img src="https://raw.githubusercontent.com/NonoNoe/imgTest/master//HugoArticlePreference.png" alt="参数参考"></p>
-<p>以上为本篇文章在终端中输入<em>Hugo new posts/Hugo文章写作指南.md</em>时自动生成的文章参数</p>
-<hr>
-<p><strong>draft = true</strong> <em>文章是否为草稿状态</em></p>
-<p>true：草稿，Hugo默认不会生成/发布</p>
-<p>false：正式文章，会被发布</p>
-<hr>
-<p><strong>date = 2025-04-08T20:09:27+08:00</strong>  <em>文章创建/发布时间</em></p>
-<p>ps：本篇文章的时间在测试时被修改过</p>
-<p>格式：ISO 8601标准时间格式</p>
-<p>+08:00表示东八区（中国时区）</p>
-<p>影响文章排序和发布时间判断</p>
-<hr>
-<p>title = &ldquo;Hugo文章写作指南&rdquo;</p>
-<p>文章标题（支持特殊字符和中文）</p>
-<p>会显示为网页<title>和文章页标题</p>
-
-      </div>
-
-
-      <footer>
-        
-
-
-        
-        
-        
-        
-        
-        
-        
-      </footer>
-    </article>
-
-    
-  </section>
-
-    </div>
-
-    <footer class="footer">
-  <section class="container">
-    ©
-    
-      2019 -
-    
-    2025
-     NonoNoe 
-    ·
-    
-    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
-    
-  </section>
-</footer>
-
-  </main>
-
-  
-
-  
-  
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</body>
-</html>
-g.csdn.net/ChinarCSDN/article/details/82914420"  class="external-link" target="_blank" rel="noopener">Unity增量时间Time.deltaTime详解</a></p></blockquote>
+<p><strong>1,unity新建项目后出现闪屏现象</strong></p>
+<p>进入project setting修改：</p>
+<ul>
+<li>edit &ndash;&gt; project Settings &ndash;&gt; player &ndash;&gt; other settings &ndash;&gt; color space &ndash;&gt; Linear</li>
+</ul>
+<blockquote>
+<p>可参考：<a href="https://blog.csdn.net/WzTernary/article/details/131504879"  class="external-link" target="_blank" rel="noopener">unity3d莫名出现闪屏现象</a></p></blockquote>
+<p><strong>2，在unity2d项目中，建立好Tilemap后报错且无法进行绘制</strong></p>
+<p>显示 “Active Tilemap Nothing” 而无法在Scene窗口中进行绘制</p>
+<ul>
+<li>是因为没有在Hierachy（Scene）中创建Tilemap</li>
+</ul>
+<p><strong>3，button组件中OnClick读取不到想要的函数</strong></p>
+<p>不能直接把脚本拖进去！！</p>
+<ul>
+<li>把对应脚本拖到游戏物体上，再把游戏物体拖进去</li>
+</ul>
+<p><strong>4，在unity和vs双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除</strong></p>
+<p>待解决……</p>
+<ul>
+<li>ps:经测试，关闭vs后提示也会消除</li>
+</ul>
+<p><strong>5，unity中deltaTime的概念</strong></p>
+<blockquote>
+<p>可参考：<a href="https://blog.csdn.net/ChinarCSDN/article/details/82914420"  class="external-link" target="_blank" rel="noopener">Unity增量时间Time.deltaTime详解</a></p></blockquote>
 <p><strong>6，UI自适应问题相关参考</strong></p>
 <p>在设置好UI组件的锚点之后还要修改Canvas Scaler</p>
 <blockquote>
