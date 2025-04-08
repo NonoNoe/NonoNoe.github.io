@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 20 Mar 2025 17:47:59 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Apr 2025 20:09:27 +0800</lastBuildDate>
     <atom:link href="https://NonoNoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Re:从零开始的计算机图形学生活 1.0</title>
+      <link>https://NonoNoe.github.io/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Tue, 08 Apr 2025 20:09:27 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%94%9F%E6%B4%BB/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Unity新手容易遇到的问题 1.0</title>
       <link>https://NonoNoe.github.io/posts/1/</link>
@@ -18,9 +25,9 @@
     </item>
     <item>
       <title>Unity项目整合</title>
-      <link>https://NonoNoe.github.io/projects/unity%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/</link>
+      <link>https://NonoNoe.github.io/projects/1/</link>
       <pubDate>Tue, 11 Mar 2025 21:31:05 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/projects/unity%E9%A1%B9%E7%9B%AE%E6%95%B4%E5%90%88/</guid>
+      <guid>https://NonoNoe.github.io/projects/1/</guid>
       <description>&lt;h2 id=&#34;foxtale&#34;&gt;&#xA;  FoxTale&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#foxtale&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Unity2d项目初尝试，横板平台跳跃类小游戏，其中的美术素材源自网络&lt;/p&gt;&#xA;&lt;p&gt;目前版本完成了两个关卡的制作，实现了角色基本移动跳跃，生命值检测，敌人逻辑，存档点，收集物和机关（如弹簧和单向平台）等功能&lt;/p&gt;</description>
     </item>
     <item>
@@ -49,7 +56,14 @@
       <link>https://NonoNoe.github.io/posts/test/</link>
       <pubDate>Mon, 29 Apr 2024 09:43:55 +0800</pubDate>
       <guid>https://NonoNoe.github.io/posts/test/</guid>
-      <description>&lt;h2 id=&#34;简介-text&#34;&gt;&#xA;  简介（## text）&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%ae%80%e4%bb%8b-text&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;这是 &lt;strong&gt;粗体&lt;/strong&gt; 文本，这是 &lt;em&gt;斜体&lt;/em&gt; 文本。&lt;/p&gt;&#xA;&lt;p&gt;Markdown语言的默认图片排版超巨大，请欣赏超巨&lt;em&gt;星&lt;/em&gt;（型）老广&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/NonoNoe/imgTest/master//hirochan.jpg&#34; alt=&#34;如果能加载出来，这是一张情人节老广&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;以html格式改变图片排版（改变图片大小+改变排版位置为靠右）：&#xA;&lt;img src=&#34;https://raw.githubusercontent.com/NonoNoe/imgTest/master//hirochan.jpg&#34; align = &#34;right&#34; width=&#34;300&#34; /&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;简介-text&#34;&gt;&#xA;  简介（## text）&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%ae%80%e4%bb%8b-text&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;这是 &lt;strong&gt;粗体&lt;/strong&gt; 文本，这是 &lt;em&gt;斜体&lt;/em&gt; 文本。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;（三个星号（*）可以实现以上的横线）&lt;/p&gt;&#xA;&lt;p&gt;Markdown语言的默认图片排版超巨大，请欣赏超巨&lt;em&gt;星&lt;/em&gt;（型）老广&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo文章写作指南</title>
+      <link>https://NonoNoe.github.io/posts/1/</link>
+      <pubDate>Fri, 26 Apr 2024 20:21:01 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/1/</guid>
+      <description>&lt;h2 id=&#34;no0-markdown基本语法&#34;&gt;&#xA;  NO.0 Markdown基本语法&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#no0-markdown%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;no1-认识hugo文章开头的各项参数&#34;&gt;&#xA;  NO.1 认识Hugo文章开头的各项参数&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#no1-%e8%ae%a4%e8%af%86hugo%e6%96%87%e7%ab%a0%e5%bc%80%e5%a4%b4%e7%9a%84%e5%90%84%e9%a1%b9%e5%8f%82%e6%95%b0&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/NonoNoe/imgTest/master//HugoArticlePreference.png&#34; alt=&#34;参数参考&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;以上为本篇文章在终端中输入&lt;em&gt;Hugo new posts/Hugo文章写作指南.md&lt;/em&gt;时自动生成的文章参数&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

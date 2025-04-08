@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on NonoNoe</title>
+    <link>https://NonoNoe.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on NonoNoe</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 26 Apr 2024 20:21:01 +0800</lastBuildDate>
+    <atom:link href="https://NonoNoe.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo文章写作指南</title>
+      <link>https://NonoNoe.github.io/posts/1/</link>
+      <pubDate>Fri, 26 Apr 2024 20:21:01 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/1/</guid>
+      <description>&lt;h2 id=&#34;no0-markdown基本语法&#34;&gt;&#xA;  NO.0 Markdown基本语法&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#no0-markdown%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;no1-认识hugo文章开头的各项参数&#34;&gt;&#xA;  NO.1 认识Hugo文章开头的各项参数&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#no1-%e8%ae%a4%e8%af%86hugo%e6%96%87%e7%ab%a0%e5%bc%80%e5%a4%b4%e7%9a%84%e5%90%84%e9%a1%b9%e5%8f%82%e6%95%b0&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/NonoNoe/imgTest/master//HugoArticlePreference.png&#34; alt=&#34;参数参考&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;以上为本篇文章在终端中输入&lt;em&gt;Hugo new posts/Hugo文章写作指南.md&lt;/em&gt;时自动生成的文章参数&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
