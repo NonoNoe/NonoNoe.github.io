@@ -2,129 +2,129 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>https://NonoNoe.github.io/authors/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/authors/"
+                href="https://NonoNoe.github.io/en/authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="http://localhost:1313/authors/"
+                href="https://NonoNoe.github.io/authors/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://NonoNoe.github.io/categories/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/categories/"
+                href="https://NonoNoe.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="http://localhost:1313/categories/"
+                href="https://NonoNoe.github.io/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/categories/hugo/</loc>
+    <loc>https://NonoNoe.github.io/categories/hugo/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
+    <loc>https://NonoNoe.github.io/tags/hugo/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/hugo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
+    <loc>https://NonoNoe.github.io/series/hugo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/markdown/</loc>
+    <loc>https://NonoNoe.github.io/categories/markdown/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://NonoNoe.github.io/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/"
+                href="https://NonoNoe.github.io/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="http://localhost:1313/"
+                href="https://NonoNoe.github.io/"
                 />
   </url><url>
-    <loc>http://localhost:1313/authors/nononoe/</loc>
+    <loc>https://NonoNoe.github.io/authors/nononoe/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://NonoNoe.github.io/posts/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>https://NonoNoe.github.io/series/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/series/"
+                href="https://NonoNoe.github.io/en/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="http://localhost:1313/series/"
+                href="https://NonoNoe.github.io/series/"
                 />
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://NonoNoe.github.io/tags/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/"
+                href="https://NonoNoe.github.io/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-CN"
-                href="http://localhost:1313/tags/"
+                href="https://NonoNoe.github.io/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</loc>
+    <loc>https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</loc>
     <lastmod>2025-04-11T20:37:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%94%9F%E6%B4%BB/</loc>
+    <loc>https://NonoNoe.github.io/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2025-04-08T20:09:27+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/</loc>
+    <loc>https://NonoNoe.github.io/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/</loc>
     <lastmod>2025-04-08T20:09:27+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/unity/</loc>
+    <loc>https://NonoNoe.github.io/categories/unity/</loc>
     <lastmod>2025-03-20T17:47:59+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/unity/</loc>
+    <loc>https://NonoNoe.github.io/tags/unity/</loc>
     <lastmod>2025-03-20T17:47:59+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/1/</loc>
+    <loc>https://NonoNoe.github.io/posts/1/</loc>
     <lastmod>2025-03-20T17:47:59+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://NonoNoe.github.io/projects/</loc>
     <lastmod>2025-03-11T21:31:05+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/1/</loc>
+    <loc>https://NonoNoe.github.io/projects/1/</loc>
     <lastmod>2025-03-11T21:31:05+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>https://NonoNoe.github.io/contact/</loc>
     <lastmod>2025-03-11T20:30:33+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://NonoNoe.github.io/about/</loc>
     <lastmod>2025-03-11T20:19:28+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E9%9F%B3%E7%A0%81/</loc>
+    <loc>https://NonoNoe.github.io/posts/%E9%9F%B3%E7%A0%81/</loc>
     <lastmod>2025-03-11T19:34:48+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E9%9F%B3mad/</loc>
+    <loc>https://NonoNoe.github.io/tags/%E9%9F%B3mad/</loc>
     <lastmod>2025-03-11T19:34:48+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/test/</loc>
+    <loc>https://NonoNoe.github.io/posts/test/</loc>
     <lastmod>2024-04-29T09:43:55+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</loc>
+    <loc>https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2024-04-26T20:21:01+08:00</lastmod>
   </url>
 </urlset>

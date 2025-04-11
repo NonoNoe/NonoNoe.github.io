@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on NonoNoe</title>
-    <link>http://localhost:1313/categories/hugo/</link>
+    <link>https://NonoNoe.github.io/categories/hugo/</link>
     <description>Recent content in Hugo on NonoNoe</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 11 Apr 2025 20:37:01 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NonoNoe.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>面向新手的Hugo文章功能添加</title>
-      <link>http://localhost:1313/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</link>
+      <link>https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</link>
       <pubDate>Fri, 11 Apr 2025 20:37:01 +0800</pubDate>
-      <guid>http://localhost:1313/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</guid>
+      <guid>https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</guid>
       <description>&lt;p&gt;本文中所使用的hugo主题中，series是默认不在文章开头显示的，那么如何修改才能使series的参数和author/categories/tags等参数保持相同格式显示在文章内呢？&lt;/p&gt;</description>
     </item>
     <item>
       <title>Markdown语言测试文档</title>
-      <link>http://localhost:1313/posts/test/</link>
+      <link>https://NonoNoe.github.io/posts/test/</link>
       <pubDate>Mon, 29 Apr 2024 09:43:55 +0800</pubDate>
-      <guid>http://localhost:1313/posts/test/</guid>
+      <guid>https://NonoNoe.github.io/posts/test/</guid>
       <description>&lt;h2 id=&#34;简介-text&#34;&gt;&#xA;  简介（## text）&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%ae%80%e4%bb%8b-text&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;这是 &lt;strong&gt;粗体&lt;/strong&gt; 文本，这是 &lt;em&gt;斜体&lt;/em&gt; 文本。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;（三个星号（*）可以实现以上的横线）&lt;/p&gt;&#xA;&lt;p&gt;Markdown语言的默认图片排版超巨大，请欣赏超巨&lt;em&gt;星&lt;/em&gt;（型）老广&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo文章写作指南</title>
-      <link>http://localhost:1313/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</link>
+      <link>https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</link>
       <pubDate>Fri, 26 Apr 2024 20:21:01 +0800</pubDate>
-      <guid>http://localhost:1313/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</guid>
+      <guid>https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</guid>
       <description>&lt;h2 id=&#34;no0-markdown基本语法&#34;&gt;&#xA;  NO.0 Markdown基本语法&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#no0-markdown%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;建议参考&#xA;&lt;a href=&#34;https://markdown.com.cn/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;markdown官网&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;no1-认识hugo文章开头的各项参数&#34;&gt;&#xA;  NO.1 认识Hugo文章开头的各项参数&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#no1-%e8%ae%a4%e8%af%86hugo%e6%96%87%e7%ab%a0%e5%bc%80%e5%a4%b4%e7%9a%84%e5%90%84%e9%a1%b9%e5%8f%82%e6%95%b0&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/NonoNoe/imgTest/master//HugoArticlePreference.png&#34; alt=&#34;参数参考&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;以上为本篇文章在终端中输入&lt;em&gt;Hugo new posts/Hugo文章写作指南.md&lt;/em&gt;时自动生成的文章参数&lt;/p&gt;</description>
     </item>
   </channel>

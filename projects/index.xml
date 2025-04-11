@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on NonoNoe</title>
-    <link>http://localhost:1313/projects/</link>
+    <link>https://NonoNoe.github.io/projects/</link>
     <description>Recent content in Projects on NonoNoe</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 11 Mar 2025 21:31:05 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NonoNoe.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unity项目整合</title>
-      <link>http://localhost:1313/projects/1/</link>
+      <link>https://NonoNoe.github.io/projects/1/</link>
       <pubDate>Tue, 11 Mar 2025 21:31:05 +0800</pubDate>
-      <guid>http://localhost:1313/projects/1/</guid>
+      <guid>https://NonoNoe.github.io/projects/1/</guid>
       <description>&lt;h2 id=&#34;foxtale&#34;&gt;&#xA;  FoxTale&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#foxtale&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Unity2d项目初尝试，横板平台跳跃类小游戏，其中的美术素材源自网络&lt;/p&gt;&#xA;&lt;p&gt;目前版本完成了两个关卡的制作，实现了角色基本移动跳跃，生命值检测，敌人逻辑，存档点，收集物和机关（如弹簧和单向平台）等功能&lt;/p&gt;</description>
     </item>
   </channel>
