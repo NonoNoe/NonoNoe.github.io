@@ -3,7 +3,7 @@
 
 <head>
   <title>
-  Hugo文章写作指南 · NonoNoe
+  面向新手的Hugo文章功能添加 · NonoNoe
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,26 +19,26 @@
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Hugo文章写作指南">
+  <meta name="twitter:title" content="面向新手的Hugo文章功能添加">
   <meta name="twitter:description" content="1.0">
 
-<meta property="og:url" content="https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
+<meta property="og:url" content="https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/">
   <meta property="og:site_name" content="NonoNoe">
-  <meta property="og:title" content="Hugo文章写作指南">
+  <meta property="og:title" content="面向新手的Hugo文章功能添加">
   <meta property="og:description" content="1.0">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-04-26T20:21:01+08:00">
-    <meta property="article:modified_time" content="2024-04-26T20:21:01+08:00">
+    <meta property="article:published_time" content="2025-04-11T20:37:01+08:00">
+    <meta property="article:modified_time" content="2025-04-11T20:37:01+08:00">
     <meta property="article:tag" content="Hugo">
-      <meta property="og:see_also" content="https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/">
       <meta property="og:see_also" content="https://NonoNoe.github.io/posts/test/">
+      <meta property="og:see_also" content="https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
 
 
 
 
-<link rel="canonical" href="https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
+<link rel="canonical" href="https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -167,8 +167,8 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
-              Hugo文章写作指南
+            <a class="title-link" href="https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/">
+              面向新手的Hugo文章功能添加
             </a>
           </h1>
         </div>
@@ -176,13 +176,13 @@
           <div class="date">
             <span class="posted-on">
               <i class="fa-solid fa-calendar" aria-hidden="true"></i>
-              <time datetime="2024-04-26T20:21:01&#43;08:00">
-                April 26, 2024
+              <time datetime="2025-04-11T20:37:01&#43;08:00">
+                April 11, 2025
               </time>
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：2 分钟
+              阅读时间：1 分钟
             </span>
           </div>
           <div class="authors">
@@ -210,125 +210,17 @@
 
       <div class="post-content">
         
-        <h2 id="no0-markdown基本语法">
-  NO.0 Markdown基本语法
-  <a class="heading-link" href="#no0-markdown%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95">
-    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
-    <span class="sr-only">链接到标题</span>
-  </a>
-</h2>
-<p>建议参考
-<a href="https://markdown.com.cn/"  class="external-link" target="_blank" rel="noopener">markdown官网</a></p>
-<hr>
-<h2 id="no1-认识hugo文章开头的各项参数">
-  NO.1 认识Hugo文章开头的各项参数
-  <a class="heading-link" href="#no1-%e8%ae%a4%e8%af%86hugo%e6%96%87%e7%ab%a0%e5%bc%80%e5%a4%b4%e7%9a%84%e5%90%84%e9%a1%b9%e5%8f%82%e6%95%b0">
-    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
-    <span class="sr-only">链接到标题</span>
-  </a>
-</h2>
-<p><img src="https://raw.githubusercontent.com/NonoNoe/imgTest/master//HugoArticlePreference.png" alt="参数参考"></p>
-<p>以上为本篇文章在终端中输入<em>Hugo new posts/Hugo文章写作指南.md</em>时自动生成的文章参数</p>
-<hr>
-<p><strong>draft = true</strong> <em>文章是否为草稿状态</em></p>
-<ul>
-<li>
-<p>true：草稿，Hugo默认不会生成/发布</p>
-<ul>
-<li><em>然而实际测试时，draft为true文章也正常发布了，待进一步测试中……</em></li>
-</ul>
-</li>
-<li>
-<p>false：正式文章，会被发布</p>
-</li>
-</ul>
-<hr>
-<p><strong>date = 2025-04-08T20:09:27+08:00</strong>  <em>文章创建/发布时间</em></p>
-<p>ps：本篇文章的时间在测试时被修改过</p>
-<ul>
-<li>
-<p>格式：ISO 8601标准时间格式</p>
-</li>
-<li>
-<p>+08:00表示东八区（中国时区）</p>
-</li>
-<li>
-<p>影响文章排序和发布时间判断</p>
-</li>
-</ul>
-<hr>
-<p><strong>title = &ldquo;Hugo文章写作指南&rdquo;</strong>  <em>文章标题（支持特殊字符和中文）</em></p>
-<ul>
-<li>会显示为文章页标题</li>
-</ul>
-<hr>
-<p><strong>slug = &ldquo;1&rdquo;</strong> <em>自定义URL路径</em></p>
-<ul>
-<li>
-<p>留空时Hugo会从title自动生成</p>
-<ul>
-<li>像标题这样写，最后会显示为：</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/NonoNoe/imgTest/master//Hugo_slug_1.png" alt="slug1"></p>
-<ul>
-<li>不填写，自动生成的显示结果：</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/NonoNoe/imgTest/master//Hugo_slug_2.png" alt="slug2"></p>
-</li>
-</ul>
-<hr>
-<p><strong>authors = [&ldquo;NonoNoe&rdquo;]</strong>  <em>作者列表（数组格式）</em></p>
-<ul>
-<li>
-<p>需要与config中定义的作者标识匹配</p>
-</li>
-<li>
-<p>支持多作者：[作者1, 作者2]</p>
-</li>
-</ul>
-<p><ins>因为作者列表是数组格式，数组格式中的字符串一定要记得加引号，否则会报错</ins></p>
-<hr>
-<p><strong>tags = [&ldquo;Hugo&rdquo;]</strong> <em>标签(同为数组格式)</em></p>
-<ul>
-<li>
-<p>用于内容分类</p>
-</li>
-<li>
-<p>一篇文章可以有多个标签</p>
-</li>
-</ul>
-<p><ins>如果里面需要填写中文字符串，也要记得加引号</ins></p>
-<hr>
-<p><strong>categories = []</strong> <em>分类目录（数组格式）</em></p>
-<ul>
-<li>
-<p>比tags更宽泛的分类</p>
-</li>
-<li>
-<p>示例：[&ldquo;技术&rdquo;, &ldquo;计算机图形学&rdquo;]</p>
-</li>
-</ul>
-<hr>
-<p><strong>externalLink = &ldquo;&rdquo;</strong> <em>外部链接（跳转URL用）</em></p>
-<ul>
-<li>
-<p>设置后文章会直接跳转到指定链接</p>
-</li>
-<li>
-<p>留空表示正常生成文章页</p>
-</li>
-</ul>
-<hr>
-<p><strong>series = []</strong> <em>系列文章分组</em></p>
-<ul>
-<li>
-<p>用于关联多篇系列文章</p>
-</li>
-<li>
-<p>示例：[&ldquo;图形学入门&rdquo;]</p>
-</li>
-</ul>
-<p><ins>被关联的文章会显示在文章底部，如下所示</ins></p>
+        <p>本文中所使用的hugo主题中，series是默认不在文章开头显示的，那么如何修改才能使series的参数和author/categories/tags等参数保持相同格式显示在文章内呢？</p>
+<p>修改前：</p>
+<img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//series_1.png" width="500" />
+<p>修改后：</p>
+<img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//series_2.png" width="500" />
+<p>1，</p>
+<p>2,</p>
+<p>接下来仿造格式增加一行对应的</p>
+<pre><code>      {{ with .GetTerms &quot;series&quot; }}{{ partial &quot;taxonomy/series.html&quot; . }}{{ end }}
+</code></pre>
+<p>并根据该代码前往taxonomy文件夹，新建文件series.html，从该文件夹中其他html文件复制粘贴格式，并修改自己想要自定义的部分</p>
 
       </div>
 
@@ -353,10 +245,6 @@
         
         
           
-            <li>
-              <a href="/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/">面向新手的Hugo文章功能添加</a>
-            </li>
-          
         
           
             <li>
@@ -364,6 +252,10 @@
             </li>
           
         
+          
+            <li>
+              <a href="/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">Hugo文章写作指南</a>
+            </li>
           
         
         </ul>

@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 26 Apr 2024 20:21:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Apr 2025 20:37:01 +0800</lastBuildDate>
     <atom:link href="https://NonoNoe.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面向新手的Hugo文章功能添加</title>
+      <link>https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Fri, 11 Apr 2025 20:37:01 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</guid>
+      <description>&lt;p&gt;本文中所使用的hugo主题中，series是默认不在文章开头显示的，那么如何修改才能使series的参数和author/categories/tags等参数保持相同格式显示在文章内呢？&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hugo文章写作指南</title>
       <link>https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</link>

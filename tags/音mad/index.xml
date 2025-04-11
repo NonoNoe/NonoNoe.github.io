@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>音MAD on NonoNoe</title>
+    <link>https://NonoNoe.github.io/tags/%E9%9F%B3mad/</link>
+    <description>Recent content in 音MAD on NonoNoe</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 11 Mar 2025 19:34:48 +0800</lastBuildDate>
+    <atom:link href="https://NonoNoe.github.io/tags/%E9%9F%B3mad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>非常个人向的音MAD制作心得总结 1.0</title>
+      <link>https://NonoNoe.github.io/posts/%E9%9F%B3%E7%A0%81/</link>
+      <pubDate>Tue, 11 Mar 2025 19:34:48 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E9%9F%B3%E7%A0%81/</guid>
+      <description>&lt;p&gt;使用软件：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;音频处理：FL studio(扒midi/调音)  utau/openutau(人力调教)  melodyne(修音)  GlodWave  AU(素材处理等)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;视频处理：QQ影音(预览很方便，带有轻量剪辑功能)  aviutl(pv剪辑)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
