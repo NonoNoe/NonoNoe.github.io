@@ -21,7 +21,7 @@
   
 
 1,unity新建项目后出现闪屏现象
-进入project setting修改：">
+省流：进入project setting修改：">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
@@ -29,13 +29,13 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Unity新手容易遇到的问题 1.0">
   <meta name="twitter:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity新建项目后出现闪屏现象
-进入project setting修改：">
+省流：进入project setting修改：">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/1/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Unity新手容易遇到的问题 1.0">
   <meta property="og:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity新建项目后出现闪屏现象
-进入project setting修改：">
+省流：进入project setting修改：">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -190,7 +190,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：1 分钟
+              阅读时间：3 分钟
             </span>
           </div>
           <div class="authors">
@@ -221,7 +221,7 @@
   </a>
 </h2>
 <p><strong>1,unity新建项目后出现闪屏现象</strong></p>
-<p>进入project setting修改：</p>
+<p>省流：进入project setting修改：</p>
 <ul>
 <li>edit &ndash;&gt; project Settings &ndash;&gt; player &ndash;&gt; other settings &ndash;&gt; color space &ndash;&gt; Linear</li>
 </ul>
@@ -240,16 +240,59 @@
 <p><strong>4，在unity和vs双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除</strong></p>
 <p>待解决……</p>
 <ul>
-<li>ps:经测试，关闭vs后提示也会消除</li>
+<li>ps:经测试，关闭vs后提示会消除</li>
 </ul>
 <p><strong>5，unity中deltaTime的概念</strong></p>
 <blockquote>
 <p>可参考：<a href="https://blog.csdn.net/ChinarCSDN/article/details/82914420"  class="external-link" target="_blank" rel="noopener">Unity增量时间Time.deltaTime详解</a></p></blockquote>
 <p><strong>6，UI自适应问题相关参考</strong></p>
+<p>待进一步研究中……</p>
 <p>在设置好UI组件的锚点之后还要修改Canvas Scaler</p>
 <blockquote>
 <p>可参考：<a href="https://blog.csdn.net/weixin_43757333/article/details/115050696"  class="external-link" target="_blank" rel="noopener">unity解决UI组件在屏幕放大时位置变化的问题</a></p></blockquote>
-
+<blockquote>
+<p><a href="https://cloud.tencent.com/developer/article/1637553"  class="external-link" target="_blank" rel="noopener">Unity3D-关于项目的屏幕适配(看我就够了)</a></p></blockquote>
+<p><strong>7，Unity项目中跳转场景后，随着跳转次数增加，新的is loading场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————</strong></p>
+<p>运行途中截图：</p>
+<p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//isLoadingBug.png" alt="bug"></p>
+<p>可能原因：在此问题解决前使用的场景跳转代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl">  <span class="n">SceneManager</span><span class="p">.</span><span class="n">LoadScene</span><span class="p">(</span><span class="n">levelToLoad</span><span class="p">);</span><span class="c1">//直接调用SceneManager.LaodScene</span>
+</span></span></code></pre></div><p>同时在出现问题的该项目中，我将一部分UI设置成跳转场景时不销毁，结果之后发生了回到初始场景时部分组件仍被销毁，导致地图名的text丢失无法正常更新的问题（最初的bug甚至是一回初始地图就无法正常加载黑屏过场，不过后来把过场去除了，总之该问题暂未解决，考虑到可能与标题有关联此处只做提及，待解决）</p>
+<p>解决方案：</p>
+<p>在 <a href="https://docs.unity.cn/cn/current/ScriptReference/SceneManagement.SceneManager.LoadScene.html"  class="external-link" target="_blank" rel="noopener">Unity官方文档</a> 中关于SceneManager.LoadScene的解释里提到：使用 SceneManager.LoadScene 时，不会立即加载场景，而是在下一帧加载。这种 <strong>半异步</strong> 的行为可能会导致 <strong>帧卡顿</strong> ，并可能令人困惑，因为加载无法立即完成。</p>
+<p>因此应该采用异步加载新场景的方式解决</p>
+<p>代码参考：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">LoadLevelL</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">LoadLevelLCo</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">IEnumerator</span> <span class="n">LoadLevelLCo</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">isLoading</span><span class="p">)</span> <span class="k">yield</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">isLoading</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 直接加载新场景（Single模式会自动卸载旧场景）</span>
+</span></span><span class="line"><span class="cl">        <span class="n">AsyncOperation</span> <span class="n">loadOp</span> <span class="p">=</span> <span class="n">SceneManager</span><span class="p">.</span><span class="n">LoadSceneAsync</span><span class="p">(</span><span class="n">currentPoint</span><span class="p">.</span><span class="n">levelLeft</span><span class="p">,</span> <span class="n">LoadSceneMode</span><span class="p">.</span><span class="n">Single</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loadOp</span><span class="p">.</span><span class="n">allowSceneActivation</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 等待加载至90%</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">loadOp</span><span class="p">.</span><span class="n">progress</span> <span class="p">&lt;</span> <span class="m">0.9f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">yield</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loadOp</span><span class="p">.</span><span class="n">allowSceneActivation</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 等待加载完成</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(!</span><span class="n">loadOp</span><span class="p">.</span><span class="n">isDone</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">yield</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">isLoading</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div>
       </div>
 
 
