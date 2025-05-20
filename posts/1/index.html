@@ -20,7 +20,7 @@
     链接到标题
   
 
-1,unity新建项目后出现闪屏现象
+1,unity 新建项目后出现闪屏现象
 省流：进入project setting修改：">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
@@ -28,13 +28,13 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Unity新手容易遇到的问题 1.0">
-  <meta name="twitter:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity新建项目后出现闪屏现象
+  <meta name="twitter:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity 新建项目后出现闪屏现象
 省流：进入project setting修改：">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/1/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Unity新手容易遇到的问题 1.0">
-  <meta property="og:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity新建项目后出现闪屏现象
+  <meta property="og:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity 新建项目后出现闪屏现象
 省流：进入project setting修改：">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
@@ -220,39 +220,39 @@
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
-<p><strong>1,unity新建项目后出现闪屏现象</strong></p>
+<p><strong>1,unity 新建项目后出现闪屏现象</strong></p>
 <p>省流：进入project setting修改：</p>
 <ul>
 <li>edit &ndash;&gt; project Settings &ndash;&gt; player &ndash;&gt; other settings &ndash;&gt; color space &ndash;&gt; Linear</li>
 </ul>
 <blockquote>
 <p>可参考：<a href="https://blog.csdn.net/WzTernary/article/details/131504879"  class="external-link" target="_blank" rel="noopener">unity3d莫名出现闪屏现象</a></p></blockquote>
-<p><strong>2，在unity2d项目中，建立好Tilemap后报错且无法进行绘制</strong></p>
+<p><strong>2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制</strong></p>
 <p>显示 “Active Tilemap Nothing” 而无法在Scene窗口中进行绘制</p>
 <ul>
 <li>是因为没有在Hierachy（Scene）中创建Tilemap</li>
 </ul>
-<p><strong>3，button组件中OnClick读取不到想要的函数</strong></p>
+<p><strong>3，button 组件中 OnClick 读取不到想要的函数</strong></p>
 <p>不能直接把脚本拖进去！！</p>
 <ul>
 <li>把对应脚本拖到游戏物体上，再把游戏物体拖进去</li>
 </ul>
-<p><strong>4，在unity和vs双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除</strong></p>
+<p><strong>4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除</strong></p>
 <p>待解决……</p>
 <ul>
 <li>ps:经测试，关闭vs后提示会消除</li>
 </ul>
-<p><strong>5，unity中deltaTime的概念</strong></p>
+<p><strong>5，unity 中 deltaTime 的概念</strong></p>
 <blockquote>
 <p>可参考：<a href="https://blog.csdn.net/ChinarCSDN/article/details/82914420"  class="external-link" target="_blank" rel="noopener">Unity增量时间Time.deltaTime详解</a></p></blockquote>
-<p><strong>6，UI自适应问题相关参考</strong></p>
+<p><strong>6，UI 自适应问题相关参考</strong></p>
 <p>待进一步研究中……</p>
 <p>在设置好UI组件的锚点之后还要修改Canvas Scaler</p>
 <blockquote>
 <p>可参考：<a href="https://blog.csdn.net/weixin_43757333/article/details/115050696"  class="external-link" target="_blank" rel="noopener">unity解决UI组件在屏幕放大时位置变化的问题</a></p></blockquote>
 <blockquote>
 <p><a href="https://cloud.tencent.com/developer/article/1637553"  class="external-link" target="_blank" rel="noopener">Unity3D-关于项目的屏幕适配(看我就够了)</a></p></blockquote>
-<p><strong>7，Unity项目中跳转场景后，随着跳转次数增加，新的is loading场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————</strong></p>
+<p><strong>7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————</strong></p>
 <p>运行途中截图：</p>
 <p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//isLoadingBug.png" alt="bug"></p>
 <p>可能原因：在此问题解决前使用的场景跳转代码如下：</p>
@@ -292,6 +292,28 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">isLoading</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p><strong>8，对GetComponentInChildren&lt;&gt;() 的使用</strong></p>
+<p>该代码在新手时期时容易误解为：获取子对象组件</p>
+<p>实际上在脚本运行时，该段代码会查找 <em>被查找游戏对象自身及其所有子物体</em> 的对应组件</p>
+<p>如果想要单独删除子对象中的组件，应该先利用新变量获取该组件，再用 Destroy() 删除该变量</p>
+<p>例子：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">Start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">BagGrid</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 获取所有子物体的 Image</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="n">Transform</span> <span class="n">child</span> <span class="k">in</span> <span class="n">BagGrid</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">transform</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Image</span> <span class="n">childImage</span> <span class="p">=</span> <span class="n">child</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">Image</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">childImage</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Destroy</span><span class="p">(</span><span class="n">child</span><span class="p">.</span><span class="n">gameObject</span><span class="p">);</span> <span class="c1">// 直接删除子物体</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// 或 Destroy(childImage); 仅删除 Image 组件</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&#34;清空格子 &#34;</span> <span class="p">+</span> <span class="n">i</span> <span class="p">+</span> <span class="s">&#34; 的子物体 Image&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
       </div>
 
