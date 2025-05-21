@@ -265,6 +265,15 @@
 <p>调整 sprite 图层次序(order in layer)的时候可以适当调多一些，为后续的素材留下余地(比如初期素材背景调到-5，主角0，道具5)，以免后期发生需要整体调整图层的情况</p>
 <p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//spriteRenderer.png" alt="SpriteRenderer"></p>
 <p>Tiled 模式下可以调整素材填充的长宽</p>
+<p>一些命名前缀推荐：</p>
+<p>m_ : Mesh ，实体
+b_ : Bone ，骨骼</p>
+<p>通常创建游戏对象的时候可以采用父物体+子物体的方式，在父物体上挂载脚本等，子物体为图像，这样方便进行数据分离，可以把数据和动画分开</p>
+<p>cinemachine 一个非常方便的插件，可以简单地做出摄像机跟随的效果</p>
+<p><strong>规范化：</strong></p>
+<p>制作 prefab 的时候，最好将该 prefab 的 transform 各项属性全部归零，scale 归一</p>
+<p>Assets 文件夹下应对文件进行分类(sprite 单独放，script 单独放，prefab 单独放……)</p>
+<p>推荐：建立 resource 文件夹，在其中建立sprite文件夹用于存放sprite图像，其余素材同理</p>
 
       </div>
 
