@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>游戏通识 on NonoNoe</title>
+    <link>https://NonoNoe.github.io/series/%E6%B8%B8%E6%88%8F%E9%80%9A%E8%AF%86/</link>
+    <description>Recent content in 游戏通识 on NonoNoe</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 27 May 2025 10:37:30 +0800</lastBuildDate>
+    <atom:link href="https://NonoNoe.github.io/series/%E6%B8%B8%E6%88%8F%E9%80%9A%E8%AF%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>通识课程笔记————UE</title>
+      <link>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B03/</link>
+      <pubDate>Tue, 27 May 2025 10:37:30 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B03/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>通识课程笔记————Unity</title>
+      <link>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/</link>
+      <pubDate>Tue, 27 May 2025 10:37:27 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>通识课程笔记————C#</title>
+      <link>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B01/</link>
+      <pubDate>Tue, 27 May 2025 10:33:53 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B01/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

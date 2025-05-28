@@ -7,8 +7,36 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 10 May 2025 11:00:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 May 2025 10:37:30 +0800</lastBuildDate>
     <atom:link href="https://NonoNoe.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>通识课程笔记————UE</title>
+      <link>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B03/</link>
+      <pubDate>Tue, 27 May 2025 10:37:30 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B03/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>通识课程笔记————Unity</title>
+      <link>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/</link>
+      <pubDate>Tue, 27 May 2025 10:37:27 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>计算机图形学</title>
+      <link>https://NonoNoe.github.io/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Tue, 27 May 2025 10:34:04 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>通识课程笔记————C#</title>
+      <link>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B01/</link>
+      <pubDate>Tue, 27 May 2025 10:33:53 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B01/</guid>
+      <description></description>
+    </item>
     <item>
       <title>游戏艺术设计课程笔记</title>
       <link>https://NonoNoe.github.io/posts/%E6%B8%B8%E6%88%8F%E8%89%BA%E6%9C%AF%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/</link>
@@ -22,13 +50,6 @@
       <pubDate>Fri, 11 Apr 2025 20:37:01 +0800</pubDate>
       <guid>https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</guid>
       <description>&lt;p&gt;本文中所使用的 hugo 主题中，series 是默认不在文章开头显示的，那么如何修改才能使 series 的参数和 author/categories/tags 等参数保持相同格式显示在文章内呢？&lt;/p&gt;&#xA;&lt;p&gt;修改前：&lt;/p&gt;&#xA;&lt;img src=&#34;https://raw.gitmirror.com/NonoNoe/imgTest/master//series_1.png&#34; width=&#34;500&#34; /&gt;&#xD;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;1，&lt;/p&gt;&#xA;&lt;p&gt;首先，这里以 Visual Studio Code 为例，按照&lt;ins&gt; themes\你的hugo主题名称\layouts\partials\… &lt;/ins&gt;路径寻找 single.html 文件，在其中找到文章开头信息显示的部分&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Re:从零开始的计算机图形学生活 1.0</title>
-      <link>https://NonoNoe.github.io/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%94%9F%E6%B4%BB/</link>
-      <pubDate>Tue, 08 Apr 2025 20:09:27 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/posts/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%94%9F%E6%B4%BB/</guid>
-      <description></description>
     </item>
     <item>
       <title>Unity新手容易遇到的问题 1.0</title>
