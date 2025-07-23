@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PS2022 on NonoNoe</title>
-    <link>http://localhost:1313/tags/ps2022/</link>
+    <link>https://NonoNoe.github.io/tags/ps2022/</link>
     <description>Recent content in PS2022 on NonoNoe</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 10 May 2025 11:00:16 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ps2022/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NonoNoe.github.io/tags/ps2022/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>游戏艺术设计课程笔记</title>
-      <link>http://localhost:1313/posts/%E6%B8%B8%E6%88%8F%E8%89%BA%E6%9C%AF%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/</link>
+      <link>https://NonoNoe.github.io/posts/%E6%B8%B8%E6%88%8F%E8%89%BA%E6%9C%AF%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sat, 10 May 2025 11:00:16 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%B8%B8%E6%88%8F%E8%89%BA%E6%9C%AF%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://NonoNoe.github.io/posts/%E6%B8%B8%E6%88%8F%E8%89%BA%E6%9C%AF%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;h1 id=&#34;1&#34;&gt;&#xA;  1&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;如何审丑？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;1，美术素材完成度不统一&lt;/p&gt;&#xA;&lt;p&gt;2，美术素材风格不统一&lt;/p&gt;&#xA;&lt;p&gt;3，视觉元素的廉价感（过度鲜艳/过度丰富/高饱和红配绿）&lt;/p&gt;&#xA;&lt;p&gt;4，违反了人对现实经验的已有判断，反常（人体崩坏/结构错乱等）&lt;/p&gt;</description>
     </item>
   </channel>
