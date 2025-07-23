@@ -7,50 +7,8 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 27 May 2025 10:37:30 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 20 Mar 2025 17:47:59 +0800</lastBuildDate>
     <atom:link href="https://NonoNoe.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>通识课程笔记————UE</title>
-      <link>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B03/</link>
-      <pubDate>Tue, 27 May 2025 10:37:30 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B03/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>通识课程笔记————Unity</title>
-      <link>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/</link>
-      <pubDate>Tue, 27 May 2025 10:37:27 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>计算机图形学</title>
-      <link>https://NonoNoe.github.io/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Tue, 27 May 2025 10:34:04 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>通识课程笔记————C#</title>
-      <link>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B01/</link>
-      <pubDate>Tue, 27 May 2025 10:33:53 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B01/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>游戏艺术设计课程笔记</title>
-      <link>https://NonoNoe.github.io/posts/%E6%B8%B8%E6%88%8F%E8%89%BA%E6%9C%AF%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Sat, 10 May 2025 11:00:16 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/posts/%E6%B8%B8%E6%88%8F%E8%89%BA%E6%9C%AF%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/</guid>
-      <description>&lt;h1 id=&#34;1&#34;&gt;&#xA;  1&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#1&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;如何审丑？&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;1，美术素材完成度不统一&lt;/p&gt;&#xA;&lt;p&gt;2，美术素材风格不统一&lt;/p&gt;&#xA;&lt;p&gt;3，视觉元素的廉价感（过度鲜艳/过度丰富/高饱和红配绿）&lt;/p&gt;&#xA;&lt;p&gt;4，违反了人对现实经验的已有判断，反常（人体崩坏/结构错乱等）&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>面向新手的Hugo文章信息添加方式</title>
-      <link>https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</link>
-      <pubDate>Fri, 11 Apr 2025 20:37:01 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/</guid>
-      <description>&lt;p&gt;本文中所使用的 hugo 主题中，series 是默认不在文章开头显示的，那么如何修改才能使 series 的参数和 author/categories/tags 等参数保持相同格式显示在文章内呢？&lt;/p&gt;&#xA;&lt;p&gt;修改前：&lt;/p&gt;&#xA;&lt;img src=&#34;https://raw.gitmirror.com/NonoNoe/imgTest/master//series_1.png&#34; width=&#34;500&#34; /&gt;&#xD;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;1，&lt;/p&gt;&#xA;&lt;p&gt;首先，这里以 Visual Studio Code 为例，按照&lt;ins&gt; themes\你的hugo主题名称\layouts\partials\… &lt;/ins&gt;路径寻找 single.html 文件，在其中找到文章开头信息显示的部分&lt;/p&gt;</description>
-    </item>
     <item>
       <title>Unity新手容易遇到的问题 1.0</title>
       <link>https://NonoNoe.github.io/posts/1/</link>
@@ -64,20 +22,6 @@
       <pubDate>Tue, 11 Mar 2025 19:34:48 +0800</pubDate>
       <guid>https://NonoNoe.github.io/posts/%E9%9F%B3%E7%A0%81/</guid>
       <description>&lt;p&gt;使用软件：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;音频处理：FL studio(扒midi/调音)  utau/openutau(人力调教)  melodyne(修音)  GlodWave  AU(素材处理等)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;视频处理：QQ影音(预览很方便，带有轻量剪辑功能)  aviutl(pv剪辑)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Markdown语言测试文档</title>
-      <link>https://NonoNoe.github.io/posts/test/</link>
-      <pubDate>Mon, 29 Apr 2024 09:43:55 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/posts/test/</guid>
-      <description>&lt;h2 id=&#34;简介-text&#34;&gt;&#xA;  简介（## text）&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%ae%80%e4%bb%8b-text&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;这是 &lt;strong&gt;粗体&lt;/strong&gt; 文本，这是 &lt;em&gt;斜体&lt;/em&gt; 文本。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;（三个星号（*）可以实现以上的横线）&lt;/p&gt;&#xA;&lt;p&gt;Markdown 语言的默认图片排版超巨大，请欣赏超巨&lt;em&gt;星&lt;/em&gt;（型）老广&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.gitmirror.com/NonoNoe/imgTest/master//hirochan.jpg&#34; alt=&#34;如果能加载出来，这是一张情人节老广&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;以html格式改变图片排版（改变图片大小+改变排版位置为靠右）：&#xA;&lt;img src=&#34;https://raw.gitmirror.com/NonoNoe/imgTest/master//hirochan.jpg&#34; align = &#34;right&#34; width=&#34;300&#34; /&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hugo文章写作指南</title>
-      <link>https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</link>
-      <pubDate>Fri, 26 Apr 2024 20:21:01 +0800</pubDate>
-      <guid>https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/</guid>
-      <description>&lt;h2 id=&#34;no0-markdown-基本语法与写作习惯养成&#34;&gt;&#xA;  NO.0 Markdown 基本语法与写作习惯养成&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#no0-markdown-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e4%b8%8e%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e5%85%bb%e6%88%90&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Markdown 基本语法可参考&#xA;&lt;a href=&#34;https://markdown.com.cn/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;markdown官网&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;部分常用语法&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Markdown&#34; data-lang=&#34;Markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;#标题1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;&lt;span class=&#34;gu&#34;&gt;##标题2&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;###标题3&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gs&#34;&gt;**加粗文字**&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ge&#34;&gt;*斜体文字*&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ge&#34;&gt;**&lt;/span&gt;*加粗斜体文字***&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; 列表1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 列表2&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;ge&#34;&gt;引用&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ge&#34;&gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ge&#34;&gt;**&lt;/span&gt;* （分割线1）&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--- （分割线2）&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;图片名&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;图片链接&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[&lt;span class=&#34;nt&#34;&gt;网站&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;网站链接&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Markdown 插入代码块：&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ``&lt;span class=&#34;sb&#34;&gt;`python&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;    #!/usr/bin/python3&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;    print(&amp;#34;Hello, World!&amp;#34;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;    `&lt;/span&gt;``&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Markdown 段首缩进：&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ni&#34;&gt;&amp;amp;ensp;&lt;/span&gt; or &lt;span class=&#34;ni&#34;&gt;&amp;amp;#8194;&lt;/span&gt; 表示一个半角的空格&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ni&#34;&gt;&amp;amp;emsp;&lt;/span&gt; or &lt;span class=&#34;ni&#34;&gt;&amp;amp;#8195;&lt;/span&gt;  表示一个全角的空格&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ni&#34;&gt;&amp;amp;emsp;&amp;amp;emsp;&lt;/span&gt; 两个全角的空格（用的比较多）&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ni&#34;&gt;&amp;amp;nbsp;&lt;/span&gt; or &lt;span class=&#34;ni&#34;&gt;&amp;amp;#160;&lt;/span&gt; 不断行的空白格&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;写作习惯推荐&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

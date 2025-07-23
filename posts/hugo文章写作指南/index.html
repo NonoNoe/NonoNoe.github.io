@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
   Hugo文章写作指南 · NonoNoe
 </title>
@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Hugo文章写作指南">
   <meta name="twitter:description" content="1.0">
 
-<meta property="og:url" content="https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
+<meta property="og:url" content="http://localhost:1313/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Hugo文章写作指南">
   <meta property="og:description" content="1.0">
@@ -33,13 +33,13 @@
     <meta property="article:modified_time" content="2024-04-26T20:21:01+08:00">
     <meta property="article:tag" content="Hugo">
     <meta property="article:tag" content="Markdown">
-      <meta property="og:see_also" content="https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/">
-      <meta property="og:see_also" content="https://NonoNoe.github.io/posts/test/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/test/">
 
 
 
 
-<link rel="canonical" href="https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
+<link rel="canonical" href="http://localhost:1313/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -49,7 +49,7 @@
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
 
 
 
@@ -59,7 +59,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
   
 
 
@@ -107,7 +107,7 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://NonoNoe.github.io/">
+    <a class="navigation-title" href="http://localhost:1313/">
       NonoNoe
     </a>
     
@@ -168,7 +168,7 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://NonoNoe.github.io/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
+            <a class="title-link" href="http://localhost:1313/posts/hugo%E6%96%87%E7%AB%A0%E5%86%99%E4%BD%9C%E6%8C%87%E5%8D%97/">
               Hugo文章写作指南
             </a>
           </h1>
@@ -215,7 +215,8 @@
 
       <div class="post-content">
         
-        <h2 id="no0-markdown-基本语法与写作习惯养成">
+        <p><img src="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md001" alt="markdown写作格式参考"></p>
+<h2 id="no0-markdown-基本语法与写作习惯养成">
   NO.0 Markdown 基本语法与写作习惯养成
   <a class="heading-link" href="#no0-markdown-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e4%b8%8e%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e5%85%bb%e6%88%90">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
@@ -224,7 +225,13 @@
 </h2>
 <p>Markdown 基本语法可参考
 <a href="https://markdown.com.cn/"  class="external-link" target="_blank" rel="noopener">markdown官网</a></p>
-<p><strong>部分常用语法</strong></p>
+<h3 id="部分常用语法">
+  部分常用语法
+  <a class="heading-link" href="#%e9%83%a8%e5%88%86%e5%b8%b8%e7%94%a8%e8%af%ad%e6%b3%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl"><span class="gh">#标题1
 </span></span></span><span class="line"><span class="cl"><span class="gh"></span><span class="gu">##标题2
 </span></span></span><span class="line"><span class="cl"><span class="gu">###标题3
@@ -256,7 +263,13 @@
 </span></span><span class="line"><span class="cl"><span class="ni">&amp;emsp;</span> or <span class="ni">&amp;#8195;</span>  表示一个全角的空格
 </span></span><span class="line"><span class="cl"><span class="ni">&amp;emsp;&amp;emsp;</span> 两个全角的空格（用的比较多）
 </span></span><span class="line"><span class="cl"><span class="ni">&amp;nbsp;</span> or <span class="ni">&amp;#160;</span> 不断行的空白格
-</span></span></code></pre></div><p><strong>写作习惯推荐</strong></p>
+</span></span></code></pre></div><h3 id="写作习惯推荐">
+  写作习惯推荐
+  <a class="heading-link" href="#%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e6%8e%a8%e8%8d%90">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
 <ul>
 <li>好好排版
 <ul>
@@ -313,13 +326,15 @@
 <li>
 <p>留空时Hugo会从title自动生成</p>
 <ul>
-<li>像标题这样写，最后会显示为：</li>
+<li>
+<p>像标题这样写，最后会显示为：
+<img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//Hugo_slug_1.png" alt="slug1"></p>
+</li>
+<li>
+<p>不填写，自动生成的显示结果：
+<img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//Hugo_slug_2.png" alt="slug2"></p>
+</li>
 </ul>
-<p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//Hugo_slug_1.png" alt="slug1"></p>
-<ul>
-<li>不填写，自动生成的显示结果：</li>
-</ul>
-<p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//Hugo_slug_2.png" alt="slug2"></p>
 </li>
 </ul>
 <hr>
@@ -457,7 +472,7 @@
 
   
   
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/js/coder.js"></script>
   
 
   

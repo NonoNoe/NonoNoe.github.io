@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
   通识课程笔记————Unity · NonoNoe
 </title>
@@ -13,32 +13,45 @@
 
 
 <meta name="author" content="NonoNoe">
-<meta name="description" content="test">
+<meta name="description" content="Unity 生命周期
+Camera 逻辑一般放到LateUpdate里面
+DeltaTime 增量时间详解
+建议参考：
+Unity增量时间Time.deltaTime详解
+省流版：无论当前帧率是多少，乘以增量时间能让每一帧的计算结果相同">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="通识课程笔记————Unity">
-  <meta name="twitter:description" content="test">
+  <meta name="twitter:description" content="Unity 生命周期
+Camera 逻辑一般放到LateUpdate里面
+DeltaTime 增量时间详解
+建议参考： Unity增量时间Time.deltaTime详解
+省流版：无论当前帧率是多少，乘以增量时间能让每一帧的计算结果相同">
 
-<meta property="og:url" content="https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
+<meta property="og:url" content="http://localhost:1313/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="通识课程笔记————Unity">
-  <meta property="og:description" content="test">
+  <meta property="og:description" content="Unity 生命周期
+Camera 逻辑一般放到LateUpdate里面
+DeltaTime 增量时间详解
+建议参考： Unity增量时间Time.deltaTime详解
+省流版：无论当前帧率是多少，乘以增量时间能让每一帧的计算结果相同">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-05-27T10:37:27+08:00">
     <meta property="article:modified_time" content="2025-05-27T10:37:27+08:00">
     <meta property="article:tag" content="Unity">
-      <meta property="og:see_also" content="https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B03/">
-      <meta property="og:see_also" content="https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B01/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B03/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B01/">
 
 
 
 
-<link rel="canonical" href="https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
+<link rel="canonical" href="http://localhost:1313/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -48,7 +61,7 @@
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
 
 
 
@@ -58,7 +71,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
   
 
 
@@ -106,7 +119,7 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://NonoNoe.github.io/">
+    <a class="navigation-title" href="http://localhost:1313/">
       NonoNoe
     </a>
     
@@ -167,7 +180,7 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
+            <a class="title-link" href="http://localhost:1313/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
               通识课程笔记————Unity
             </a>
           </h1>
@@ -182,7 +195,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：0 分钟
+              阅读时间：1 分钟
             </span>
           </div>
           <div class="authors">
@@ -205,7 +218,22 @@
 
       <div class="post-content">
         
-        
+        <p><strong>Unity 生命周期</strong></p>
+<p>Camera 逻辑一般放到LateUpdate里面</p>
+<p><strong>DeltaTime 增量时间详解</strong></p>
+<p>建议参考：
+<a href="https://blog.csdn.net/ChinarCSDN/article/details/82914420"  class="external-link" target="_blank" rel="noopener">Unity增量时间Time.deltaTime详解</a></p>
+<p>省流版：无论当前帧率是多少，乘以增量时间能让每一帧的计算结果相同</p>
+<p><strong>射线检测</strong></p>
+<p><strong>Camera</strong></p>
+<p>切换角度&gt;30°时会被认为是换了一个分镜</p>
+<p>第一人称的枪+手臂是单独用一个相机渲染了一层，也就是说，场景内有两个相机，另一个是负责在玩家眼睛部位观察世界的</p>
+<p>Clear flag 清除标记(unity官网解释: Determines which parts of the screen will be cleared. This is handy when using multiple Cameras to draw different game elements. )</p>
+<p>Skybox 代表会在场景空白部分渲染一个天空盒背景(默认显示)</p>
+<p>Solid Color 渲染纯色背景</p>
+<p>Depth only 代表当前摄像机渲染层级在所有层级之上，通常用于保持当前对象不被裁剪</p>
+<p>Don&rsquo;t Clear 不清除颜色和深度缓冲区</p>
+
       </div>
 
 
@@ -285,7 +313,7 @@
 
   
   
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/js/coder.js"></script>
   
 
   
