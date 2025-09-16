@@ -14,13 +14,33 @@
 
 <meta name="author" content="NonoNoe">
 <meta name="description" content="
-  总结一下自己初识Unity时犯的基础错误和遇到的一些小bug
+  目录
+  
+  
+    1,unity 新建项目后出现闪屏现象
+    2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制
+    3，button 组件中 OnClick 读取不到想要的函数
+    4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除
+    5，unity 中 deltaTime 的概念
+    6，UI 自适应问题相关参考
+    7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————**
+    8，对GetComponentInChildren&lt;&gt;() 的使用
+  
+
+
+↑ 返回顶部
+
+
+
+
+
+
+  1,unity 新建项目后出现闪屏现象
   
     
     链接到标题
   
 
-1,unity 新建项目后出现闪屏现象
 省流：进入project setting修改：">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
@@ -28,14 +48,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Unity新手容易遇到的问题 1.0">
-  <meta name="twitter:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity 新建项目后出现闪屏现象
-省流：进入project setting修改：">
+  <meta name="twitter:description" content="目录1,unity 新建项目后出现闪屏现象 2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制 3，button 组件中 OnClick 读取不到想要的函数 4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除 5，unity 中 deltaTime 的概念 6，UI 自适应问题相关参考 7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————** 8，对GetComponentInChildren&lt;&gt;() 的使用 ↑ 返回顶部1,unity 新建项目后出现闪屏现象 链接到标题 省流：进入project setting修改：">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/1/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Unity新手容易遇到的问题 1.0">
-  <meta property="og:description" content="总结一下自己初识Unity时犯的基础错误和遇到的一些小bug 链接到标题 1,unity 新建项目后出现闪屏现象
-省流：进入project setting修改：">
+  <meta property="og:description" content="目录1,unity 新建项目后出现闪屏现象 2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制 3，button 组件中 OnClick 读取不到想要的函数 4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除 5，unity 中 deltaTime 的概念 6，UI 自适应问题相关参考 7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————** 8，对GetComponentInChildren&lt;&gt;() 的使用 ↑ 返回顶部1,unity 新建项目后出现闪屏现象 链接到标题 省流：进入project setting修改：">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -213,46 +231,147 @@
 
       <div class="post-content">
         
-        <h2 id="总结一下自己初识unity时犯的基础错误和遇到的一些小bug">
-  总结一下自己初识Unity时犯的基础错误和遇到的一些小bug
-  <a class="heading-link" href="#%e6%80%bb%e7%bb%93%e4%b8%80%e4%b8%8b%e8%87%aa%e5%b7%b1%e5%88%9d%e8%af%86unity%e6%97%b6%e7%8a%af%e7%9a%84%e5%9f%ba%e7%a1%80%e9%94%99%e8%af%af%e5%92%8c%e9%81%87%e5%88%b0%e7%9a%84%e4%b8%80%e4%ba%9b%e5%b0%8fbug">
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1unity-新建项目后出现闪屏现象">1,unity 新建项目后出现闪屏现象</a></li>
+    <li><a href="#2在-unity2d-项目中建立好-tilemap-后报错且无法进行绘制">2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制</a></li>
+    <li><a href="#3button-组件中-onclick-读取不到想要的函数">3，button 组件中 OnClick 读取不到想要的函数</a></li>
+    <li><a href="#4在-unity-和-vs-双开的过程中屏幕上不停出现向上还原的提示且关闭unity后才会消除">4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除</a></li>
+    <li><a href="#5unity-中-deltatime-的概念">5，unity 中 deltaTime 的概念</a></li>
+    <li><a href="#6ui-自适应问题相关参考">6，UI 自适应问题相关参考</a></li>
+    <li><a href="#7unity-项目中跳转场景后随着跳转次数增加新的-is-loading-场景不断增加最后导致跳转一次场景的加载时间变得巨长">7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————**</a></li>
+    <li><a href="#8对getcomponentinchildren-的使用">8，对GetComponentInChildren&lt;&gt;() 的使用</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+ 
+.back-to-top {
+  position: fixed;         
+  bottom: 20px;            
+  right: 80px;             
+  background-color: #3c3c3c;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: none;           
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
+}
+
+ 
+.back-to-top:hover {
+  background-color: #8f8f8f;
+  color: rgb(77, 76, 80);
+}
+
+ 
+.back-to-top.show {
+  display: block;
+}
+</style>
+
+<script>
+
+const btn = document.querySelector('.back-to-top');
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) { 
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+});
+</script>
+
+<h2 id="1unity-新建项目后出现闪屏现象">
+  1,unity 新建项目后出现闪屏现象
+  <a class="heading-link" href="#1unity-%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae%e5%90%8e%e5%87%ba%e7%8e%b0%e9%97%aa%e5%b1%8f%e7%8e%b0%e8%b1%a1">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
-<p><strong>1,unity 新建项目后出现闪屏现象</strong></p>
 <p>省流：进入project setting修改：</p>
 <ul>
 <li>edit &ndash;&gt; project Settings &ndash;&gt; player &ndash;&gt; other settings &ndash;&gt; color space &ndash;&gt; Linear</li>
 </ul>
 <blockquote>
 <p>可参考：<a href="https://blog.csdn.net/WzTernary/article/details/131504879"  class="external-link" target="_blank" rel="noopener">unity3d莫名出现闪屏现象</a></p></blockquote>
-<p><strong>2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制</strong></p>
+<h2 id="2在-unity2d-项目中建立好-tilemap-后报错且无法进行绘制">
+  2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制
+  <a class="heading-link" href="#2%e5%9c%a8-unity2d-%e9%a1%b9%e7%9b%ae%e4%b8%ad%e5%bb%ba%e7%ab%8b%e5%a5%bd-tilemap-%e5%90%8e%e6%8a%a5%e9%94%99%e4%b8%94%e6%97%a0%e6%b3%95%e8%bf%9b%e8%a1%8c%e7%bb%98%e5%88%b6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
 <p>显示 “Active Tilemap Nothing” 而无法在Scene窗口中进行绘制</p>
 <ul>
 <li>是因为没有在Hierachy（Scene）中创建Tilemap</li>
 </ul>
-<p><strong>3，button 组件中 OnClick 读取不到想要的函数</strong></p>
+<h2 id="3button-组件中-onclick-读取不到想要的函数">
+  3，button 组件中 OnClick 读取不到想要的函数
+  <a class="heading-link" href="#3button-%e7%bb%84%e4%bb%b6%e4%b8%ad-onclick-%e8%af%bb%e5%8f%96%e4%b8%8d%e5%88%b0%e6%83%b3%e8%a6%81%e7%9a%84%e5%87%bd%e6%95%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
 <p>不能直接把脚本拖进去！！</p>
 <ul>
 <li>把对应脚本拖到游戏物体上，再把游戏物体拖进去</li>
 </ul>
-<p><strong>4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除</strong></p>
+<h2 id="4在-unity-和-vs-双开的过程中屏幕上不停出现向上还原的提示且关闭unity后才会消除">
+  4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭unity后才会消除
+  <a class="heading-link" href="#4%e5%9c%a8-unity-%e5%92%8c-vs-%e5%8f%8c%e5%bc%80%e7%9a%84%e8%bf%87%e7%a8%8b%e4%b8%ad%e5%b1%8f%e5%b9%95%e4%b8%8a%e4%b8%8d%e5%81%9c%e5%87%ba%e7%8e%b0%e5%90%91%e4%b8%8a%e8%bf%98%e5%8e%9f%e7%9a%84%e6%8f%90%e7%a4%ba%e4%b8%94%e5%85%b3%e9%97%adunity%e5%90%8e%e6%89%8d%e4%bc%9a%e6%b6%88%e9%99%a4">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
 <p>待解决……</p>
 <ul>
 <li>ps:经测试，关闭vs后提示会消除</li>
 </ul>
-<p><strong>5，unity 中 deltaTime 的概念</strong></p>
+<h2 id="5unity-中-deltatime-的概念">
+  5，unity 中 deltaTime 的概念
+  <a class="heading-link" href="#5unity-%e4%b8%ad-deltatime-%e7%9a%84%e6%a6%82%e5%bf%b5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
 <blockquote>
 <p>可参考：<a href="https://blog.csdn.net/ChinarCSDN/article/details/82914420"  class="external-link" target="_blank" rel="noopener">Unity增量时间Time.deltaTime详解</a></p></blockquote>
-<p><strong>6，UI 自适应问题相关参考</strong></p>
+<h2 id="6ui-自适应问题相关参考">
+  6，UI 自适应问题相关参考
+  <a class="heading-link" href="#6ui-%e8%87%aa%e9%80%82%e5%ba%94%e9%97%ae%e9%a2%98%e7%9b%b8%e5%85%b3%e5%8f%82%e8%80%83">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
 <p>待进一步研究中……</p>
 <p>在设置好UI组件的锚点之后还要修改Canvas Scaler</p>
-<blockquote>
-<p>可参考：<a href="https://blog.csdn.net/weixin_43757333/article/details/115050696"  class="external-link" target="_blank" rel="noopener">unity解决UI组件在屏幕放大时位置变化的问题</a></p></blockquote>
-<blockquote>
-<p><a href="https://cloud.tencent.com/developer/article/1637553"  class="external-link" target="_blank" rel="noopener">Unity3D-关于项目的屏幕适配(看我就够了)</a></p></blockquote>
-<p><strong>7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————</strong></p>
+<p>可参考：</p>
+<ul>
+<li>
+<p><a href="https://blog.csdn.net/weixin_43757333/article/details/115050696"  class="external-link" target="_blank" rel="noopener">unity解决UI组件在屏幕放大时位置变化的问题</a></p>
+</li>
+<li>
+<p><a href="https://cloud.tencent.com/developer/article/1637553"  class="external-link" target="_blank" rel="noopener">Unity3D-关于项目的屏幕适配(看我就够了)</a></p>
+</li>
+</ul>
+<h2 id="7unity-项目中跳转场景后随着跳转次数增加新的-is-loading-场景不断增加最后导致跳转一次场景的加载时间变得巨长">
+  7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————**
+  <a class="heading-link" href="#7unity-%e9%a1%b9%e7%9b%ae%e4%b8%ad%e8%b7%b3%e8%bd%ac%e5%9c%ba%e6%99%af%e5%90%8e%e9%9a%8f%e7%9d%80%e8%b7%b3%e8%bd%ac%e6%ac%a1%e6%95%b0%e5%a2%9e%e5%8a%a0%e6%96%b0%e7%9a%84-is-loading-%e5%9c%ba%e6%99%af%e4%b8%8d%e6%96%ad%e5%a2%9e%e5%8a%a0%e6%9c%80%e5%90%8e%e5%af%bc%e8%87%b4%e8%b7%b3%e8%bd%ac%e4%b8%80%e6%ac%a1%e5%9c%ba%e6%99%af%e7%9a%84%e5%8a%a0%e8%bd%bd%e6%97%b6%e9%97%b4%e5%8f%98%e5%be%97%e5%b7%a8%e9%95%bf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
 <p>运行途中截图：</p>
 <p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//isLoadingBug.png" alt="bug"></p>
 <p>可能原因：在此问题解决前使用的场景跳转代码如下：</p>
@@ -292,7 +411,13 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">        <span class="n">isLoading</span> <span class="p">=</span> <span class="kc">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span></code></pre></div><p><strong>8，对GetComponentInChildren&lt;&gt;() 的使用</strong></p>
+</span></span></code></pre></div><h2 id="8对getcomponentinchildren-的使用">
+  8，对GetComponentInChildren&lt;&gt;() 的使用
+  <a class="heading-link" href="#8%e5%af%b9getcomponentinchildren-%e7%9a%84%e4%bd%bf%e7%94%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
 <p>该代码在新手时期时容易误解为：获取子对象组件</p>
 <p>实际上在脚本运行时，该段代码会查找 <em>被查找游戏对象自身及其所有子物体</em> 的对应组件</p>
 <p>如果想要单独删除子对象中的组件，应该先利用新变量获取该组件，再用 Destroy() 删除该变量</p>

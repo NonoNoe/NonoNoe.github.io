@@ -14,29 +14,46 @@
 
 <meta name="author" content="NonoNoe">
 <meta name="description" content="
-  1，小数点精度设置
+  目录
+  
+  
+    0，常考常错常忘
+      
+        二叉树相关概念
+      
+    
+    1，小数点精度设置
+    2，二叉树编号
+  
+
+
+↑ 返回顶部
+
+
+
+
+
+
+  0，常考常错常忘
   
     
     链接到标题
   
 
-cout&lt;&lt;fixed&lt;&lt;setprecision(n);
-设置输出精度为小数点后n位（四舍五入），该设置会对此后的所有cout输出产生影响
-如果需要直接截断小数点后n位，并不四舍五入，可采用以下方式：">
+
+逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="算法笔记（错题收集）">
-  <meta name="twitter:description" content="1，小数点精度设置 链接到标题 cout&lt;&lt;fixed&lt;&lt;setprecision(n); 设置输出精度为小数点后n位（四舍五入），该设置会对此后的所有cout输出产生影响
-如果需要直接截断小数点后n位，并不四舍五入，可采用以下方式：">
+  <meta name="twitter:description" content="目录0，常考常错常忘 二叉树相关概念 1，小数点精度设置 2，二叉树编号 ↑ 返回顶部0，常考常错常忘 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="算法笔记（错题收集）">
-  <meta property="og:description" content="1，小数点精度设置 链接到标题 cout&lt;&lt;fixed&lt;&lt;setprecision(n); 设置输出精度为小数点后n位（四舍五入），该设置会对此后的所有cout输出产生影响
-如果需要直接截断小数点后n位，并不四舍五入，可采用以下方式：">
+  <meta property="og:description" content="目录0，常考常错常忘 二叉树相关概念 1，小数点精度设置 2，二叉树编号 ↑ 返回顶部0，常考常错常忘 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -191,7 +208,7 @@ cout&lt;&lt;fixed&lt;&lt;setprecision(n);
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：1 分钟
+              阅读时间：2 分钟
             </span>
           </div>
           <div class="authors">
@@ -214,7 +231,96 @@ cout&lt;&lt;fixed&lt;&lt;setprecision(n);
 
       <div class="post-content">
         
-        <h2 id="1小数点精度设置">
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0常考常错常忘">0，常考常错常忘</a>
+      <ul>
+        <li><a href="#二叉树相关概念">二叉树相关概念</a></li>
+      </ul>
+    </li>
+    <li><a href="#1小数点精度设置">1，小数点精度设置</a></li>
+    <li><a href="#2二叉树编号">2，二叉树编号</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+ 
+.back-to-top {
+  position: fixed;         
+  bottom: 20px;            
+  right: 80px;             
+  background-color: #3c3c3c;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: none;           
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
+}
+
+ 
+.back-to-top:hover {
+  background-color: #8f8f8f;
+  color: rgb(77, 76, 80);
+}
+
+ 
+.back-to-top.show {
+  display: block;
+}
+</style>
+
+<script>
+
+const btn = document.querySelector('.back-to-top');
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) { 
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+});
+</script>
+
+<h2 id="0常考常错常忘">
+  0，常考常错常忘
+  <a class="heading-link" href="#0%e5%b8%b8%e8%80%83%e5%b8%b8%e9%94%99%e5%b8%b8%e5%bf%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<hr>
+<p>逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。</p>
+<p>存储结构有顺序、链式、索引、散列四种，逻辑结构有<strong>线性</strong>和<strong>非线性</strong>结构。</p>
+<p>二叉树是<strong>逻辑结构</strong>，树属于逻辑结构中的<strong>非线性结构</strong>。</p>
+<p><strong>双向链表</strong>、<em>哈希表</em>、<em><strong>循环队列</strong></em>都是存储结构分别属于<strong>链式</strong>、<em>散列</em>和<em><strong>顺序</strong></em>。</p>
+<hr>
+<p>在循环队列中,正确判断<strong>队满</strong>的条件是(rear+1)%n == front。</p>
+<p>因为循环队列需要牺牲一个存储空间来区分队空和队满状态,当队列满时,队尾指针rear再前进一个位置就会与队头指针front重合。</p>
+<p>判断<strong>队空</strong>的条件是rear%n == front</p>
+<p>队列中只有一个元素时，(front+1)%n == rear</p>
+<hr>
+<h3 id="二叉树相关概念">
+  二叉树相关概念
+  <a class="heading-link" href="#%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9b%b8%e5%85%b3%e6%a6%82%e5%bf%b5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>结点的度：一个节点的子树的个数</p>
+<p>叶节点：度为0的结点</p>
+<p>二叉树最小深度：dmin​=⌈log2​(n+1)⌉ (⌈x⌉表示向上取整)</p>
+<hr>
+<h2 id="1小数点精度设置">
   1，小数点精度设置
   <a class="heading-link" href="#1%e5%b0%8f%e6%95%b0%e7%82%b9%e7%b2%be%e5%ba%a6%e8%ae%be%e7%bd%ae">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
@@ -227,6 +333,28 @@ cout&lt;&lt;fixed&lt;&lt;setprecision(n);
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">count</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">trunc</span><span class="p">(</span><span class="n">count</span><span class="o">*</span><span class="mf">1e9</span><span class="p">)</span><span class="o">/</span><span class="mf">1e9</span><span class="p">;</span>
 </span></span></code></pre></div><p>trunc函数只能截断小数部分保留整数部分，此处将count的小数点后9位转为整数，截断后再将数值缩回原位，从而达成直接截断的效果</p>
+<hr>
+<h2 id="2二叉树编号">
+  2，二叉树编号
+  <a class="heading-link" href="#2%e4%ba%8c%e5%8f%89%e6%a0%91%e7%bc%96%e5%8f%b7">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>(牛客二叉树专项练习)将一颗有 100 个结点的完全二叉树从根这一层开始，每一层从左到右依次对结点进行编号，根节点编号为 1 ，求编号为 98 的节点的父节点编号</p>
+<p>在完全二叉树中,对于任意一个编号为n的节点:</p>
+<ul>
+<li>
+<p>其左子节点的编号为2n</p>
+</li>
+<li>
+<p>其右子节点的编号为2n+1</p>
+</li>
+<li>
+<p>其父节点的编号为⌊n/2⌋(向下取整)</p>
+</li>
+</ul>
+<hr>
 
       </div>
 

@@ -14,37 +14,43 @@
 
 <meta name="author" content="NonoNoe">
 <meta name="description" content="
-  1
+  目录
+  
+  
+    1 如何审丑？
+    2 PS2020使用
+    3 unity预制件规范化
+    4 2d骨骼绑定与IK Manager
+    TileMap的规则
+  
+
+
+↑ 返回顶部
+
+
+
+
+
+
+  1 如何审丑？
   
     
     链接到标题
   
 
-如何审丑？
-1，美术素材完成度不统一
-2，美术素材风格不统一
-3，视觉元素的廉价感（过度鲜艳/过度丰富/高饱和红配绿）
-4，违反了人对现实经验的已有判断，反常（人体崩坏/结构错乱等）">
+1，美术素材完成度不统一">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="游戏艺术设计课程笔记">
-  <meta name="twitter:description" content="1 链接到标题 如何审丑？
-1，美术素材完成度不统一
-2，美术素材风格不统一
-3，视觉元素的廉价感（过度鲜艳/过度丰富/高饱和红配绿）
-4，违反了人对现实经验的已有判断，反常（人体崩坏/结构错乱等）">
+  <meta name="twitter:description" content="目录1 如何审丑？ 2 PS2020使用 3 unity预制件规范化 4 2d骨骼绑定与IK Manager TileMap的规则 ↑ 返回顶部1 如何审丑？ 链接到标题 1，美术素材完成度不统一">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E6%B8%B8%E6%88%8F%E8%89%BA%E6%9C%AF%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="游戏艺术设计课程笔记">
-  <meta property="og:description" content="1 链接到标题 如何审丑？
-1，美术素材完成度不统一
-2，美术素材风格不统一
-3，视觉元素的廉价感（过度鲜艳/过度丰富/高饱和红配绿）
-4，违反了人对现实经验的已有判断，反常（人体崩坏/结构错乱等）">
+  <meta property="og:description" content="目录1 如何审丑？ 2 PS2020使用 3 unity预制件规范化 4 2d骨骼绑定与IK Manager TileMap的规则 ↑ 返回顶部1 如何审丑？ 链接到标题 1，美术素材完成度不统一">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -227,14 +233,71 @@
 
       <div class="post-content">
         
-        <h1 id="1">
-  1
-  <a class="heading-link" href="#1">
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-如何审丑">1 如何审丑？</a></li>
+    <li><a href="#2-ps2020使用">2 PS2020使用</a></li>
+    <li><a href="#3-unity预制件规范化">3 unity预制件规范化</a></li>
+    <li><a href="#4-2d骨骼绑定与ik-manager">4 2d骨骼绑定与IK Manager</a></li>
+    <li><a href="#tilemap的规则">TileMap的规则</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+ 
+.back-to-top {
+  position: fixed;         
+  bottom: 20px;            
+  right: 80px;             
+  background-color: #3c3c3c;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: none;           
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
+}
+
+ 
+.back-to-top:hover {
+  background-color: #8f8f8f;
+  color: rgb(77, 76, 80);
+}
+
+ 
+.back-to-top.show {
+  display: block;
+}
+</style>
+
+<script>
+
+const btn = document.querySelector('.back-to-top');
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) { 
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+});
+</script>
+
+<h2 id="1-如何审丑">
+  1 如何审丑？
+  <a class="heading-link" href="#1-%e5%a6%82%e4%bd%95%e5%ae%a1%e4%b8%91">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h1>
-<p><strong>如何审丑？</strong></p>
+</h2>
 <p>1，美术素材完成度不统一</p>
 <p>2，美术素材风格不统一</p>
 <p>3，视觉元素的廉价感（过度鲜艳/过度丰富/高饱和红配绿）</p>
@@ -249,14 +312,13 @@
 <p>小众 ———————————— 大众</p>
 <p>建议折中，不要走风格化/商业化的极端</p>
 <hr>
-<h1 id="2">
-  2
-  <a class="heading-link" href="#2">
+<h2 id="2-ps2020使用">
+  2 PS2020使用
+  <a class="heading-link" href="#2-ps2020%e4%bd%bf%e7%94%a8">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h1>
-<p>Ps2022使用</p>
+</h2>
 <p>unity 可读取 PSD 文件，但可能会导致图像出现白边，这时候勾选 remove matte 即可</p>
 <p>Unity 中可设置资产的 max size</p>
 <p>eg.如果一个大小为 1024^2 的图像在 unity 中最大尺寸设为 512^2，那么图像的清晰度会降低</p>
@@ -266,16 +328,35 @@
 <p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//spriteRenderer.png" alt="SpriteRenderer"></p>
 <p>Tiled 模式下可以调整素材填充的长宽</p>
 <p>一些命名前缀推荐：</p>
-<p>m_ : Mesh ，实体
-b_ : Bone ，骨骼</p>
+<p>m_ : Mesh ，实体</p>
+<p>b_ : Bone ，骨骼</p>
 <p>通常创建游戏对象的时候可以采用父物体+子物体的方式，在父物体上挂载脚本等，子物体为图像，这样方便进行数据分离，可以把数据和动画分开</p>
 <p>cinemachine 一个非常方便的插件，可以简单地做出摄像机跟随的效果</p>
-<p><strong>规范化：</strong></p>
+<h2 id="3-unity预制件规范化">
+  3 unity预制件规范化
+  <a class="heading-link" href="#3-unity%e9%a2%84%e5%88%b6%e4%bb%b6%e8%a7%84%e8%8c%83%e5%8c%96">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
 <p>制作 prefab 的时候，最好将该 prefab 的 transform 各项属性全部归零，scale 归一</p>
 <p>Assets 文件夹下应对文件进行分类(sprite 单独放，script 单独放，prefab 单独放……)</p>
 <p>推荐：建立 resource 文件夹，在其中建立sprite文件夹用于存放sprite图像，其余素材同理</p>
-<p><strong>2d骨骼绑定与IK Manager</strong></p>
-<p><strong>TileMap的规则</strong></p>
+<h2 id="4-2d骨骼绑定与ik-manager">
+  4 2d骨骼绑定与IK Manager
+  <a class="heading-link" href="#4-2d%e9%aa%a8%e9%aa%bc%e7%bb%91%e5%ae%9a%e4%b8%8eik-manager">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h2 id="tilemap的规则">
+  TileMap的规则
+  <a class="heading-link" href="#tilemap%e7%9a%84%e8%a7%84%e5%88%99">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>待更新中……</p>
 
       </div>
 

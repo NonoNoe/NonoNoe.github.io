@@ -215,7 +215,68 @@
 
       <div class="post-content">
         
-        <p><a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md001"  class="external-link" target="_blank" rel="noopener">markdown写作格式参考</a></p>
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#no0-markdown-基本语法与写作习惯养成">NO.0 Markdown 基本语法与写作习惯养成</a>
+      <ul>
+        <li><a href="#部分常用语法">部分常用语法</a></li>
+        <li><a href="#写作习惯推荐">写作习惯推荐</a></li>
+      </ul>
+    </li>
+    <li><a href="#no1-认识-hugo-文章开头的各项参数">NO.1 认识 Hugo 文章开头的各项参数</a></li>
+    <li><a href="#no2-发布-hugo-文章的方式">NO.2 发布 Hugo 文章的方式</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+ 
+.back-to-top {
+  position: fixed;         
+  bottom: 20px;            
+  right: 80px;             
+  background-color: #3c3c3c;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: none;           
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
+}
+
+ 
+.back-to-top:hover {
+  background-color: #8f8f8f;
+  color: rgb(77, 76, 80);
+}
+
+ 
+.back-to-top.show {
+  display: block;
+}
+</style>
+
+<script>
+
+const btn = document.querySelector('.back-to-top');
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) { 
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+});
+</script>
+
+<p><a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md001"  class="external-link" target="_blank" rel="noopener">markdown写作格式参考</a></p>
 <h2 id="no0-markdown-基本语法与写作习惯养成">
   NO.0 Markdown 基本语法与写作习惯养成
   <a class="heading-link" href="#no0-markdown-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e4%b8%8e%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e5%85%bb%e6%88%90">
@@ -241,27 +302,37 @@
 </span></span><span class="line"><span class="cl"><span class="ge">**</span>*加粗斜体文字***
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="k">-</span> 列表1
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="k">1.</span> 列表2
 </span></span><span class="line"><span class="cl"><span class="k">
 </span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">引用
 </span></span></span><span class="line"><span class="cl"><span class="ge"></span>
 </span></span><span class="line"><span class="cl"><span class="ge">**</span>* （分割线1）
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">--- （分割线2）
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">![<span class="nt">图片名</span>](<span class="na">图片链接</span>)
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">[<span class="nt">网站</span>](<span class="na">网站链接</span>)
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Markdown 插入代码块：
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    ``<span class="sb">`python
+</span></span></span><span class="line"><span class="cl"><span class="sb">
 </span></span></span><span class="line"><span class="cl"><span class="sb">    #!/usr/bin/python3
 </span></span></span><span class="line"><span class="cl"><span class="sb">    print(&#34;Hello, World!&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="sb">
 </span></span></span><span class="line"><span class="cl"><span class="sb">    `</span>``
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">Markdown 段首缩进：
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="ni">&amp;ensp;</span> or <span class="ni">&amp;#8194;</span> 表示一个半角的空格
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="ni">&amp;emsp;</span> or <span class="ni">&amp;#8195;</span>  表示一个全角的空格
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="ni">&amp;emsp;&amp;emsp;</span> 两个全角的空格（用的比较多）
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="ni">&amp;nbsp;</span> or <span class="ni">&amp;#160;</span> 不断行的空白格
 </span></span></code></pre></div><h3 id="写作习惯推荐">
   写作习惯推荐
@@ -271,10 +342,15 @@
   </a>
 </h3>
 <ul>
-<li>好好排版
+<li>
+<p>好好排版</p>
 <ul>
-<li>中英文混用时，建议在英文单词前后加上空格方便阅读</li>
-<li>中英文逗号/句号等最好不要混用，强迫症震怒（）</li>
+<li>
+<p>中英文混用时，建议在英文单词前后加上空格方便阅读</p>
+</li>
+<li>
+<p>中英文逗号/句号等最好不要混用，强迫症震怒（）</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -286,7 +362,7 @@
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
-<p><strong>2025.9.16修改：此处文章使用的TOML格式可能已过时，需要给时间加上引号才能通过编译，现创建文章时建议使用解析器更宽松的YAML格式</strong></p>
+<p><strong>2025.9.16修改</strong>：此处文章使用的TOML格式可能已过时，需要给时间加上引号才能通过编译，现创建文章时建议使用解析器更宽松的YAML格式</p>
 <p>YAML格式示例：(其实就是将=符号改为:符号后，再将+++改为&mdash;即可)</p>
 <p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//Hugo-YAML.png" alt="YAML格式示例"></p>
 <p>或者在创建文章时使用YAML格式：</p>

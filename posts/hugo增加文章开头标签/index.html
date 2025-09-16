@@ -210,7 +210,53 @@
 
       <div class="post-content">
         
-        <p>本文中所使用的 hugo 主题中，series 是默认不在文章开头显示的，那么如何修改才能使 series 的参数和 author/categories/tags 等参数保持相同格式显示在文章内呢？</p>
+        <a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+ 
+.back-to-top {
+  position: fixed;         
+  bottom: 20px;            
+  right: 80px;             
+  background-color: #3c3c3c;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: none;           
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
+}
+
+ 
+.back-to-top:hover {
+  background-color: #8f8f8f;
+  color: rgb(77, 76, 80);
+}
+
+ 
+.back-to-top.show {
+  display: block;
+}
+</style>
+
+<script>
+
+const btn = document.querySelector('.back-to-top');
+
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) { 
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+});
+</script>
+
+<p>本文中所使用的 hugo 主题中，series 是默认不在文章开头显示的，那么如何修改才能使 series 的参数和 author/categories/tags 等参数保持相同格式显示在文章内呢？</p>
 <p>修改前：</p>
 <img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//series_1.png" width="500" />
 <hr>
@@ -220,7 +266,7 @@
 <p>2,</p>
 <p>接下来仿造格式增加一行对应的</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl">          <span class="p">{{</span> <span class="nx">with</span> <span class="p">.</span><span class="nx">GetTerms</span> <span class="s">&#34;series&#34;</span> <span class="p">}}{{</span> <span class="nx">partial</span> <span class="s">&#34;taxonomy/series.html&#34;</span> <span class="p">.</span> <span class="p">}}{{</span> <span class="nx">end</span> <span class="p">}}</span>
-</span></span></code></pre></div><p>代码，并根据代码中的<ins> partial &ldquo;taxonomy/series.html&rdquo; </ins>前往当前目录下的 taxonomy 文件夹，新建文件 series.html ，从该文件夹中其他 html 文件复制粘贴格式，并修改自己想要自定义的部分</p>
+</span></span></code></pre></div><p>代码，并根据代码中的 <ins> partial &ldquo;taxonomy/series.html&rdquo; </ins>前往当前目录下的 taxonomy 文件夹，新建文件 series.html ，从该文件夹中其他 html 文件复制粘贴格式，并修改自己想要自定义的部分</p>
 <img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//series_2_1.png" width="800" />
 <p>我主要修改了开头的class名和显示的图标</p>
 <hr>
