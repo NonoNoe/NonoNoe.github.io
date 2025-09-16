@@ -3,7 +3,7 @@
 
 <head>
   <title>
-  非常个人向的音MAD制作心得总结 1.0 · NonoNoe
+  算法笔记（错题收集） · NonoNoe
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,35 +13,41 @@
 
 
 <meta name="author" content="NonoNoe">
-<meta name="description" content="使用软件：
+<meta name="description" content="
+  1，小数点精度设置
+  
+    
+    链接到标题
+  
 
-
-音频处理：FL studio(扒midi/调音)  utau/openutau/vocalshifter(人力调教)  melodyne(修音)  GlodWave/AU(素材处理等)">
+cout&lt;&lt;fixed&lt;&lt;setprecision(n);
+设置输出精度为小数点后n位（四舍五入），该设置会对此后的所有cout输出产生影响
+如果需要直接截断小数点后n位，并不四舍五入，可采用以下方式：">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="非常个人向的音MAD制作心得总结 1.0">
-  <meta name="twitter:description" content="使用软件：
-音频处理：FL studio(扒midi/调音) utau/openutau/vocalshifter(人力调教) melodyne(修音) GlodWave/AU(素材处理等)">
+  <meta name="twitter:title" content="算法笔记（错题收集）">
+  <meta name="twitter:description" content="1，小数点精度设置 链接到标题 cout&lt;&lt;fixed&lt;&lt;setprecision(n); 设置输出精度为小数点后n位（四舍五入），该设置会对此后的所有cout输出产生影响
+如果需要直接截断小数点后n位，并不四舍五入，可采用以下方式：">
 
-<meta property="og:url" content="https://NonoNoe.github.io/posts/%E9%9F%B3%E7%A0%81/">
+<meta property="og:url" content="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
-  <meta property="og:title" content="非常个人向的音MAD制作心得总结 1.0">
-  <meta property="og:description" content="使用软件：
-音频处理：FL studio(扒midi/调音) utau/openutau/vocalshifter(人力调教) melodyne(修音) GlodWave/AU(素材处理等)">
+  <meta property="og:title" content="算法笔记（错题收集）">
+  <meta property="og:description" content="1，小数点精度设置 链接到标题 cout&lt;&lt;fixed&lt;&lt;setprecision(n); 设置输出精度为小数点后n位（四舍五入），该设置会对此后的所有cout输出产生影响
+如果需要直接截断小数点后n位，并不四舍五入，可采用以下方式：">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-11T19:34:48+08:00">
-    <meta property="article:modified_time" content="2025-03-11T19:34:48+08:00">
-    <meta property="article:tag" content="音MAD">
+    <meta property="article:published_time" content="2025-03-14T09:23:53+08:00">
+    <meta property="article:modified_time" content="2025-03-14T09:23:53+08:00">
+    <meta property="article:tag" content="算法">
 
 
 
 
-<link rel="canonical" href="https://NonoNoe.github.io/posts/%E9%9F%B3%E7%A0%81/">
+<link rel="canonical" href="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -170,8 +176,8 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://NonoNoe.github.io/posts/%E9%9F%B3%E7%A0%81/">
-              非常个人向的音MAD制作心得总结 1.0
+            <a class="title-link" href="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
+              算法笔记（错题收集）
             </a>
           </h1>
         </div>
@@ -179,8 +185,8 @@
           <div class="date">
             <span class="posted-on">
               <i class="fa-solid fa-calendar" aria-hidden="true"></i>
-              <time datetime="2025-03-11T19:34:48&#43;08:00">
-                March 11, 2025
+              <time datetime="2025-03-14T09:23:53&#43;08:00">
+                March 14, 2025
               </time>
             </span>
             <span class="reading-time">
@@ -196,31 +202,45 @@
           <div class="tags">
   <i class="fa-solid fa-tag" aria-hidden="true"></i>
     <span class="tag">
-      <a href="/tags/%E9%9F%B3mad/">音MAD</a>
+      <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
     </span></div>
 
-          
+          <div class="series">
+ <i class="fa-solid fa-archive" aria-hidden="true"></i>
+       <a href="/series/%E7%AE%97%E6%B3%95/">算法</a></div>
+  
         </div>
       </header>
 
       <div class="post-content">
         
-        <p>使用软件：</p>
-<ul>
-<li>
-<p>音频处理：FL studio(扒midi/调音)  utau/openutau/vocalshifter(人力调教)  melodyne(修音)  GlodWave/AU(素材处理等)</p>
-</li>
-<li>
-<p>视频处理：QQ影音(预览很方便，带有轻量剪辑功能)  aviutl(pv剪辑)</p>
-</li>
-</ul>
-<p>待更新……</p>
+        <h2 id="1小数点精度设置">
+  1，小数点精度设置
+  <a class="heading-link" href="#1%e5%b0%8f%e6%95%b0%e7%82%b9%e7%b2%be%e5%ba%a6%e8%ae%be%e7%bd%ae">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">fixed</span><span class="o">&lt;&lt;</span><span class="n">setprecision</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</span></span></code></pre></div><p>设置输出精度为小数点后n位（四舍五入），该设置会对此后的所有cout输出产生影响</p>
+<p>如果需要直接截断小数点后n位，并不四舍五入，可采用以下方式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">trunc</span><span class="p">(</span><span class="n">count</span><span class="o">*</span><span class="mf">1e9</span><span class="p">)</span><span class="o">/</span><span class="mf">1e9</span><span class="p">;</span>
+</span></span></code></pre></div><p>trunc函数只能截断小数部分保留整数部分，此处将count的小数点后9位转为整数，截断后再将数值缩回原位，从而达成直接截断的效果</p>
 
       </div>
 
 
       <footer>
         
+
+<section class="see-also">
+  
+    
+    
+    
+  
+</section>
 
 
         
