@@ -25,10 +25,18 @@
         常见排序算法的稳定性
         有序数组合并时间复杂度
         二叉树相关概念
+        Linux中的查找
       
     
     1，小数点精度设置
     2，二叉树编号
+    3，前中后缀表达式
+      
+        前缀表达式
+        中缀表达式
+        后缀表达式
+      
+    
   
 
 
@@ -60,12 +68,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="算法笔记（错题收集）">
-  <meta name="twitter:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 1，小数点精度设置 2，二叉树编号 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
+  <meta name="twitter:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="算法笔记（错题收集）">
-  <meta property="og:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 1，小数点精度设置 2，二叉树编号 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
+  <meta property="og:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -220,7 +228,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：2 分钟
+              阅读时间：3 分钟
             </span>
           </div>
           <div class="authors">
@@ -255,10 +263,18 @@
         <li><a href="#常见排序算法的稳定性">常见排序算法的稳定性</a></li>
         <li><a href="#有序数组合并时间复杂度">有序数组合并时间复杂度</a></li>
         <li><a href="#二叉树相关概念">二叉树相关概念</a></li>
+        <li><a href="#linux中的查找">Linux中的查找</a></li>
       </ul>
     </li>
     <li><a href="#1小数点精度设置">1，小数点精度设置</a></li>
     <li><a href="#2二叉树编号">2，二叉树编号</a></li>
+    <li><a href="#3前中后缀表达式">3，前中后缀表达式</a>
+      <ul>
+        <li><a href="#前缀表达式">前缀表达式</a></li>
+        <li><a href="#中缀表达式">中缀表达式</a></li>
+        <li><a href="#后缀表达式">后缀表达式</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
@@ -381,7 +397,35 @@ window.addEventListener('scroll', () => {
 <p>结点的度：一个节点的子树的个数</p>
 <p>叶节点：度为0的结点</p>
 <p>二叉树最小深度：dmin​=⌈log2​(n+1)⌉ (⌈x⌉表示向上取整)</p>
+<h4 id="二叉树的不同形态">
+  二叉树的不同形态
+  <a class="heading-link" href="#%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e4%b8%8d%e5%90%8c%e5%bd%a2%e6%80%81">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><strong>哈夫曼树</strong>：给定N个权值作为N个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。</p>
+<p><strong>平衡二叉树</strong>：它的左子树和右子树的深度之差(平衡因子)的绝对值不超过1，且它的左子树和右子树都是一颗平衡二叉树。</p>
+<h4 id="大根堆小根堆">
+  大根堆小根堆
+  <a class="heading-link" href="#%e5%a4%a7%e6%a0%b9%e5%a0%86%e5%b0%8f%e6%a0%b9%e5%a0%86">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><strong>堆</strong>是一种特殊的完全二叉树</p>
+<p>子节点均大于等于根节点的堆叫做<strong>小根堆</strong>，反之为<strong>大根堆</strong></p>
+<p>将关键字依次插入小根堆中，按层序从左至右插入，遇到结点值比根节点小时上浮即可</p>
 <hr>
+<h3 id="linux中的查找">
+  Linux中的查找
+  <a class="heading-link" href="#linux%e4%b8%ad%e7%9a%84%e6%9f%a5%e6%89%be">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>(牛客查找原题)</p>
+<p>Linux 中，有文本文件 file.txt，想要查找出包含 &ldquo;test&rdquo; 或 &ldquo;taste&rdquo; 两个单词的行并显示对应行号，下面命令正确的是(grep -n &rsquo;t[ae]st&rsquo; file.txt)</p>
 <h2 id="1小数点精度设置">
   1，小数点精度设置
   <a class="heading-link" href="#1%e5%b0%8f%e6%95%b0%e7%82%b9%e7%b2%be%e5%ba%a6%e8%ae%be%e7%bd%ae">
@@ -417,6 +461,37 @@ window.addEventListener('scroll', () => {
 </li>
 </ul>
 <hr>
+<h2 id="3前中后缀表达式">
+  3，前中后缀表达式
+  <a class="heading-link" href="#3%e5%89%8d%e4%b8%ad%e5%90%8e%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="前缀表达式">
+  前缀表达式
+  <a class="heading-link" href="#%e5%89%8d%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>前缀表达式是运算符在前操作符在后的式子，实际上类似于二叉树的先序遍历 (eg.*+ab+cd)</p>
+<h3 id="中缀表达式">
+  中缀表达式
+  <a class="heading-link" href="#%e4%b8%ad%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>中缀表达式的格式和我们平时所写所看的表达式格式相同，同时也类似于二叉树的中序遍历</p>
+<h3 id="后缀表达式">
+  后缀表达式
+  <a class="heading-link" href="#%e5%90%8e%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>后缀表达式的运算符放在两个操作符的后面，类似于二叉树的后续遍历 (eg.ab+cd+*)</p>
 
       </div>
 
