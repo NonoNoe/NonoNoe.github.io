@@ -27,9 +27,9 @@
         二叉树相关概念
       
     
-    堆/栈
+    堆/栈/队列
       
-        LIFO与FILO
+        LIFO与FILO , LILO与FIFO
         大根堆/小根堆
         Linux中的查找
       
@@ -74,12 +74,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="算法笔记（错题收集）">
-  <meta name="twitter:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈 LIFO与FILO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
+  <meta name="twitter:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="算法笔记（错题收集）">
-  <meta property="og:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈 LIFO与FILO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
+  <meta property="og:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -234,7 +234,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：4 分钟
+              阅读时间：5 分钟
             </span>
           </div>
           <div class="authors">
@@ -271,9 +271,9 @@
         <li><a href="#二叉树相关概念">二叉树相关概念</a></li>
       </ul>
     </li>
-    <li><a href="#堆栈">堆/栈</a>
+    <li><a href="#堆栈队列">堆/栈/队列</a>
       <ul>
-        <li><a href="#lifo与filo">LIFO与FILO</a></li>
+        <li><a href="#lifo与filo--lilo与fifo">LIFO与FILO , LILO与FIFO</a></li>
         <li><a href="#大根堆小根堆">大根堆/小根堆</a></li>
         <li><a href="#linux中的查找">Linux中的查找</a></li>
       </ul>
@@ -367,6 +367,9 @@ window.addEventListener('scroll', () => {
 <p>因为循环队列需要牺牲一个存储空间来区分队空和队满状态,当队列满时,队尾指针rear再前进一个位置就会与队头指针front重合。</p>
 <p>判断<strong>队空</strong>的条件是rear%n == front</p>
 <p>队列中只有一个元素时，(front+1)%n == rear</p>
+<p>rear = (front + 队列中元素个数) % 数组长度</p>
+<p>enqueue将元素（item）插入队列的末尾，dequeue将队列的第一个元素（即最先插入队列的元素）移除并返回其值</p>
+<p>在使用链表实现的队列中，入队和出队操作的平均时间复杂度分别是多少？</p>
 <hr>
 <h3 id="输出受限的双向队列">
   输出受限的双向队列
@@ -409,6 +412,7 @@ window.addEventListener('scroll', () => {
 <p>结点的度：一个节点的子树的个数</p>
 <p>叶节点：度为0的结点</p>
 <p>二叉树最小深度：dmin​=⌈log2​(n+1)⌉ (⌈x⌉表示向上取整)</p>
+<p>树的节点数=度*对应结点个数+根节点</p>
 <h4 id="二叉树的不同形态">
   二叉树的不同形态
   <a class="heading-link" href="#%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e4%b8%8d%e5%90%8c%e5%bd%a2%e6%80%81">
@@ -417,6 +421,7 @@ window.addEventListener('scroll', () => {
   </a>
 </h4>
 <p><strong>哈夫曼树</strong>：给定N个权值作为N个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。</p>
+<p>给定n个带权结点，其Huffman树的结构不是唯一的</p>
 <p>在哈夫曼编码中,要满足前缀编码的要求,即任何一个字符的编码都不能是另一个字符编码的前缀。同时,哈夫曼树是一个满二叉树,所有的字符编码都是叶子节点。</p>
 <p>哈夫曼树带权路径计算有两种方式：1，按 Huffman（最小对合并）逐步合并</p>
 <p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//20250917122625.png" alt="最小对合并"></p>
@@ -424,18 +429,25 @@ window.addEventListener('scroll', () => {
 <p><strong>平衡二叉树</strong>：它的左子树和右子树的深度之差(平衡因子)的绝对值不超过1，且它的左子树和右子树都是一颗平衡二叉树。</p>
 <p><strong>满二叉树</strong>：如果一个二叉树的层数为k，结点总数是(2^k)-1 ，它就是满二叉树。</p>
 <p><strong>完全二叉树</strong>：与满二叉树相似，但最后一行相比满二叉树并不完整</p>
+<p><strong>二叉搜索树</strong>：非空左子树的所有键值小于其根结点的键值；非空右子树的所有键值大于其根结点的键值；左、右子树都是二叉搜索树</p>
 <hr>
-<h2 id="堆栈">
-  堆/栈
-  <a class="heading-link" href="#%e5%a0%86%e6%a0%88">
+<h2 id="堆栈队列">
+  堆/栈/队列
+  <a class="heading-link" href="#%e5%a0%86%e6%a0%88%e9%98%9f%e5%88%97">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
 <p><strong>堆</strong>是一种特殊的完全二叉树</p>
-<h3 id="lifo与filo">
-  LIFO与FILO
-  <a class="heading-link" href="#lifo%e4%b8%8efilo">
+<p><strong>栈</strong>中有 n 个元素时，这几个元素能组成的出栈序列有
+<img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//nInStack.png" width="200" style="vertical-align: middle;" /> 个</p>
+<p><strong>队列</strong>状况判定条件</p>
+<p>队空:front=rear</p>
+<p>队满:(front=(rear+1)modmaxSize)</p>
+<p>最大有效元素个数:maxSize - 1</p>
+<h3 id="lifo与filo--lilo与fifo">
+  LIFO与FILO , LILO与FIFO
+  <a class="heading-link" href="#lifo%e4%b8%8efilo--lilo%e4%b8%8efifo">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -446,6 +458,10 @@ window.addEventListener('scroll', () => {
 <p>FILO (First In, Last Out)</p>
 <p>“先进后出” → 最先放进去的元素最后出来。</p>
 <p>👉 和 LIFO 是同一个规则，只是从“第一个进去的元素”的角度来描述。</p>
+<hr>
+<p>同理得</p>
+<p>FIFO 先进先出(队列)</p>
+<p>LILO 后进后出</p>
 <h3 id="大根堆小根堆">
   大根堆/小根堆
   <a class="heading-link" href="#%e5%a4%a7%e6%a0%b9%e5%a0%86%e5%b0%8f%e6%a0%b9%e5%a0%86">
