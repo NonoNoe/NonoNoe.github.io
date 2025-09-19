@@ -219,9 +219,16 @@
   <h1>目录</h1>
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#no0-markdown-基本语法与写作习惯养成">NO.0 Markdown 基本语法与写作习惯养成</a>
+    <li><a href="#部分常用语法">部分常用语法</a>
       <ul>
-        <li><a href="#部分常用语法">部分常用语法</a></li>
+        <li><a href="#标题">标题</a></li>
+        <li><a href="#文字变体">文字变体</a></li>
+        <li><a href="#列表">列表</a></li>
+        <li><a href="#分割线">分割线</a></li>
+        <li><a href="#图片和外链">图片和外链</a></li>
+        <li><a href="#表格">表格</a></li>
+        <li><a href="#markdown-插入代码块">Markdown 插入代码块</a></li>
+        <li><a href="#markdown-段首缩进">Markdown 段首缩进</a></li>
         <li><a href="#写作习惯推荐">写作习惯推荐</a></li>
       </ul>
     </li>
@@ -277,64 +284,162 @@ window.addEventListener('scroll', () => {
 </script>
 
 <p><a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md001"  class="external-link" target="_blank" rel="noopener">markdown写作格式参考</a></p>
-<h2 id="no0-markdown-基本语法与写作习惯养成">
+<h1 id="no0-markdown-基本语法与写作习惯养成">
   NO.0 Markdown 基本语法与写作习惯养成
   <a class="heading-link" href="#no0-markdown-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e4%b8%8e%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e5%85%bb%e6%88%90">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h2>
+</h1>
 <p>Markdown 基本语法可参考
 <a href="https://markdown.com.cn/"  class="external-link" target="_blank" rel="noopener">markdown官网</a></p>
-<h3 id="部分常用语法">
+<h2 id="部分常用语法">
   部分常用语法
   <a class="heading-link" href="#%e9%83%a8%e5%88%86%e5%b8%b8%e7%94%a8%e8%af%ad%e6%b3%95">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
+</h2>
+<h3 id="标题">
+  标题
+  <a class="heading-link" href="#%e6%a0%87%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
 </h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl"><span class="gh">#标题1
-</span></span></span><span class="line"><span class="cl"><span class="gh"></span><span class="gu">##标题2
-</span></span></span><span class="line"><span class="cl"><span class="gu">###标题3
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># 标题1
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl"><span class="gu">## 标题2
 </span></span></span><span class="line"><span class="cl"><span class="gu"></span>
-</span></span><span class="line"><span class="cl"><span class="gs">**加粗文字**</span>
-</span></span><span class="line"><span class="cl"><span class="ge">*斜体文字*</span>
+</span></span><span class="line"><span class="cl"><span class="gu">### 标题3
+</span></span></span></code></pre></div><hr>
+<h3 id="文字变体">
+  文字变体
+  <a class="heading-link" href="#%e6%96%87%e5%ad%97%e5%8f%98%e4%bd%93">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p><strong>加粗</strong>文字</p>
+<p><em>斜体</em>文字</p>
+<p><em><strong>加粗斜体文字</strong></em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">**加粗**文字
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">*斜体*文字
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="ge">**</span>*加粗斜体文字***
+</span></span></code></pre></div><hr>
+<h3 id="列表">
+  列表
+  <a class="heading-link" href="#%e5%88%97%e8%a1%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<ul>
+<li>列表1</li>
+</ul>
+<ol>
+<li>列表2</li>
+</ol>
+<blockquote>
+<p>引用</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 列表1
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"> <span class="k">-</span> 列表1
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"> <span class="k">1.</span> 列表2
+</span></span><span class="line"><span class="cl"><span class="k">1.</span> 列表2
 </span></span><span class="line"><span class="cl"><span class="k">
 </span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">引用
-</span></span></span><span class="line"><span class="cl"><span class="ge"></span>
-</span></span><span class="line"><span class="cl"><span class="ge">**</span>* （分割线1）
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">--- （分割线2）
-</span></span><span class="line"><span class="cl">
+</span></span></span></code></pre></div><hr>
+<h3 id="分割线">
+  分割线
+  <a class="heading-link" href="#%e5%88%86%e5%89%b2%e7%ba%bf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>*** （分割线1）</p>
+<p>&mdash; （分割线2）</p>
+<hr>
+<h3 id="图片和外链">
+  图片和外链
+  <a class="heading-link" href="#%e5%9b%be%e7%89%87%e5%92%8c%e5%a4%96%e9%93%be">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p><img src="%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5" alt="图片名"></p>
+<p><a href="%e7%bd%91%e7%ab%99%e9%93%be%e6%8e%a5" >网站</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">![<span class="nt">图片名</span>](<span class="na">图片链接</span>)
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">[<span class="nt">网站</span>](<span class="na">网站链接</span>)
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Markdown 插入代码块：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    ``<span class="sb">`python
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">    #!/usr/bin/python3
-</span></span></span><span class="line"><span class="cl"><span class="sb">    print(&#34;Hello, World!&#34;);
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">    `</span>``
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Markdown 段首缩进：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="ni">&amp;ensp;</span> or <span class="ni">&amp;#8194;</span> 表示一个半角的空格
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="ni">&amp;emsp;</span> or <span class="ni">&amp;#8195;</span>  表示一个全角的空格
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="ni">&amp;emsp;&amp;emsp;</span> 两个全角的空格（用的比较多）
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="ni">&amp;nbsp;</span> or <span class="ni">&amp;#160;</span> 不断行的空白格
-</span></span></code></pre></div><h3 id="写作习惯推荐">
+</span></span></code></pre></div><hr>
+<h3 id="表格">
+  表格
+  <a class="heading-link" href="#%e8%a1%a8%e6%a0%bc">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>列1</th>
+          <th>列2</th>
+          <th>列3</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>内容1</td>
+          <td>内容2</td>
+          <td>内容3</td>
+      </tr>
+      <tr>
+          <td>内容4</td>
+          <td>内容5</td>
+          <td>内容6</td>
+      </tr>
+  </tbody>
+</table>
+<p>该表格用:控制对齐方式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">| 左对齐 | 居中对齐 | 右对齐 | 默认(居中) |
+</span></span><span class="line"><span class="cl">|:-------|:-------:|-------:||-------|
+</span></span><span class="line"><span class="cl">| 内容1 | 内容2 | 内容3 | 内容4 |
+</span></span><span class="line"><span class="cl">| 内容5 | 内容6 | 内容7 | 内容8 |
+</span></span></code></pre></div><hr>
+<h3 id="markdown-插入代码块">
+  Markdown 插入代码块
+  <a class="heading-link" href="#markdown-%e6%8f%92%e5%85%a5%e4%bb%a3%e7%a0%81%e5%9d%97">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<pre><code>```python
+
+#!/usr/bin/python3
+print(&quot;Hello, World!&quot;);
+
+```
+</code></pre>
+<hr>
+<h3 id="markdown-段首缩进">
+  Markdown 段首缩进
+  <a class="heading-link" href="#markdown-%e6%ae%b5%e9%a6%96%e7%bc%a9%e8%bf%9b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>  or   表示一个半角的空格</p>
+<p>  or    表示一个全角的空格</p>
+<p>   两个全角的空格（用的比较多）</p>
+<p>  or   不断行的空白格</p>
+<hr>
+<h3 id="写作习惯推荐">
   写作习惯推荐
   <a class="heading-link" href="#%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e6%8e%a8%e8%8d%90">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>

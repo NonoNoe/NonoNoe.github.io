@@ -21,6 +21,7 @@
     2 DeltaTime 增量时间详解
     3 射线检测
     4 Camera
+    5 C# 变量
   
 
 
@@ -44,12 +45,12 @@ Camera 逻辑一般放到LateUpdate里面">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="通识课程笔记">
-  <meta name="twitter:description" content="目录1 Unity 生命周期 2 DeltaTime 增量时间详解 3 射线检测 4 Camera ↑ 返回顶部1 Unity 生命周期 链接到标题 Camera 逻辑一般放到LateUpdate里面">
+  <meta name="twitter:description" content="目录1 Unity 生命周期 2 DeltaTime 增量时间详解 3 射线检测 4 Camera 5 C# 变量 ↑ 返回顶部1 Unity 生命周期 链接到标题 Camera 逻辑一般放到LateUpdate里面">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="通识课程笔记">
-  <meta property="og:description" content="目录1 Unity 生命周期 2 DeltaTime 增量时间详解 3 射线检测 4 Camera ↑ 返回顶部1 Unity 生命周期 链接到标题 Camera 逻辑一般放到LateUpdate里面">
+  <meta property="og:description" content="目录1 Unity 生命周期 2 DeltaTime 增量时间详解 3 射线检测 4 Camera 5 C# 变量 ↑ 返回顶部1 Unity 生命周期 链接到标题 Camera 逻辑一般放到LateUpdate里面">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -204,7 +205,7 @@ Camera 逻辑一般放到LateUpdate里面">
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：1 分钟
+              阅读时间：2 分钟
             </span>
           </div>
           <div class="authors">
@@ -235,6 +236,7 @@ Camera 逻辑一般放到LateUpdate里面">
     <li><a href="#2-deltatime-增量时间详解">2 DeltaTime 增量时间详解</a></li>
     <li><a href="#3-射线检测">3 射线检测</a></li>
     <li><a href="#4-camera">4 Camera</a></li>
+    <li><a href="#5-c-变量">5 C# 变量</a></li>
   </ul>
 </nav>
 </div>
@@ -323,6 +325,41 @@ window.addEventListener('scroll', () => {
 <p>Solid Color 渲染纯色背景</p>
 <p>Depth only 代表当前摄像机渲染层级在所有层级之上，通常用于保持当前对象不被裁剪</p>
 <p>Don&rsquo;t Clear 不清除颜色和深度缓冲区</p>
+<h2 id="5-c-变量">
+  5 C# 变量
+  <a class="heading-link" href="#5-c-%e5%8f%98%e9%87%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>参考:<a href="https://www.bilibili.com/video/BV1Pa411G7ss/"  class="external-link" target="_blank" rel="noopener">【Unity教学】C# 内存管理 Value Type 与 Reference Type</a></p>
+<p>C# 变量可以分为三种：值类型(Value Type)，引用类型(Reference Type)，指针类型(Pointer Type)</p>
+<table>
+  <thead>
+      <tr>
+          <th>变量类型</th>
+          <th>Value Type</th>
+          <th>Reference Type</th>
+          <th>Pointer Type (不常用，暂不做讨论)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>变量概念</td>
+          <td>变量存放实际值</td>
+          <td>变量存放记忆体位置</td>
+          <td>/</td>
+      </tr>
+      <tr>
+          <td>变量内容</td>
+          <td>int,float,bool,char,enum,struct</td>
+          <td>String,Array,Class,Interface,Delegate,Object</td>
+          <td>/</td>
+      </tr>
+  </tbody>
+</table>
+<p>每开启一个新的应用程序，系统就会分配一块记忆体空间，用来存储刚刚开启的应用程序，而这个区域同时又会被划分为几个部分</p>
+<p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//20250919105604.png" alt="参考"></p>
 
       </div>
 

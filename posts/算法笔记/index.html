@@ -25,7 +25,12 @@
         常见排序算法的稳定性
         有序数组合并时间复杂度
         二叉树相关概念
-        大根堆小根堆
+      
+    
+    堆/栈
+      
+        LIFO与FILO
+        大根堆/小根堆
         Linux中的查找
       
     
@@ -69,12 +74,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="算法笔记（错题收集）">
-  <meta name="twitter:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 大根堆小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
+  <meta name="twitter:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈 LIFO与FILO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="算法笔记（错题收集）">
-  <meta property="og:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 大根堆小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
+  <meta property="og:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈 LIFO与FILO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -264,7 +269,12 @@
         <li><a href="#常见排序算法的稳定性">常见排序算法的稳定性</a></li>
         <li><a href="#有序数组合并时间复杂度">有序数组合并时间复杂度</a></li>
         <li><a href="#二叉树相关概念">二叉树相关概念</a></li>
-        <li><a href="#大根堆小根堆">大根堆小根堆</a></li>
+      </ul>
+    </li>
+    <li><a href="#堆栈">堆/栈</a>
+      <ul>
+        <li><a href="#lifo与filo">LIFO与FILO</a></li>
+        <li><a href="#大根堆小根堆">大根堆/小根堆</a></li>
         <li><a href="#linux中的查找">Linux中的查找</a></li>
       </ul>
     </li>
@@ -415,15 +425,35 @@ window.addEventListener('scroll', () => {
 <p><strong>满二叉树</strong>：如果一个二叉树的层数为k，结点总数是(2^k)-1 ，它就是满二叉树。</p>
 <p><strong>完全二叉树</strong>：与满二叉树相似，但最后一行相比满二叉树并不完整</p>
 <hr>
+<h2 id="堆栈">
+  堆/栈
+  <a class="heading-link" href="#%e5%a0%86%e6%a0%88">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p><strong>堆</strong>是一种特殊的完全二叉树</p>
+<h3 id="lifo与filo">
+  LIFO与FILO
+  <a class="heading-link" href="#lifo%e4%b8%8efilo">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>LIFO (Last In, First Out)</p>
+<p>“后进先出” → 最后放进去的元素最先出来。</p>
+<p>👉 常用在栈 (stack) 的描述里。</p>
+<p>FILO (First In, Last Out)</p>
+<p>“先进后出” → 最先放进去的元素最后出来。</p>
+<p>👉 和 LIFO 是同一个规则，只是从“第一个进去的元素”的角度来描述。</p>
 <h3 id="大根堆小根堆">
-  大根堆小根堆
+  大根堆/小根堆
   <a class="heading-link" href="#%e5%a4%a7%e6%a0%b9%e5%a0%86%e5%b0%8f%e6%a0%b9%e5%a0%86">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h3>
 <p>可参考:<a href="https://zhuanlan.zhihu.com/p/681331225"  class="external-link" target="_blank" rel="noopener">【堆 - 专题】堆排序，大根堆，小根堆</a></p>
-<p><strong>堆</strong>是一种特殊的完全二叉树</p>
 <p>子节点均大于等于根节点的堆叫做<strong>小根堆</strong>，反之为<strong>大根堆</strong></p>
 <p>将关键字依次插入小根堆中，按层序从左至右插入，遇到结点值比根节点小时上浮即可</p>
 <hr>
