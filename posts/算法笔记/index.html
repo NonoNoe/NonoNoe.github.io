@@ -19,7 +19,9 @@
   
     0，常考常错常忘
       
+        时间/空间复杂度
         数据元素的存储结构
+        数组的存取
         队列的各种情况判定
         输出受限的双向队列
         常见排序算法的稳定性
@@ -43,6 +45,13 @@
         后缀表达式
       
     
+    C# 中各类修饰符
+      
+        访问修饰符
+        类修饰符
+        成员修饰符
+      
+    
   
 
 
@@ -61,25 +70,25 @@
 
 
 
-  数据元素的存储结构
+  时间/空间复杂度
   
     
     链接到标题
   
 
-逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
+空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="算法笔记（错题收集）">
-  <meta name="twitter:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
+  <meta name="twitter:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 C# 中各类修饰符 访问修饰符 类修饰符 成员修饰符 ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="算法笔记（错题收集）">
-  <meta property="og:description" content="目录0，常考常错常忘 数据元素的存储结构 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 ↑ 返回顶部0，常考常错常忘 链接到标题 数据元素的存储结构 链接到标题 逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。">
+  <meta property="og:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 C# 中各类修饰符 访问修饰符 类修饰符 成员修饰符 ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -234,7 +243,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：5 分钟
+              阅读时间：6 分钟
             </span>
           </div>
           <div class="authors">
@@ -263,7 +272,9 @@
   <ul>
     <li><a href="#0常考常错常忘">0，常考常错常忘</a>
       <ul>
+        <li><a href="#时间空间复杂度">时间/空间复杂度</a></li>
         <li><a href="#数据元素的存储结构">数据元素的存储结构</a></li>
+        <li><a href="#数组的存取">数组的存取</a></li>
         <li><a href="#队列的各种情况判定">队列的各种情况判定</a></li>
         <li><a href="#输出受限的双向队列">输出受限的双向队列</a></li>
         <li><a href="#常见排序算法的稳定性">常见排序算法的稳定性</a></li>
@@ -285,6 +296,13 @@
         <li><a href="#前缀表达式">前缀表达式</a></li>
         <li><a href="#中缀表达式">中缀表达式</a></li>
         <li><a href="#后缀表达式">后缀表达式</a></li>
+      </ul>
+    </li>
+    <li><a href="#c-中各类修饰符">C# 中各类修饰符</a>
+      <ul>
+        <li><a href="#访问修饰符">访问修饰符</a></li>
+        <li><a href="#类修饰符">类修饰符</a></li>
+        <li><a href="#成员修饰符">成员修饰符</a></li>
       </ul>
     </li>
   </ul>
@@ -344,6 +362,22 @@ window.addEventListener('scroll', () => {
   </a>
 </h2>
 <hr>
+<h3 id="时间空间复杂度">
+  时间/空间复杂度
+  <a class="heading-link" href="#%e6%97%b6%e9%97%b4%e7%a9%ba%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。</p>
+<p>只考虑与输入规模 n 有关的额外内存。</p>
+<p>常数个额外变量（无论有几个）都算作 O(1)</p>
+<p>eg.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">nums</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</span></span></code></pre></div><p>该段代码创建了一个大小为n的数组，所以空间复杂度是n</p>
+<p>该代码初始化所有元素的操作相当于一个隐性的for循环，所以时间复杂度是<strong>O(n)</strong></p>
+<hr>
 <h3 id="数据元素的存储结构">
   数据元素的存储结构
   <a class="heading-link" href="#%e6%95%b0%e6%8d%ae%e5%85%83%e7%b4%a0%e7%9a%84%e5%ad%98%e5%82%a8%e7%bb%93%e6%9e%84">
@@ -355,6 +389,17 @@ window.addEventListener('scroll', () => {
 <p>存储结构有顺序、链式、索引、散列四种，逻辑结构有<strong>线性</strong>和<strong>非线性</strong>结构。</p>
 <p>二叉树是<strong>逻辑结构</strong>，树属于逻辑结构中的<strong>非线性结构</strong>。</p>
 <p><strong>双向链表</strong>、<em>哈希表</em>、<em><strong>循环队列</strong></em>都是存储结构分别属于<strong>链式</strong>、<em>散列</em>和<em><strong>顺序</strong></em>。</p>
+<hr>
+<h3 id="数组的存取">
+  数组的存取
+  <a class="heading-link" href="#%e6%95%b0%e7%bb%84%e7%9a%84%e5%ad%98%e5%8f%96">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>数组的存取≠插入/删除，存取速度与下标数值无关，存就是给a[i]赋值，取就是读出a[i]的值，永远是O(1)</p>
+<p>在二维数组行序为主序存储时,元素在内存中按照先行后列的顺序连续存储。对于A[i][j],其地址计算公式为:</p>
+<p>基地址 + (i-1)*n + (j-1)</p>
 <hr>
 <h3 id="队列的各种情况判定">
   队列的各种情况判定
@@ -412,6 +457,7 @@ window.addEventListener('scroll', () => {
 <p>结点的度：一个节点的子树的个数</p>
 <p>叶节点：度为0的结点</p>
 <p>二叉树最小深度：dmin​=⌈log2​(n+1)⌉ (⌈x⌉表示向上取整)</p>
+<p>深度为k的二叉树至多有2^k-1个结点</p>
 <p>树的节点数=度*对应结点个数+根节点</p>
 <h4 id="二叉树的不同形态">
   二叉树的不同形态
@@ -548,6 +594,51 @@ window.addEventListener('scroll', () => {
   </a>
 </h3>
 <p>后缀表达式的运算符放在两个操作符的后面，类似于二叉树的后续遍历 (eg.ab+cd+*)</p>
+<hr>
+<h2 id="c-中各类修饰符">
+  C# 中各类修饰符
+  <a class="heading-link" href="#c-%e4%b8%ad%e5%90%84%e7%b1%bb%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="访问修饰符">
+  访问修饰符
+  <a class="heading-link" href="#%e8%ae%bf%e9%97%ae%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>Public:公有的，对其访问没有限制</p>
+<p>Internal:内部的，同一个程序集中的所有类都可以访问</p>
+<p>Private:私有的，只有在声明它们的类或结构中才能访问</p>
+<p>Protected:受保护的，只能在它的类和派生类中访问</p>
+<h3 id="类修饰符">
+  类修饰符
+  <a class="heading-link" href="#%e7%b1%bb%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>abstract:可以被指示一个类只能作为其它类的基类</p>
+<p>sealed:指示一个类不能被继承</p>
+<p>static：修饰类时表示该类是静态类，不能够实例化该类的对象,该类的成员为静态</p>
+<h3 id="成员修饰符">
+  成员修饰符
+  <a class="heading-link" href="#%e6%88%90%e5%91%98%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>abstract:指示该方法或属性没有实现</p>
+<p>const:指定域或局部变量的值不能被改动</p>
+<p>event:声明一个事件</p>
+<p>extern:指示方法在外部实现</p>
+<p>override:对由基类继承成员的新实现</p>
+<p>readonly:指示一个域只能在声明时以及相同类的内部被赋值</p>
+<p>Partial：在整个同一程序集中定义分部类和结构</p>
+<p>Virtual：用于修饰方法、属性、索引器或事件声明，并且允许在派生类中重写这些对象</p>
+<p>New：作修饰符，隐藏从基类成员继承的成员，在不使用 new 修饰符的情况下隐藏成员是允许的，但会生成警告。作运算符，用于创建对象和调用构造函数</p>
 
       </div>
 
