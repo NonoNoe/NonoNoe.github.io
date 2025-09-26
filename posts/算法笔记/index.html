@@ -27,13 +27,12 @@
         常见排序算法的稳定性
         有序数组合并时间复杂度
         二叉树相关概念
-      
-    
-    堆/栈/队列
-      
+        堆/栈/队列
         LIFO与FILO , LILO与FIFO
         大根堆/小根堆
-        Linux中的查找
+        Linux 中的查找
+        for 循环和 foreach 循环
+        C# 中常用的容器类
       
     
     1，小数点精度设置
@@ -45,11 +44,12 @@
         后缀表达式
       
     
-    C# 中各类修饰符
+    4， C# 小知识
       
-        访问修饰符
-        类修饰符
-        成员修饰符
+        C# 各类修饰符
+        C# 中的GC机制
+        C# 装箱与拆箱
+        C# ref 与 out
       
     
   
@@ -83,12 +83,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="算法笔记（错题收集）">
-  <meta name="twitter:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 C# 中各类修饰符 访问修饰符 类修饰符 成员修饰符 ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
+  <meta name="twitter:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux 中的查找 for 循环和 foreach 循环 C# 中常用的容器类 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 4， C# 小知识 C# 各类修饰符 C# 中的GC机制 C# 装箱与拆箱 C# ref 与 out ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="算法笔记（错题收集）">
-  <meta property="og:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux中的查找 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 C# 中各类修饰符 访问修饰符 类修饰符 成员修饰符 ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
+  <meta property="og:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux 中的查找 for 循环和 foreach 循环 C# 中常用的容器类 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 4， C# 小知识 C# 各类修饰符 C# 中的GC机制 C# 装箱与拆箱 C# ref 与 out ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -243,7 +243,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：6 分钟
+              阅读时间：7 分钟
             </span>
           </div>
           <div class="authors">
@@ -280,13 +280,12 @@
         <li><a href="#常见排序算法的稳定性">常见排序算法的稳定性</a></li>
         <li><a href="#有序数组合并时间复杂度">有序数组合并时间复杂度</a></li>
         <li><a href="#二叉树相关概念">二叉树相关概念</a></li>
-      </ul>
-    </li>
-    <li><a href="#堆栈队列">堆/栈/队列</a>
-      <ul>
+        <li><a href="#堆栈队列">堆/栈/队列</a></li>
         <li><a href="#lifo与filo--lilo与fifo">LIFO与FILO , LILO与FIFO</a></li>
         <li><a href="#大根堆小根堆">大根堆/小根堆</a></li>
-        <li><a href="#linux中的查找">Linux中的查找</a></li>
+        <li><a href="#linux-中的查找">Linux 中的查找</a></li>
+        <li><a href="#for-循环和-foreach-循环">for 循环和 foreach 循环</a></li>
+        <li><a href="#c-中常用的容器类">C# 中常用的容器类</a></li>
       </ul>
     </li>
     <li><a href="#1小数点精度设置">1，小数点精度设置</a></li>
@@ -298,11 +297,12 @@
         <li><a href="#后缀表达式">后缀表达式</a></li>
       </ul>
     </li>
-    <li><a href="#c-中各类修饰符">C# 中各类修饰符</a>
+    <li><a href="#4-c-小知识">4， C# 小知识</a>
       <ul>
-        <li><a href="#访问修饰符">访问修饰符</a></li>
-        <li><a href="#类修饰符">类修饰符</a></li>
-        <li><a href="#成员修饰符">成员修饰符</a></li>
+        <li><a href="#c-各类修饰符">C# 各类修饰符</a></li>
+        <li><a href="#c-中的gc机制">C# 中的GC机制</a></li>
+        <li><a href="#c-装箱与拆箱">C# 装箱与拆箱</a></li>
+        <li><a href="#c-ref-与-out">C# ref 与 out</a></li>
       </ul>
     </li>
   </ul>
@@ -477,13 +477,13 @@ window.addEventListener('scroll', () => {
 <p><strong>完全二叉树</strong>：与满二叉树相似，但最后一行相比满二叉树并不完整</p>
 <p><strong>二叉搜索树</strong>：非空左子树的所有键值小于其根结点的键值；非空右子树的所有键值大于其根结点的键值；左、右子树都是二叉搜索树</p>
 <hr>
-<h2 id="堆栈队列">
+<h3 id="堆栈队列">
   堆/栈/队列
   <a class="heading-link" href="#%e5%a0%86%e6%a0%88%e9%98%9f%e5%88%97">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h2>
+</h3>
 <p><strong>堆</strong>是一种特殊的完全二叉树</p>
 <p><strong>栈</strong>中有 n 个元素时，这几个元素能组成的出栈序列有
 <img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//nInStack.png" width="200" style="vertical-align: middle;" /> 个</p>
@@ -519,15 +519,32 @@ window.addEventListener('scroll', () => {
 <p>子节点均大于等于根节点的堆叫做<strong>小根堆</strong>，反之为<strong>大根堆</strong></p>
 <p>将关键字依次插入小根堆中，按层序从左至右插入，遇到结点值比根节点小时上浮即可</p>
 <hr>
-<h3 id="linux中的查找">
-  Linux中的查找
-  <a class="heading-link" href="#linux%e4%b8%ad%e7%9a%84%e6%9f%a5%e6%89%be">
+<h3 id="linux-中的查找">
+  Linux 中的查找
+  <a class="heading-link" href="#linux-%e4%b8%ad%e7%9a%84%e6%9f%a5%e6%89%be">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h3>
 <p>(牛客查找原题)</p>
 <p>Linux 中，有文本文件 file.txt，想要查找出包含 &ldquo;test&rdquo; 或 &ldquo;taste&rdquo; 两个单词的行并显示对应行号，下面命令正确的是(grep -n &rsquo;t[ae]st&rsquo; file.txt)</p>
+<h3 id="for-循环和-foreach-循环">
+  for 循环和 foreach 循环
+  <a class="heading-link" href="#for-%e5%be%aa%e7%8e%af%e5%92%8c-foreach-%e5%be%aa%e7%8e%af">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>for 循环遍历速度快于 foreach 循环</p>
+<p>不建议在 Unity 中的 Update() 函数中使用 foreach 循环，容易遗留内存垃圾</p>
+<h3 id="c-中常用的容器类">
+  C# 中常用的容器类
+  <a class="heading-link" href="#c-%e4%b8%ad%e5%b8%b8%e7%94%a8%e7%9a%84%e5%ae%b9%e5%99%a8%e7%b1%bb">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>List(列表)，HashTable(哈希表)，Dictionary(字典)，Stack(栈)，Queue(队列)</p>
 <h2 id="1小数点精度设置">
   1，小数点精度设置
   <a class="heading-link" href="#1%e5%b0%8f%e6%95%b0%e7%82%b9%e7%b2%be%e5%ba%a6%e8%ae%be%e7%bd%ae">
@@ -595,41 +612,48 @@ window.addEventListener('scroll', () => {
 </h3>
 <p>后缀表达式的运算符放在两个操作符的后面，类似于二叉树的后续遍历 (eg.ab+cd+*)</p>
 <hr>
-<h2 id="c-中各类修饰符">
-  C# 中各类修饰符
-  <a class="heading-link" href="#c-%e4%b8%ad%e5%90%84%e7%b1%bb%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+<h2 id="4-c-小知识">
+  4， C# 小知识
+  <a class="heading-link" href="#4-c-%e5%b0%8f%e7%9f%a5%e8%af%86">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
-<h3 id="访问修饰符">
+<h3 id="c-各类修饰符">
+  C# 各类修饰符
+  <a class="heading-link" href="#c-%e5%90%84%e7%b1%bb%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h4 id="访问修饰符">
   访问修饰符
   <a class="heading-link" href="#%e8%ae%bf%e9%97%ae%e4%bf%ae%e9%a5%b0%e7%ac%a6">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <p>Public:公有的，对其访问没有限制</p>
 <p>Internal:内部的，同一个程序集中的所有类都可以访问</p>
 <p>Private:私有的，只有在声明它们的类或结构中才能访问</p>
 <p>Protected:受保护的，只能在它的类和派生类中访问</p>
-<h3 id="类修饰符">
+<h4 id="类修饰符">
   类修饰符
   <a class="heading-link" href="#%e7%b1%bb%e4%bf%ae%e9%a5%b0%e7%ac%a6">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <p>abstract:可以被指示一个类只能作为其它类的基类</p>
 <p>sealed:指示一个类不能被继承</p>
 <p>static：修饰类时表示该类是静态类，不能够实例化该类的对象,该类的成员为静态</p>
-<h3 id="成员修饰符">
+<h4 id="成员修饰符">
   成员修饰符
   <a class="heading-link" href="#%e6%88%90%e5%91%98%e4%bf%ae%e9%a5%b0%e7%ac%a6">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <p>abstract:指示该方法或属性没有实现</p>
 <p>const:指定域或局部变量的值不能被改动</p>
 <p>event:声明一个事件</p>
@@ -639,6 +663,45 @@ window.addEventListener('scroll', () => {
 <p>Partial：在整个同一程序集中定义分部类和结构</p>
 <p>Virtual：用于修饰方法、属性、索引器或事件声明，并且允许在派生类中重写这些对象</p>
 <p>New：作修饰符，隐藏从基类成员继承的成员，在不使用 new 修饰符的情况下隐藏成员是允许的，但会生成警告。作运算符，用于创建对象和调用构造函数</p>
+<hr>
+<h3 id="c-中的gc机制">
+  C# 中的GC机制
+  <a class="heading-link" href="#c-%e4%b8%ad%e7%9a%84gc%e6%9c%ba%e5%88%b6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>参考:</p>
+<p><a href="https://xiaoy.blog.csdn.net/article/details/129391838"  class="external-link" target="_blank" rel="noopener">【Unity面试篇】Unity 面试题总结甄选 ｜C#基础篇 | ❤️持续更新❤️</a></p>
+<p><a href="https://www.cnblogs.com/yinhe6/articles/18710308"  class="external-link" target="_blank" rel="noopener">C#垃圾回收机制(GC)基础到进阶</a></p>
+<p>GC (垃圾回收机制，Garbage Collection) 是.net框架中负责自动管理和内存释放的重要特性，将不再使用的对象所占的内存资源回收</p>
+<p>C# 内部有两个内存管理池:堆内存和栈内存</p>
+<p>然而 GC 操作容易引起性能问题</p>
+<hr>
+<h3 id="c-装箱与拆箱">
+  C# 装箱与拆箱
+  <a class="heading-link" href="#c-%e8%a3%85%e7%ae%b1%e4%b8%8e%e6%8b%86%e7%ae%b1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>C# 中的数据类型主要分为值类型和引用类型(值类型:整数/浮点数/布尔等 引用类型:类/数组/字符串等)</p>
+<p>装箱：值类型转换为对象类型</p>
+<p>拆箱：之前由值类型转换而来的对象类型再转回值类型</p>
+<p>只有装过箱的数据才能拆箱</p>
+<p>装箱拆箱会带来性能问题，应尽量避免装箱拆箱操作</p>
+<p>参考:</p>
+<p><a href="https://www.runoob.com/note/1198"  class="external-link" target="_blank" rel="noopener">C# 装箱和拆箱</a></p>
+<p><a href="https://blog.csdn.net/caifox/article/details/150147643"  class="external-link" target="_blank" rel="noopener">C# 程序设计基础之 - 装箱与拆箱</a></p>
+<hr>
+<h3 id="c-ref-与-out">
+  C# ref 与 out
+  <a class="heading-link" href="#c-ref-%e4%b8%8e-out">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>参考:<a href="https://zhuanlan.zhihu.com/p/463771455"  class="external-link" target="_blank" rel="noopener">【唐老狮】C#——ref和out</a></p>
 
       </div>
 
