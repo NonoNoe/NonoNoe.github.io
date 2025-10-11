@@ -58,6 +58,9 @@
         Unity 的 PlayerPrefs 类
         Unity 中 Image 和 RawImage 的区别
         localPosition与position
+        Unity 生命周期
+        对象池
+        值/引用类型的存放位置
       
     
   
@@ -91,12 +94,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="笔试错题收集">
-  <meta name="twitter:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux 中的查找 for 循环和 foreach 循环 C# 中常用的容器类 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 4， C# 小知识 C# 各类修饰符 C# 中的GC机制 C# 装箱与拆箱 C# ref 与 out 5，Unity 小知识 Unity C# 线程与协程 Unity 的 PlayerPrefs 类 Unity 中 Image 和 RawImage 的区别 localPosition与position ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
+  <meta name="twitter:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux 中的查找 for 循环和 foreach 循环 C# 中常用的容器类 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 4， C# 小知识 C# 各类修饰符 C# 中的GC机制 C# 装箱与拆箱 C# ref 与 out 5，Unity 小知识 Unity C# 线程与协程 Unity 的 PlayerPrefs 类 Unity 中 Image 和 RawImage 的区别 localPosition与position Unity 生命周期 对象池 值/引用类型的存放位置 ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="笔试错题收集">
-  <meta property="og:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux 中的查找 for 循环和 foreach 循环 C# 中常用的容器类 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 4， C# 小知识 C# 各类修饰符 C# 中的GC机制 C# 装箱与拆箱 C# ref 与 out 5，Unity 小知识 Unity C# 线程与协程 Unity 的 PlayerPrefs 类 Unity 中 Image 和 RawImage 的区别 localPosition与position ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
+  <meta property="og:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO与FILO , LILO与FIFO 大根堆/小根堆 Linux 中的查找 for 循环和 foreach 循环 C# 中常用的容器类 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 4， C# 小知识 C# 各类修饰符 C# 中的GC机制 C# 装箱与拆箱 C# ref 与 out 5，Unity 小知识 Unity C# 线程与协程 Unity 的 PlayerPrefs 类 Unity 中 Image 和 RawImage 的区别 localPosition与position Unity 生命周期 对象池 值/引用类型的存放位置 ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -319,6 +322,9 @@
         <li><a href="#unity-的-playerprefs-类">Unity 的 PlayerPrefs 类</a></li>
         <li><a href="#unity-中-image-和-rawimage-的区别">Unity 中 Image 和 RawImage 的区别</a></li>
         <li><a href="#localposition与position">localPosition与position</a></li>
+        <li><a href="#unity-生命周期">Unity 生命周期</a></li>
+        <li><a href="#对象池">对象池</a></li>
+        <li><a href="#值引用类型的存放位置">值/引用类型的存放位置</a></li>
       </ul>
     </li>
   </ul>
@@ -694,6 +700,7 @@ window.addEventListener('scroll', () => {
 <p>GC (垃圾回收机制，Garbage Collection) 是.net框架中负责自动管理和内存释放的重要特性，将不再使用的对象所占的内存资源回收</p>
 <p>C# 内部有两个内存管理池:堆内存和栈内存</p>
 <p>然而 GC 操作容易引起性能问题</p>
+<p>栈由编译器自动管理，GC 不管栈，GC 只管理托管堆内存</p>
 <hr>
 <h3 id="c-装箱与拆箱">
   C# 装箱与拆箱
@@ -718,7 +725,11 @@ window.addEventListener('scroll', () => {
     <span class="sr-only">链接到标题</span>
   </a>
 </h3>
-<p>参考:<a href="https://zhuanlan.zhihu.com/p/463771455"  class="external-link" target="_blank" rel="noopener">【唐老狮】C#——ref和out</a></p>
+<p>可参考:<a href="https://zhuanlan.zhihu.com/p/463771455"  class="external-link" target="_blank" rel="noopener">【唐老狮】C#——ref和out</a></p>
+<p>ref 和 out 的功能是将参数按引用传递</p>
+<p>ref要求参数在调用前初始化</p>
+<p>out要求方法体内为参数赋值</p>
+<p><em>ref 和 out 类似于 C++ 中的引用</em></p>
 <hr>
 <h2 id="5unity-小知识">
   5，Unity 小知识
@@ -737,6 +748,8 @@ window.addEventListener('scroll', () => {
 <p>Unity 中除了负责绘制 UI /获取游戏对象等的主线程以外，还有多线程与协程</p>
 <p>协程是伪异步，并不是真正的异步执行，属于生命周期的一部分，同一时间只会有一个协程运行，其余协程按顺序开启，也就是与生命周期并发执行</p>
 <p>线程是真异步，与脚本生命周期并行运行，一个CPU在同一时刻只能运行一个线程，但是多个CPU在同一时刻就可以运行多个线程。</p>
+<p>错题回顾：在 OnDestroy() 内启动协程，协程会怎样？</p>
+<p>当对象正在被销毁时，它的 MonoBehaviour 生命周期已结束，此时 Unity 不会启动新的协程（即便调用 StartCoroutine()，也不会执行）。</p>
 <p>参考</p>
 <p><a href="https://blog.csdn.net/iiiiiiimp/article/details/130061403"  class="external-link" target="_blank" rel="noopener">Unity协程和线程的区别深入理解(附实验展示)</a></p>
 <hr>
@@ -788,6 +801,35 @@ window.addEventListener('scroll', () => {
   </a>
 </h3>
 <p>子物体的 localPosition 是相对于父物体的，而 position 是世界坐标</p>
+<hr>
+<h3 id="unity-生命周期">
+  Unity 生命周期
+  <a class="heading-link" href="#unity-%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>Script Execution Order 是 Unity 唯一允许开发者显式控制生命周期顺序的入口。</p>
+<hr>
+<h3 id="对象池">
+  对象池
+  <a class="heading-link" href="#%e5%af%b9%e8%b1%a1%e6%b1%a0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>对象池适合管理生命周期短但需要重复出现的对象，可以有效减少 GC (垃圾回收) 的触发</p>
+<hr>
+<h3 id="值引用类型的存放位置">
+  值/引用类型的存放位置
+  <a class="heading-link" href="#%e5%80%bc%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%ad%98%e6%94%be%e4%bd%8d%e7%bd%ae">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>【值类型是否在栈上】取决于它被放在哪</p>
+<p>【引用类型的内容】一定在堆上，但引用本身可能在栈上</p>
+<p>方法中的局部变量默认存放在栈上</p>
 
       </div>
 
