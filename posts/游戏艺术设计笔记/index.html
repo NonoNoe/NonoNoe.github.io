@@ -18,10 +18,10 @@
   
   
     1 如何审丑？
-    2 PS2020使用
-    3 unity预制件规范化
-    4 2d骨骼绑定与IK Manager
-    TileMap的规则
+    2 PS2020 使用
+    3 unity 预制件规范化
+    4 2d 骨骼绑定与 IK Manager
+    TileMap 的规则
   
 
 
@@ -45,12 +45,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="游戏艺术设计课程笔记">
-  <meta name="twitter:description" content="目录1 如何审丑？ 2 PS2020使用 3 unity预制件规范化 4 2d骨骼绑定与IK Manager TileMap的规则 ↑ 返回顶部1 如何审丑？ 链接到标题 1，美术素材完成度不统一">
+  <meta name="twitter:description" content="目录1 如何审丑？ 2 PS2020 使用 3 unity 预制件规范化 4 2d 骨骼绑定与 IK Manager TileMap 的规则 ↑ 返回顶部1 如何审丑？ 链接到标题 1，美术素材完成度不统一">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E6%B8%B8%E6%88%8F%E8%89%BA%E6%9C%AF%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="游戏艺术设计课程笔记">
-  <meta property="og:description" content="目录1 如何审丑？ 2 PS2020使用 3 unity预制件规范化 4 2d骨骼绑定与IK Manager TileMap的规则 ↑ 返回顶部1 如何审丑？ 链接到标题 1，美术素材完成度不统一">
+  <meta property="og:description" content="目录1 如何审丑？ 2 PS2020 使用 3 unity 预制件规范化 4 2d 骨骼绑定与 IK Manager TileMap 的规则 ↑ 返回顶部1 如何审丑？ 链接到标题 1，美术素材完成度不统一">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -238,10 +238,10 @@
   <nav id="TableOfContents">
   <ul>
     <li><a href="#1-如何审丑">1 如何审丑？</a></li>
-    <li><a href="#2-ps2020使用">2 PS2020使用</a></li>
-    <li><a href="#3-unity预制件规范化">3 unity预制件规范化</a></li>
-    <li><a href="#4-2d骨骼绑定与ik-manager">4 2d骨骼绑定与IK Manager</a></li>
-    <li><a href="#tilemap的规则">TileMap的规则</a></li>
+    <li><a href="#2-ps2020-使用">2 PS2020 使用</a></li>
+    <li><a href="#3-unity-预制件规范化">3 unity 预制件规范化</a></li>
+    <li><a href="#4-2d-骨骼绑定与-ik-manager">4 2d 骨骼绑定与 IK Manager</a></li>
+    <li><a href="#tilemap-的规则">TileMap 的规则</a></li>
   </ul>
 </nav>
 </div>
@@ -312,9 +312,9 @@ window.addEventListener('scroll', () => {
 <p>小众 ———————————— 大众</p>
 <p>建议折中，不要走风格化/商业化的极端</p>
 <hr>
-<h2 id="2-ps2020使用">
-  2 PS2020使用
-  <a class="heading-link" href="#2-ps2020%e4%bd%bf%e7%94%a8">
+<h2 id="2-ps2020-使用">
+  2 PS2020 使用
+  <a class="heading-link" href="#2-ps2020-%e4%bd%bf%e7%94%a8">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -324,7 +324,7 @@ window.addEventListener('scroll', () => {
 <p>eg.如果一个大小为 1024^2 的图像在 unity 中最大尺寸设为 512^2，那么图像的清晰度会降低</p>
 <p>当素材清晰度要求没那么高的时候，可以通过这个方法压缩素材</p>
 <p>想让像素显示得更清晰，可以把 Filter mode 改为 Point(no Filter)</p>
-<p>调整 sprite 图层次序(order in layer)的时候可以适当调多一些，为后续的素材留下余地(比如初期素材背景调到-5，主角0，道具5)，以免后期发生需要整体调整图层的情况</p>
+<p>调整 sprite 图层次序(order in layer)的时候可以适当调多一些，为后续的素材留下余地(比如初期素材背景调到-5，主角 0，道具 5)，以免后期发生需要整体调整图层的情况</p>
 <p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//spriteRenderer.png" alt="SpriteRenderer"></p>
 <p>Tiled 模式下可以调整素材填充的长宽</p>
 <p>一些命名前缀推荐：</p>
@@ -332,26 +332,26 @@ window.addEventListener('scroll', () => {
 <p>b_ : Bone ，骨骼</p>
 <p>通常创建游戏对象的时候可以采用父物体+子物体的方式，在父物体上挂载脚本等，子物体为图像，这样方便进行数据分离，可以把数据和动画分开</p>
 <p>cinemachine 一个非常方便的插件，可以简单地做出摄像机跟随的效果</p>
-<h2 id="3-unity预制件规范化">
-  3 unity预制件规范化
-  <a class="heading-link" href="#3-unity%e9%a2%84%e5%88%b6%e4%bb%b6%e8%a7%84%e8%8c%83%e5%8c%96">
+<h2 id="3-unity-预制件规范化">
+  3 unity 预制件规范化
+  <a class="heading-link" href="#3-unity-%e9%a2%84%e5%88%b6%e4%bb%b6%e8%a7%84%e8%8c%83%e5%8c%96">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
 <p>制作 prefab 的时候，最好将该 prefab 的 transform 各项属性全部归零，scale 归一</p>
 <p>Assets 文件夹下应对文件进行分类(sprite 单独放，script 单独放，prefab 单独放……)</p>
-<p>推荐：建立 resource 文件夹，在其中建立sprite文件夹用于存放sprite图像，其余素材同理</p>
-<h2 id="4-2d骨骼绑定与ik-manager">
-  4 2d骨骼绑定与IK Manager
-  <a class="heading-link" href="#4-2d%e9%aa%a8%e9%aa%bc%e7%bb%91%e5%ae%9a%e4%b8%8eik-manager">
+<p>推荐：建立 resource 文件夹，在其中建立 sprite 文件夹用于存放 sprite 图像，其余素材同理</p>
+<h2 id="4-2d-骨骼绑定与-ik-manager">
+  4 2d 骨骼绑定与 IK Manager
+  <a class="heading-link" href="#4-2d-%e9%aa%a8%e9%aa%bc%e7%bb%91%e5%ae%9a%e4%b8%8e-ik-manager">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
-<h2 id="tilemap的规则">
-  TileMap的规则
-  <a class="heading-link" href="#tilemap%e7%9a%84%e8%a7%84%e5%88%99">
+<h2 id="tilemap-的规则">
+  TileMap 的规则
+  <a class="heading-link" href="#tilemap-%e7%9a%84%e8%a7%84%e5%88%99">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
