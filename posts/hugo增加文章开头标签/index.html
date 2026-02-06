@@ -258,21 +258,21 @@ window.addEventListener('scroll', () => {
 
 <p>本文中所使用的 hugo 主题中，series 是默认不在文章开头显示的，那么如何修改才能使 series 的参数和 author/categories/tags 等参数保持相同格式显示在文章内呢？</p>
 <p>修改前：</p>
-<img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//series_1.png" width="500" />
+<img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//series_1.png" width="500" />
 <hr>
 <p>1，</p>
 <p>首先，这里以 Visual Studio Code 为例，按照<ins> themes\你的 hugo 主题名称\layouts\partials\… </ins>路径寻找 single.html 文件，在其中找到文章开头信息显示的部分</p>
-<img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//series_1_1.png" width="800" />
+<img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//series_1_1.png" width="800" />
 <p>2,</p>
 <p>接下来仿造格式增加一行对应的</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl">          <span class="p">{{</span> <span class="nx">with</span> <span class="p">.</span><span class="nx">GetTerms</span> <span class="s">&#34;series&#34;</span> <span class="p">}}{{</span> <span class="nx">partial</span> <span class="s">&#34;taxonomy/series.html&#34;</span> <span class="p">.</span> <span class="p">}}{{</span> <span class="nx">end</span> <span class="p">}}</span>
 </span></span></code></pre></div><p>代码，并根据代码中的 <ins> partial &ldquo;taxonomy/series.html&rdquo; </ins>前往当前目录下的 taxonomy 文件夹，新建文件 series.html ，从该文件夹中其他 html 文件复制粘贴格式，并修改自己想要自定义的部分</p>
-<img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//series_2_1.png" width="800" />
+<img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//series_2_1.png" width="800" />
 <p>我主要修改了开头的 class 名和显示的图标</p>
 <hr>
 <p>现在文章开头就可以显示 series 的相关信息了</p>
 <p>修改后：</p>
-<img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//series_2.png" width="500" />
+<img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//series_2.png" width="500" />
 
       </div>
 

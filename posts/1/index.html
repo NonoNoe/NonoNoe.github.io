@@ -25,6 +25,8 @@
     6，UI 自适应问题相关参考
     7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————**
     8，对 GetComponentInChildren&lt;&gt;() 的使用
+    9，Mask的使用
+    10，关于3d场景中切换场景导致灯光变暗的问题
   
 
 
@@ -48,12 +50,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Unity新手容易遇到的问题 1.0">
-  <meta name="twitter:description" content="目录1,unity 新建项目后出现闪屏现象 2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制 3，button 组件中 OnClick 读取不到想要的函数 4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭 unity 后才会消除 5，unity 中 deltaTime 的概念 6，UI 自适应问题相关参考 7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————** 8，对 GetComponentInChildren&lt;&gt;() 的使用 ↑ 返回顶部1,unity 新建项目后出现闪屏现象 链接到标题 省流：进入 project setting 修改：">
+  <meta name="twitter:description" content="目录1,unity 新建项目后出现闪屏现象 2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制 3，button 组件中 OnClick 读取不到想要的函数 4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭 unity 后才会消除 5，unity 中 deltaTime 的概念 6，UI 自适应问题相关参考 7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————** 8，对 GetComponentInChildren&lt;&gt;() 的使用 9，Mask的使用 10，关于3d场景中切换场景导致灯光变暗的问题 ↑ 返回顶部1,unity 新建项目后出现闪屏现象 链接到标题 省流：进入 project setting 修改：">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/1/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Unity新手容易遇到的问题 1.0">
-  <meta property="og:description" content="目录1,unity 新建项目后出现闪屏现象 2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制 3，button 组件中 OnClick 读取不到想要的函数 4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭 unity 后才会消除 5，unity 中 deltaTime 的概念 6，UI 自适应问题相关参考 7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————** 8，对 GetComponentInChildren&lt;&gt;() 的使用 ↑ 返回顶部1,unity 新建项目后出现闪屏现象 链接到标题 省流：进入 project setting 修改：">
+  <meta property="og:description" content="目录1,unity 新建项目后出现闪屏现象 2，在 unity2d 项目中，建立好 Tilemap 后报错且无法进行绘制 3，button 组件中 OnClick 读取不到想要的函数 4，在 unity 和 vs 双开的过程中，屏幕上不停出现“向上还原”的提示且关闭 unity 后才会消除 5，unity 中 deltaTime 的概念 6，UI 自适应问题相关参考 7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————** 8，对 GetComponentInChildren&lt;&gt;() 的使用 9，Mask的使用 10，关于3d场景中切换场景导致灯光变暗的问题 ↑ 返回顶部1,unity 新建项目后出现闪屏现象 链接到标题 省流：进入 project setting 修改：">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -208,7 +210,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：3 分钟
+              阅读时间：4 分钟
             </span>
           </div>
           <div class="authors">
@@ -243,6 +245,8 @@
     <li><a href="#6ui-自适应问题相关参考">6，UI 自适应问题相关参考</a></li>
     <li><a href="#7unity-项目中跳转场景后随着跳转次数增加新的-is-loading-场景不断增加最后导致跳转一次场景的加载时间变得巨长">7，Unity 项目中跳转场景后，随着跳转次数增加，新的 is loading 场景不断增加，最后导致跳转一次场景的加载时间变得巨————长————————**</a></li>
     <li><a href="#8对-getcomponentinchildren-的使用">8，对 GetComponentInChildren&lt;&gt;() 的使用</a></li>
+    <li><a href="#9mask的使用">9，Mask的使用</a></li>
+    <li><a href="#10关于3d场景中切换场景导致灯光变暗的问题">10，关于3d场景中切换场景导致灯光变暗的问题</a></li>
   </ul>
 </nav>
 </div>
@@ -373,7 +377,7 @@ window.addEventListener('scroll', () => {
   </a>
 </h2>
 <p>运行途中截图：</p>
-<p><img src="https://raw.gitmirror.com/NonoNoe/imgTest/master//isLoadingBug.png" alt="bug"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//isLoadingBug.png" alt="bug"></p>
 <p>可能原因：在此问题解决前使用的场景跳转代码如下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl">  <span class="n">SceneManager</span><span class="p">.</span><span class="n">LoadScene</span><span class="p">(</span><span class="n">levelToLoad</span><span class="p">);</span><span class="c1">//直接调用SceneManager.LaodScene</span>
 </span></span></code></pre></div><p>同时在出现问题的该项目中，我将一部分 UI 设置成跳转场景时不销毁，结果之后发生了回到初始场景时部分组件仍被销毁，导致地图名的 text 丢失无法正常更新的问题（最初的 bug 甚至是一回初始地图就无法正常加载黑屏过场，不过后来把过场去除了，总之该问题暂未解决，考虑到可能与标题有关联此处只做提及，待解决）</p>
@@ -439,7 +443,29 @@ window.addEventListener('scroll', () => {
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="9mask的使用">
+  9，Mask的使用
+  <a class="heading-link" href="#9mask%e7%9a%84%e4%bd%bf%e7%94%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>在带Image的父物体上添加Mask组件，便能为子对象增加遮罩效果</p>
+<p>但是父物体上必须要有Image才能使用，否则不会生效</p>
+<p>若考虑使用不带Image组件的父物体，则只能使用 Rect Mask 2D ，该组件只能创建矩形遮罩</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//20260205164257114.png" alt="Mask组件和Rect Mask 2D组件的异同"></p>
+<p>之前看到一个插件Soft Mask For UGUI，也可以考虑使用其替代Mask组件（？</p>
+<h2 id="10关于3d场景中切换场景导致灯光变暗的问题">
+  10，关于3d场景中切换场景导致灯光变暗的问题
+  <a class="heading-link" href="#10%e5%85%b3%e4%ba%8e3d%e5%9c%ba%e6%99%af%e4%b8%ad%e5%88%87%e6%8d%a2%e5%9c%ba%e6%99%af%e5%af%bc%e8%87%b4%e7%81%af%e5%85%89%e5%8f%98%e6%9a%97%e7%9a%84%e9%97%ae%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>需要在Unity的Light设置中生成对应的光照才能在切换场景时正常显示</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//UnityLightBug20260206.png" alt="步骤1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//UnityLightBug2_20260206.png" alt="步骤2"></p>
+
       </div>
 
 
