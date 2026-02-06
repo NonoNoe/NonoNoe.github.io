@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 20 Mar 2025 17:47:59 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 15:12:54 +0800</lastBuildDate>
     <atom:link href="https://NonoNoe.github.io/categories/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于unity的UGUI——ui布局及自适应相关问题</title>
+      <link>https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 06 Feb 2026 15:12:54 +0800</pubDate>
+      <guid>https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;h2 id=&#34;0简介&#34;&gt;&#xA;  0，简介&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#0%e7%ae%80%e4%bb%8b&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结&lt;/p&gt;&#xA;&lt;p&gt;以及 Unity 官方的 UI 大概是有三种类型：最早期的 IMGUI (通常直接称为 GUI )，本文中会总结的 UGUI (官方文档中称为 Unity UI )，以及最新的 UI 系统 UI Toolkit (2021版本后可使用),它比较贴近于 web 前端&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Unity新手容易遇到的问题 1.0</title>
       <link>https://NonoNoe.github.io/posts/1/</link>

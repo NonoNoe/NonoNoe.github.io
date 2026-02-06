@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <title>
+  关于unity的UGUI——ui布局及自适应相关问题 · NonoNoe
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="NonoNoe">
+<meta name="description" content="
+  0，简介
+  
+    
+    链接到标题
+  
+
+之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结
+以及 Unity 官方的 UI 大概是有三种类型：最早期的 IMGUI (通常直接称为 GUI )，本文中会总结的 UGUI (官方文档中称为 Unity UI )，以及最新的 UI 系统 UI Toolkit (2021版本后可使用),它比较贴近于 web 前端">
+<meta name="keywords" content="blog,desenvolvedor,pessoal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="关于unity的UGUI——ui布局及自适应相关问题">
+  <meta name="twitter:description" content="0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结
+以及 Unity 官方的 UI 大概是有三种类型：最早期的 IMGUI (通常直接称为 GUI )，本文中会总结的 UGUI (官方文档中称为 Unity UI )，以及最新的 UI 系统 UI Toolkit (2021版本后可使用),它比较贴近于 web 前端">
+
+<meta property="og:url" content="https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+  <meta property="og:site_name" content="NonoNoe">
+  <meta property="og:title" content="关于unity的UGUI——ui布局及自适应相关问题">
+  <meta property="og:description" content="0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结
+以及 Unity 官方的 UI 大概是有三种类型：最早期的 IMGUI (通常直接称为 GUI )，本文中会总结的 UGUI (官方文档中称为 Unity UI )，以及最新的 UI 系统 UI Toolkit (2021版本后可使用),它比较贴近于 web 前端">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-06T15:12:54+08:00">
+    <meta property="article:modified_time" content="2026-02-06T15:12:54+08:00">
+    <meta property="article:tag" content="Unity">
+
+
+
+
+<link rel="canonical" href="https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://NonoNoe.github.io/">
+      NonoNoe
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">博客</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">项目</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">联系我</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/en/">ENGLISH</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+              关于unity的UGUI——ui布局及自适应相关问题
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-02-06T15:12:54&#43;08:00">
+                February 6, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：3 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/nononoe/">NonoNoe</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/unity/">Unity</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/unity/">Unity</a>
+    </span></div>
+
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h2 id="0简介">
+  0，简介
+  <a class="heading-link" href="#0%e7%ae%80%e4%bb%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结</p>
+<p>以及 Unity 官方的 UI 大概是有三种类型：最早期的 IMGUI (通常直接称为 GUI )，本文中会总结的 UGUI (官方文档中称为 Unity UI )，以及最新的 UI 系统 UI Toolkit (2021版本后可使用),它比较贴近于 web 前端</p>
+<h2 id="1canvas">
+  1，Canvas
+  <a class="heading-link" href="#1canvas">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>首先建立一个新场景的时候，里边除了 Main Camera和 Direct Light 以外啥也没有。</p>
+<p>这时候开始搓ui的话，要新建一个 Canvas 画布，UGUI 中所有的 UI 元素都必须作为 Canvas 的子物体才能被渲染。</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_UICanvas_2026_2_6.png" alt="创建 Canvas 对象"></p>
+<p>Canvas 有几种不同的渲染模式：</p>
+<p>Overlay 模式下，该画布中的所有元素都会被渲染在最上层，不受任何相机影响，这个模式通常用于制作 UI 界面</p>
+<p>Camera 模式下，UI 将在指定相机前方的固定距离处渲染，这个画布中的 UI 将和 3D 场景之间有前后遮挡关系，同时由于 UI 由相机渲染，所以可以对 UI 添加后处理效果 (可以暂且理解为，当需要不同的 UI 做出层级穿插的效果，但是这些 UI 也不是放在 3D 场景中的那种 UI，就可以采用这个渲染模式，例如某些游戏的角色装备界面中，需要人物模型插在两层 UI 的中间进行展示，这里不再做其他延申)</p>
+<p>World Space 模式中，UI 作为 3D 世界中的物体存在</p>
+<p>接下来我主要以 Overlay 渲染模式为前提展开讲解（因为主要涉及到个人搭 UI 时的经验）</p>
+<h2 id="2canvas-scaler-与-graphic-raycaster">
+  2，Canvas Scaler 与 Graphic Raycaster
+  <a class="heading-link" href="#2canvas-scaler-%e4%b8%8e-graphic-raycaster">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>创建完 Canvas 之后会发现，对象上还会自带挂载两个组件：Canvas Scaler 与 Graphic Raycaster。</p>
+<p>先来讲讲 Canvas Scaler，这个组件用于让 UI 在不同分辨率的屏幕上保持相同的显示效果。它拥有三种不同的 UI Scale Mode，默认是 Constant Pixel Size，也就是 UI 元素像素尺寸始终不变，不随屏幕分辨率改变。另外一种不常用的是 Constant Physical Size，就是 UI 元素的物理尺寸不变，固定像素大小，仅根据屏幕的 DPI (每英寸像素数)调整像素数量，似乎一般只在检测工具类应用中使用。这两种运用的场景相比 Scale With Screen Size 来说较少，因此这里不再深入讨论</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_UICanvas_CanvasScaler_20260206.png" alt="Canvas Scaler 的不同显示方式"></p>
+<p>接下来要介绍的是对 UI 自适应非常重要的模式——Scale With Screen Size。该模式下 UI 会根据参考分辨率(Reference Resolution)判断 UI 的缩放比例。</p>
+<p>要想实现 UI 的自适应，就一定要在一开始建完项目初始化 Canvas 的时候设置好这个模式！！最好在开发过程中保持 Game 窗口的分辨率和参考分辨率完全一致！！<em>(不然后面没能适配好的 UI 一多不一定好更改！！)</em></p>
+<p>相比下来 Graphic Raycaster 的作用则完全不同，但也不用开发者另外去设置什么了(比上面那个方便)。它会在用户点击屏幕时，从点击位置发出一条射线，使接触的 UI 交互组件正常响应点击</p>
+<p>顺便一提，每次创建 UI 元素的时候都能看到它上面自带的组件中有个叫 Canvas Renderer 的，这个组件的官方解释是【附加到一个 Canvas 后，在完成所有正常渲染后将渲染到屏幕的组件。专为 GUI 应用程序设计。】</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//CanvasRenderer_20260206.png" alt="非常不起眼但有着重要作用的 Canvas Renderer"></p>
+<p>说实话我并没有看懂(这还是中文吗)，但询问 claude 得到的答案是【Canvas Renderer 在 Canvas 的调度下，负责将单个 UI 元素最终渲染到屏幕上。Canvas 做的是统一管理和批处理，每个 UI 元素上的 Canvas Renderer 执行具体绘制。】那么这个问题就先到这里吧，接下来还是先回到原本的主题上</p>
+<h2 id="3rect-transform">
+  3，Rect Transform
+  <a class="heading-link" href="#3rect-transform">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_RectTransform_20260206.png" alt="Rect Transform 组件"></p>
+<p>这是调整 UI 元素最重要的组件之一，并且要注意 Anchor (锚点) 和 Pivot (轴心点) 的概念区分！！</p>
+<p>Anchor 的参考对象是父物体的位置，Pivot 的参考对象是自己的位置，也就是说 Anchor 决定元素的定位对象，而 Pivot 决定元素自身用哪一个点去对齐这个位置。</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_RectTransformAnchor_20260206.png" alt="锚点"></p>
+<p>锚点设置可以使用快捷键</p>
+<p>直接点击的话锚点就会被置于以整个面板为基准的对应位置上</p>
+<p>按住alt选择时能够快速将元素置于该元素内对应位置</p>
+<p>按住shift选择可以快速将锚点置于该元素内对应位置</p>
+<h2 id="4万恶之源-layout-group-们">
+  4，万恶之源 Layout Group 们
+  <a class="heading-link" href="#4%e4%b8%87%e6%81%b6%e4%b9%8b%e6%ba%90-layout-group-%e4%bb%ac">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2026
+     NonoNoe 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
