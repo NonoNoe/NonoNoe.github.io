@@ -31,7 +31,6 @@
 
 
 
-
   1 如何审丑？
   
     
@@ -248,49 +247,52 @@
 <a href="#" class="back-to-top">↑ 返回顶部</a>
 
 <style>
- 
-.back-to-top {
-  position: fixed;         
-  bottom: 20px;            
-  right: 80px;             
-  background-color: #3c3c3c;
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  display: none;           
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: opacity 0.3s ease;
-}
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
 
- 
-.back-to-top:hover {
-  background-color: #8f8f8f;
-  color: rgb(77, 76, 80);
-}
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
 
- 
-.back-to-top.show {
-  display: block;
-}
+   
+  .back-to-top.show {
+    display: block;
+  }
 </style>
 
 <script>
+  
+  const btn = document.querySelector('.back-to-top');
 
-const btn = document.querySelector('.back-to-top');
-
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) { 
-    btn.classList.add('show');
-  } else {
-    btn.classList.remove('show');
-  }
-});
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
 </script>
-
 <h2 id="1-如何审丑">
   1 如何审丑？
   <a class="heading-link" href="#1-%e5%a6%82%e4%bd%95%e5%ae%a1%e4%b8%91">

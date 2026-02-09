@@ -73,7 +73,6 @@
 
 
 
-
   0，常考常错常忘
   
     
@@ -335,49 +334,52 @@
 <a href="#" class="back-to-top">↑ 返回顶部</a>
 
 <style>
- 
-.back-to-top {
-  position: fixed;         
-  bottom: 20px;            
-  right: 80px;             
-  background-color: #3c3c3c;
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  display: none;           
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: opacity 0.3s ease;
-}
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
 
- 
-.back-to-top:hover {
-  background-color: #8f8f8f;
-  color: rgb(77, 76, 80);
-}
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
 
- 
-.back-to-top.show {
-  display: block;
-}
+   
+  .back-to-top.show {
+    display: block;
+  }
 </style>
 
 <script>
+  
+  const btn = document.querySelector('.back-to-top');
 
-const btn = document.querySelector('.back-to-top');
-
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) { 
-    btn.classList.add('show');
-  } else {
-    btn.classList.remove('show');
-  }
-});
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
 </script>
-
 <h2 id="0常考常错常忘">
   0，常考常错常忘
   <a class="heading-link" href="#0%e5%b8%b8%e8%80%83%e5%b8%b8%e9%94%99%e5%b8%b8%e5%bf%98">

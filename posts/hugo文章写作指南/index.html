@@ -228,11 +228,9 @@
         <li><a href="#图片和外链">图片和外链</a></li>
         <li><a href="#表格">表格</a></li>
         <li><a href="#markdown-插入代码块">Markdown 插入代码块</a></li>
-        <li><a href="#markdown-段首缩进">Markdown 段首缩进</a></li>
-        <li><a href="#写作习惯推荐">写作习惯推荐</a></li>
+        <li><a href="#html-语言与-markdown-的联动">HTML 语言与 Markdown 的联动</a></li>
       </ul>
     </li>
-    <li><a href="#no1-认识-hugo-文章开头的各项参数">NO.1 认识 Hugo 文章开头的各项参数</a></li>
     <li><a href="#no2-发布-hugo-文章的方式">NO.2 发布 Hugo 文章的方式</a></li>
   </ul>
 </nav>
@@ -240,49 +238,52 @@
 <a href="#" class="back-to-top">↑ 返回顶部</a>
 
 <style>
- 
-.back-to-top {
-  position: fixed;         
-  bottom: 20px;            
-  right: 80px;             
-  background-color: #3c3c3c;
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  display: none;           
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: opacity 0.3s ease;
-}
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
 
- 
-.back-to-top:hover {
-  background-color: #8f8f8f;
-  color: rgb(77, 76, 80);
-}
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
 
- 
-.back-to-top.show {
-  display: block;
-}
+   
+  .back-to-top.show {
+    display: block;
+  }
 </style>
 
 <script>
+  
+  const btn = document.querySelector('.back-to-top');
 
-const btn = document.querySelector('.back-to-top');
-
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) { 
-    btn.classList.add('show');
-  } else {
-    btn.classList.remove('show');
-  }
-});
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
 </script>
-
 <p><a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md001"  class="external-link" target="_blank" rel="noopener">markdown 写作格式参考</a></p>
 <h1 id="no0-markdown-基本语法与写作习惯养成">
   NO.0 Markdown 基本语法与写作习惯养成
@@ -429,51 +430,53 @@ print(&quot;Hello, World!&quot;);
 
 ```
 </code></pre>
-<hr>
-<h3 id="markdown-段首缩进">
-  Markdown 段首缩进
-  <a class="heading-link" href="#markdown-%e6%ae%b5%e9%a6%96%e7%bc%a9%e8%bf%9b">
+<h3 id="html-语言与-markdown-的联动">
+  HTML 语言与 Markdown 的联动
+  <a class="heading-link" href="#html-%e8%af%ad%e8%a8%80%e4%b8%8e-markdown-%e7%9a%84%e8%81%94%e5%8a%a8">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h3>
-<p>  or   表示一个半角的空格</p>
-<p>  or   表示一个全角的空格</p>
-<p>   两个全角的空格（用的比较多）</p>
-<p>  or   不断行的空白格</p>
-<hr>
-<h3 id="写作习惯推荐">
-  写作习惯推荐
-  <a class="heading-link" href="#%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e6%8e%a8%e8%8d%90">
-    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
-    <span class="sr-only">链接到标题</span>
-  </a>
-</h3>
-<ul>
-<li>好好排版
-<ul>
-<li>
-<p>中英文混用时，建议在英文单词前后加上空格方便阅读</p>
-</li>
-<li>
-<p>中英文逗号/句号等最好不要混用，强迫症震怒（）</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="no1-认识-hugo-文章开头的各项参数">
-  NO.1 认识 Hugo 文章开头的各项参数
-  <a class="heading-link" href="#no1-%e8%ae%a4%e8%af%86-hugo-%e6%96%87%e7%ab%a0%e5%bc%80%e5%a4%b4%e7%9a%84%e5%90%84%e9%a1%b9%e5%8f%82%e6%95%b0">
-    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
-    <span class="sr-only">链接到标题</span>
-  </a>
-</h2>
-<p><strong>2025.9.16 修改</strong>：此处文章使用的 TOML 格式可能已过时，需要给时间加上引号才能通过编译，现创建文章时建议使用解析器更宽松的 YAML 格式</p>
-<p>YAML 格式示例：(其实就是将=符号改为:符号后，再将+++改为&mdash;即可)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//Hugo-YAML.png" alt="YAML格式示例"></p>
-<p>或者在创建文章时使用 YAML 格式：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> 换行
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">``<span class="sb">`
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">---
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">### Markdown 段首缩进
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">&amp;ensp; or &amp;#8194; 表示一个半角的空格
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">&amp;emsp; or &amp;#8195; 表示一个全角的空格
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">&amp;emsp;&amp;emsp; 两个全角的空格（用的比较多）
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">&amp;nbsp; or &amp;#160; 不断行的空白格
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">---
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">### 写作习惯推荐
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">- 好好排版
+</span></span></span><span class="line"><span class="cl"><span class="sb">  - 中英文混用时，建议在英文单词前后加上空格方便阅读
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">  - 中英文逗号/句号等最好不要混用，强迫症震怒（）
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">---
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">## NO.1 认识 Hugo 文章开头的各项参数
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">**2025.9.16 修改**：此处文章使用的 TOML 格式可能已过时，需要给时间加上引号才能通过编译，现创建文章时建议使用解析器更宽松的 YAML 格式
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">YAML 格式示例：(其实就是将=符号改为:符号后，再将+++改为---即可)
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">![YAML格式示例](https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//Hugo-YAML.png)
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">或者在创建文章时使用 YAML 格式：
+</span></span></span><span class="line"><span class="cl"><span class="sb">
+</span></span></span><span class="line"><span class="cl"><span class="sb">`</span>``Markdown
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">hugo new posts/my-article.md --format yaml
 </span></span></code></pre></div><p>或在站点根目录的 config.toml / config.yaml / config.json 里，添加配置：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">

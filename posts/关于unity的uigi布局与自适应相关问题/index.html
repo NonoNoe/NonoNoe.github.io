@@ -14,28 +14,43 @@
 
 <meta name="author" content="NonoNoe">
 <meta name="description" content="
+  目录
+  
+  
+    0，简介
+    1，Canvas
+    2，Canvas Scaler 与 Graphic Raycaster
+    3，Rect Transform
+    4，万恶之源 Layout Group 们
+    5，Layout Element
+  
+
+
+↑ 返回顶部
+
+
+
+
+
   0，简介
   
     
     链接到标题
   
 
-之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结
-以及 Unity 官方的 UI 大概是有三种类型：最早期的 IMGUI (通常直接称为 GUI )，本文中会总结的 UGUI (官方文档中称为 Unity UI )，以及最新的 UI 系统 UI Toolkit (2021版本后可使用),它比较贴近于 web 前端">
+之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="关于unity的UGUI——ui布局及自适应相关问题">
-  <meta name="twitter:description" content="0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结
-以及 Unity 官方的 UI 大概是有三种类型：最早期的 IMGUI (通常直接称为 GUI )，本文中会总结的 UGUI (官方文档中称为 Unity UI )，以及最新的 UI 系统 UI Toolkit (2021版本后可使用),它比较贴近于 web 前端">
+  <meta name="twitter:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="关于unity的UGUI——ui布局及自适应相关问题">
-  <meta property="og:description" content="0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结
-以及 Unity 官方的 UI 大概是有三种类型：最早期的 IMGUI (通常直接称为 GUI )，本文中会总结的 UGUI (官方文档中称为 Unity UI )，以及最新的 UI 系统 UI Toolkit (2021版本后可使用),它比较贴近于 web 前端">
+  <meta property="og:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -190,7 +205,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：3 分钟
+              阅读时间：6 分钟
             </span>
           </div>
           <div class="authors">
@@ -213,7 +228,69 @@
 
       <div class="post-content">
         
-        <h2 id="0简介">
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0简介">0，简介</a></li>
+    <li><a href="#1canvas">1，Canvas</a></li>
+    <li><a href="#2canvas-scaler-与-graphic-raycaster">2，Canvas Scaler 与 Graphic Raycaster</a></li>
+    <li><a href="#3rect-transform">3，Rect Transform</a></li>
+    <li><a href="#4万恶之源-layout-group-们">4，万恶之源 Layout Group 们</a></li>
+    <li><a href="#5layout-element">5，Layout Element</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
+
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
+
+   
+  .back-to-top.show {
+    display: block;
+  }
+</style>
+
+<script>
+  
+  const btn = document.querySelector('.back-to-top');
+
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
+<h2 id="0简介">
   0，简介
   <a class="heading-link" href="#0%e7%ae%80%e4%bb%8b">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
@@ -268,6 +345,10 @@
 <p>直接点击的话锚点就会被置于以整个面板为基准的对应位置上</p>
 <p>按住alt选择时能够快速将元素置于该元素内对应位置</p>
 <p>按住shift选择可以快速将锚点置于该元素内对应位置</p>
+<p>关于Anchor的拉伸模式：</p>
+<p>当 Anchor Min ≠ Anchor Max 时，元素进入拉伸模式，此时 Rect Transform 中会从调整元素宽高变为调整元素边距值，这个边距值时相对于锚点的距离</p>
+<p>可以通过调整 Min/Max Anchors来实现(不过通常来说，不是部分拉伸的话其实光是快捷键直接点击左上角选择对应拉伸效果就能解决了)</p>
+<p>这里再和 Canvas Scaler 组件联系一下：Canvas Scaler 主要解决窗口的等比缩放，Anchor 拉伸解决元素再不同宽高比下的适配</p>
 <h2 id="4万恶之源-layout-group-们">
   4，万恶之源 Layout Group 们
   <a class="heading-link" href="#4%e4%b8%87%e6%81%b6%e4%b9%8b%e6%ba%90-layout-group-%e4%bb%ac">
@@ -275,6 +356,57 @@
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
+<p>因为 unity 的布局系统在调整过程中实在很容易出现各种问题，所以这里我把它们一起叫做万恶之源了(学习过程中，我的排版就是在各种调整之中突然莫名其妙被破坏，有时候得重开项目才能解决问题的，但是有一说一用熟练了之后应该还是比较好用的)</p>
+<p>unity 中基本的 Layout Group组件大致分为三种：</p>
+<table>
+  <thead>
+      <tr>
+          <th>网格布局 <br> (子元素按行列网格排列)</th>
+          <th>水平布局 <br> (子元素从左到右水平排列)</th>
+          <th>竖直布局 <br> (子元素从上到下垂直排列)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Grid Layout Group</td>
+          <td>Horizontal Layout Group</td>
+          <td>Vertical Layout Group</td>
+      </tr>
+      <tr>
+          <td><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_GridLayoutGroup_20260209.png" alt=""></td>
+          <td><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_HorizontalLayoutGroup_20260209.png" alt=""></td>
+          <td><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_VerticalLayoutGroup_20260209.png" alt=""></td>
+      </tr>
+  </tbody>
+</table>
+<p>三种不同布局拥有一些通用参数：</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_LayoutDifference_20260209.png" alt=""></p>
+<p>Grid Layout Group 和另外两种布局的区别比较大，在网格布局中每个子元素的大小都一致(这一点不受子元素上 LayoutElement 的影响)，同时可以直接设置每一行/列的元素个数</p>
+<p>而 Horizontal 和 Vertical 两种布局拥有另一些功能：</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_LayoutDifference2_20260209.png" alt=""></p>
+<p><em>Reverse Arrangement</em> 是反向排列元素</p>
+<p><em>Control Child Size</em> (控制子元素大小) ， <em>Use Child Scale</em> (使用子元素缩放) 和 <em>Child Force Expand</em> (强制子元素扩展) 则是非常重要的三项功能</p>
+<p><strong>控制子元素大小</strong>通常使用于需要自动平分整个布局的场景，也就是希望每一项元素的宽/高度一致，比如像实现技能栏按钮平分宽度等等</p>
+<p><strong>使用子元素缩放</strong>使用的情况较少，但似乎会使用在动态缩放的图标列表中，或者调整使每个元素在布局中占用空间不同 (不过我并没有遇到使用这个功能的情况，这里就先不继续展开了)</p>
+<p><strong>强制子元素扩展</strong>需要子元素直接填充完整个布局的情况，会强制拉伸子元素，可配合 <em>LayoutElement</em> 控制子元素的拉伸，可以用此实现菜单收起之类的功能</p>
+<p>顺便介绍一下经常和布局一起出现的好朋友 <em>Content Size Fitter</em> 组件：</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_ContentSizeFitter_20260209.png" alt=""></p>
+<p>顾名思义这个组件用于调整整个对象的大小， <em>Unconstrained</em> 就是默认不改变大小， <em>Preferred Size</em> 能让容器自动适应尺寸，考虑子元素的 <em>Preferred Width/Height</em> ，也是最常用的功能， Min Size 也是让容器自动适应尺寸，但只考虑子元素的 <em>Min Width/Height</em> ，使用情况较少，但是遇到需要缩小/折叠的窗口或者想要保证某些元素有最小可点击区域时可以采用这个。</p>
+<p>一句话总结区别，就是 Preferred Size 更倾向于让容器适应子元素的&quot;期望大小&quot;， Min Size更倾向于让容器适应子元素的&quot;最小大小&quot;</p>
+<h2 id="5layout-element">
+  5，Layout Element
+  <a class="heading-link" href="#5layout-element">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>和上面的布局经常一起出现的第二个好朋友来了，虽然它在容器内的子元素中并不是必须的组件，但是当遇到需要精确控制某一个元素在布局中的表现时，就需要用到它了</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_LayoutElement_20260209.png" alt=""></p>
+<p>Ignore Layout 可以使当前元素完全忽略容器的布局设置</p>
+<p>Min Width/Height 就是该元素的最小尺寸，优先级最高</p>
+<p>Preferred Width/Height 是该元素的理想尺寸</p>
+<p>Flexible Width/Height 是弹性比例，用于分配容器中的剩余空间(比如假设现在容器内有三个元素，有一个弹性比例为1，有一个为2，最后一个为3，那么这三个元素分别得到的空间是容器的1/6,2/6和3/6)，优先级最低</p>
+<p>所以可以看出 Layout Group 分配空间的顺序：先保证元素的最小尺寸，如果有足够空间，给予元素期望尺寸，最后有多余空间时按比例扩展元素</p>
 
       </div>
 
