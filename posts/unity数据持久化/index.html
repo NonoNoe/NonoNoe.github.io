@@ -26,6 +26,7 @@
         2，Json文件的写入
       
     
+    4，二进制读写
   
 
 
@@ -41,19 +42,19 @@
     链接到标题
   
 
-整理一下 unity 中实现数据持久化的三种方式：PlayerPrefs，ScriptableObject 和 Json 文件保存">
+整理一下 unity 中实现数据持久化的几种方式：PlayerPrefs，ScriptableObject ， Json 文件保存 ，二进制读写">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Unity数据持久化">
-  <meta name="twitter:description" content="目录0，简介 1，PlayerPrefs 2，ScriptableObject 3，Json 1，Json文件的读取 2，Json文件的写入 ↑ 返回顶部0，简介 链接到标题 整理一下 unity 中实现数据持久化的三种方式：PlayerPrefs，ScriptableObject 和 Json 文件保存">
+  <meta name="twitter:description" content="目录0，简介 1，PlayerPrefs 2，ScriptableObject 3，Json 1，Json文件的读取 2，Json文件的写入 4，二进制读写 ↑ 返回顶部0，简介 链接到标题 整理一下 unity 中实现数据持久化的几种方式：PlayerPrefs，ScriptableObject ， Json 文件保存 ，二进制读写">
 
 <meta property="og:url" content="http://localhost:1313/posts/unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Unity数据持久化">
-  <meta property="og:description" content="目录0，简介 1，PlayerPrefs 2，ScriptableObject 3，Json 1，Json文件的读取 2，Json文件的写入 ↑ 返回顶部0，简介 链接到标题 整理一下 unity 中实现数据持久化的三种方式：PlayerPrefs，ScriptableObject 和 Json 文件保存">
+  <meta property="og:description" content="目录0，简介 1，PlayerPrefs 2，ScriptableObject 3，Json 1，Json文件的读取 2，Json文件的写入 4，二进制读写 ↑ 返回顶部0，简介 链接到标题 整理一下 unity 中实现数据持久化的几种方式：PlayerPrefs，ScriptableObject ， Json 文件保存 ，二进制读写">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -264,6 +265,7 @@
         <li><a href="#2json文件的写入">2，Json文件的写入</a></li>
       </ul>
     </li>
+    <li><a href="#4二进制读写">4，二进制读写</a></li>
   </ul>
 </nav>
 </div>
@@ -323,7 +325,7 @@
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
-<p>整理一下 unity 中实现数据持久化的三种方式：PlayerPrefs，ScriptableObject 和 Json 文件保存</p>
+<p>整理一下 unity 中实现数据持久化的几种方式：PlayerPrefs，ScriptableObject ， Json 文件保存 ，二进制读写</p>
 <h2 id="1playerprefs">
   1，PlayerPrefs
   <a class="heading-link" href="#1playerprefs">
@@ -417,7 +419,56 @@
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;invalid_request_error&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h2 id="4二进制读写">
+  4，二进制读写
+  <a class="heading-link" href="#4%e4%ba%8c%e8%bf%9b%e5%88%b6%e8%af%bb%e5%86%99">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>二进制读写相比起 Json 文件来说速度快，文件体积小，同时在一定程度上可以防止作弊(文件看起来是乱码无法直接阅读)</p>
+<p>一般使用dat文件存储，常见的也有bin/sav等，甚至自己完全自定义一个扩展名也可以</p>
+<p>参考代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="na">[Serializable]</span>  <span class="c1">// 必须加这个特性</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">SaveData</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">level</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">float</span> <span class="n">health</span> <span class="p">=</span> <span class="m">100f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">playerName</span> <span class="p">=</span> <span class="s">&#34;NonoNoe&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 写入</span>
+</span></span><span class="line"><span class="cl"><span class="n">SaveData</span> <span class="n">data</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SaveData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">BinaryFormatter</span> <span class="n">formatter</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BinaryFormatter</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileStream</span> <span class="n">file</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">formatter</span><span class="p">.</span><span class="n">Serialize</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>  <span class="c1">// 序列化为二进制写入文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 读取</span>
+</span></span><span class="line"><span class="cl"><span class="n">FileStream</span> <span class="n">file</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Open</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">SaveData</span> <span class="n">data</span> <span class="p">=</span> <span class="p">(</span><span class="n">SaveData</span><span class="p">)</span><span class="n">formatter</span><span class="p">.</span><span class="n">Deserialize</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>  <span class="c1">// 反序列化</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span><span class="p">.</span><span class="n">Close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">level</span><span class="p">);</span>  <span class="c1">// 输出：5</span>
+</span></span></code></pre></div><p>但在上面的例子中，BinaryFormatter 已经过时(因为存在严重的安全漏洞，从.Net 5+开始被标记为过时，在某些.Net版本中直接调用会抛出异常，目前 Unity 仍支持但不推荐使用)，可使用 BinaryWriter/Reader 作为替代：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 写入</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="p">(</span><span class="n">BinaryWriter</span> <span class="n">writer</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BinaryWriter</span><span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Create</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">writer</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">level</span><span class="p">);</span>      <span class="c1">// 写 int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">writer</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">health</span><span class="p">);</span>     <span class="c1">// 写 float</span>
+</span></span><span class="line"><span class="cl">    <span class="n">writer</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">playerName</span><span class="p">);</span> <span class="c1">// 写 string</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 读取（必须按写入的顺序读）</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="p">(</span><span class="n">BinaryReader</span> <span class="n">reader</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BinaryReader</span><span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Open</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="p">.</span><span class="n">level</span>      <span class="p">=</span> <span class="n">reader</span><span class="p">.</span><span class="n">ReadInt32</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="p">.</span><span class="n">health</span>     <span class="p">=</span> <span class="n">reader</span><span class="p">.</span><span class="n">ReadSingle</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span><span class="p">.</span><span class="n">playerName</span> <span class="p">=</span> <span class="n">reader</span><span class="p">.</span><span class="n">ReadString</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>BinaryWriter/BinaryReader需要手动控制读写顺序，但是它相比 BinaryFormatter 更加安全</p>
+<p>因此除非对性能有机制要求(或者我的技术力进化到非常牛逼的地步)还是使用 Json 吧。</p>
+
       </div>
 
 
