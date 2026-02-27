@@ -23,6 +23,7 @@
     3，Rect Transform
     4，万恶之源 Layout Group 们
     5，Layout Element
+    6,比万恶之源还搞心态的 ScrollView 组件
   
 
 
@@ -45,18 +46,19 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="关于unity的UGUI——ui布局及自适应相关问题">
-  <meta name="twitter:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
+  <meta name="twitter:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element 6,比万恶之源还搞心态的 ScrollView 组件 ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="关于unity的UGUI——ui布局及自适应相关问题">
-  <meta property="og:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
+  <meta property="og:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element 6,比万恶之源还搞心态的 ScrollView 组件 ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2026-02-06T15:12:54+08:00">
     <meta property="article:modified_time" content="2026-02-06T15:12:54+08:00">
     <meta property="article:tag" content="Unity">
+    <meta property="article:tag" content="UGUI">
       <meta property="og:see_also" content="https://NonoNoe.github.io/posts/1/">
 
 
@@ -221,6 +223,10 @@
   <i class="fa-solid fa-tag" aria-hidden="true"></i>
     <span class="tag">
       <a href="/tags/unity/">Unity</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/ugui/">UGUI</a>
     </span></div>
 
           <div class="series">
@@ -242,6 +248,7 @@
     <li><a href="#3rect-transform">3，Rect Transform</a></li>
     <li><a href="#4万恶之源-layout-group-们">4，万恶之源 Layout Group 们</a></li>
     <li><a href="#5layout-element">5，Layout Element</a></li>
+    <li><a href="#6比万恶之源还搞心态的-scrollview-组件">6,比万恶之源还搞心态的 ScrollView 组件</a></li>
   </ul>
 </nav>
 </div>
@@ -330,7 +337,8 @@
 <p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_UICanvas_CanvasScaler_20260206.png" alt="Canvas Scaler 的不同显示方式"></p>
 <p>接下来要介绍的是对 UI 自适应非常重要的模式——Scale With Screen Size。该模式下 UI 会根据参考分辨率(Reference Resolution)判断 UI 的缩放比例。</p>
 <p>要想实现 UI 的自适应，就一定要在一开始建完项目初始化 Canvas 的时候设置好这个模式！！最好在开发过程中保持 Game 窗口的分辨率和参考分辨率完全一致！！<em>(不然后面没能适配好的 UI 一多不一定好更改！！)</em></p>
-<p>相比下来 Graphic Raycaster 的作用则完全不同，但也不用开发者另外去设置什么了(比上面那个方便)。它会在用户点击屏幕时，从点击位置发出一条射线，使接触的 UI 交互组件正常响应点击</p>
+<p>相比下来 Graphic Raycaster 的作用则完全不同，但也不用开发者另外去设置什么了(比上面那个方便)。它会在用户点击屏幕时，从点击位置发出一条射线，使接触的 UI 交互组件正常响应点击。 Unity 的官方文档中有提及一共有三种射线发射器</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_Raycasters_20260227.png" alt="这里有三种射线发射器"></p>
 <p>顺便一提，每次创建 UI 元素的时候都能看到它上面自带的组件中有个叫 Canvas Renderer 的，这个组件的官方解释是【附加到一个 Canvas 后，在完成所有正常渲染后将渲染到屏幕的组件。专为 GUI 应用程序设计。】</p>
 <p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//CanvasRenderer_20260206.png" alt="非常不起眼但有着重要作用的 Canvas Renderer"></p>
 <p>说实话我并没有看懂(这还是中文吗)，但询问 claude 得到的答案是【Canvas Renderer 在 Canvas 的调度下，负责将单个 UI 元素最终渲染到屏幕上。Canvas 做的是统一管理和批处理，每个 UI 元素上的 Canvas Renderer 执行具体绘制。】那么这个问题就先到这里吧，接下来还是先回到原本的主题上</p>
@@ -411,6 +419,13 @@
 <p>Preferred Width/Height 是该元素的理想尺寸</p>
 <p>Flexible Width/Height 是弹性比例，用于分配容器中的剩余空间(比如假设现在容器内有三个元素，有一个弹性比例为1，有一个为2，最后一个为3，那么这三个元素分别得到的空间是容器的1/6,2/6和3/6)，优先级最低</p>
 <p>所以可以看出 Layout Group 分配空间的顺序：先保证元素的最小尺寸，如果有足够空间，给予元素期望尺寸，最后有多余空间时按比例扩展元素</p>
+<h2 id="6比万恶之源还搞心态的-scrollview-组件">
+  6,比万恶之源还搞心态的 ScrollView 组件
+  <a class="heading-link" href="#6%e6%af%94%e4%b8%87%e6%81%b6%e4%b9%8b%e6%ba%90%e8%bf%98%e6%90%9e%e5%bf%83%e6%80%81%e7%9a%84-scrollview-%e7%bb%84%e4%bb%b6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
 
       </div>
 

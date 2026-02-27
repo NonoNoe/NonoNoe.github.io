@@ -17,7 +17,15 @@
   目录
   
   
-    简介
+    0，简介
+    1，PlayerPrefs
+    2，ScriptableObject
+    3，Json
+      
+        1，Json文件的读取
+        2，Json文件的写入
+      
+    
   
 
 
@@ -27,24 +35,25 @@
 
 
 
-  简介
+  0，简介
   
     
     链接到标题
   
-">
+
+整理一下 unity 中实现数据持久化的三种方式：PlayerPrefs，ScriptableObject 和 Json 文件保存">
 <meta name="keywords" content="blog,desenvolvedor,pessoal">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Unity数据持久化">
-  <meta name="twitter:description" content="目录简介 ↑ 返回顶部简介 链接到标题">
+  <meta name="twitter:description" content="目录0，简介 1，PlayerPrefs 2，ScriptableObject 3，Json 1，Json文件的读取 2，Json文件的写入 ↑ 返回顶部0，简介 链接到标题 整理一下 unity 中实现数据持久化的三种方式：PlayerPrefs，ScriptableObject 和 Json 文件保存">
 
 <meta property="og:url" content="http://localhost:1313/posts/unity%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Unity数据持久化">
-  <meta property="og:description" content="目录简介 ↑ 返回顶部简介 链接到标题">
+  <meta property="og:description" content="目录0，简介 1，PlayerPrefs 2，ScriptableObject 3，Json 1，Json文件的读取 2，Json文件的写入 ↑ 返回顶部0，简介 链接到标题 整理一下 unity 中实现数据持久化的三种方式：PlayerPrefs，ScriptableObject 和 Json 文件保存">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -204,7 +213,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：1 分钟
+              阅读时间：4 分钟
             </span>
           </div>
           <div class="authors">
@@ -246,7 +255,15 @@
   <h1>目录</h1>
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#简介">简介</a></li>
+    <li><a href="#0简介">0，简介</a></li>
+    <li><a href="#1playerprefs">1，PlayerPrefs</a></li>
+    <li><a href="#2scriptableobject">2，ScriptableObject</a></li>
+    <li><a href="#3json">3，Json</a>
+      <ul>
+        <li><a href="#1json文件的读取">1，Json文件的读取</a></li>
+        <li><a href="#2json文件的写入">2，Json文件的写入</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
@@ -299,14 +316,108 @@
     }
   });
 </script>
-<h2 id="简介">
-  简介
-  <a class="heading-link" href="#%e7%ae%80%e4%bb%8b">
+<h2 id="0简介">
+  0，简介
+  <a class="heading-link" href="#0%e7%ae%80%e4%bb%8b">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
-
+<p>整理一下 unity 中实现数据持久化的三种方式：PlayerPrefs，ScriptableObject 和 Json 文件保存</p>
+<h2 id="1playerprefs">
+  1，PlayerPrefs
+  <a class="heading-link" href="#1playerprefs">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>PlayerPrefs 是一种比较方便的存储方式(不过我使用得很少，暂时简单地归纳一下)</p>
+<h2 id="2scriptableobject">
+  2，ScriptableObject
+  <a class="heading-link" href="#2scriptableobject">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>ScriptableObject 是一种仅能在 Unity 编辑器中修改，导出后运行时任何对其的修改都不会被保存(它运行时的修改仅保存在内存中，游戏关闭后会从磁盘加载原始数据，此时更改丢失，简单来说就是运行时不能持久化)</p>
+<p>ScriptableObject 的基本格式参考</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[CreateAssetMenu(fileName = &#34;NewData&#34;, menuName = &#34;Game/Data&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">PlayerData</span><span class="p">:</span><span class="n">ScriptableObject</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">string</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>之后就可以在 Project 窗口中右键创建这个 PlayerData 的数据了，在其他脚本中可以引用新创建的配置文件并读取里面的配置</p>
+<p>顺便一提如果里面的参数使用 private 的话作用不大，因为我们这里写出来的参数是为了方便在 unity 的 Inspector 面板中进行配置，要是私有化的话到时候创建了配置文件也看不到这个参数</p>
+<p>Scriptable 适合配置多个对象共享的数据，比如我假设要写一个角色形态切换的功能，不同形态下拥有不同的攻击力和防御力，但是最大生命值不变，这时候写配置文件就可以把攻击力和防御力写进去，最大生命值就不用记录了</p>
+<h2 id="3json">
+  3，Json
+  <a class="heading-link" href="#3json">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Json (JavaScript Object Notation) 是一种轻量级的数据交换格式，它通过纯文本来表示结构化的数据</p>
+<p>Json 文件存储数据非常常用，Unity原生提供了一个工具 JsonUtility 来处理 Json 文件的序列化与反序列化，然而它仅支持简单的 Json 结构，不够灵活，所以这里以安装了 Newtonsoft 插件为前提来介绍 Json 文件的读写，该插件最简单的安装方式是直接通过 git Url 下载： com.unity.nuget.newtonsoft-json</p>
+<p>顺便一提，文件读写相关可参考另一篇笔记</p>
+<h3 id="1json文件的读取">
+  1，Json文件的读取
+  <a class="heading-link" href="#1json%e6%96%87%e4%bb%b6%e7%9a%84%e8%af%bb%e5%8f%96">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>在介绍各种代码之前先理清一下整个读取/写入 Json 文件的思路和流程，首先看读取：我们拿到一个 Json 文件的时候，它可能长这样(这里直接借用了 DeepSeek API 文档中，未输入 API Key 就发送消息后返回的 Json 文件)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;error&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;Authentication Fails, Your api key: ****KEN&gt; is invalid&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;authentication_error&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;param&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;invalid_request_error&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>我们可以看到它返回了一个 error 对象，这个 error 对象中又嵌套了 message , type , param , code 4个字段</p>
+<p>纯文本的格式肯定是无法直接读取的，我们首先要把它翻译成 Unity 编辑器也能读取的格式， 那么直接将它翻译为 C# 类即可(网上有很多 Json 和 C# 类互相转换的网站可以使用，一般情况下也不用手动去“翻译”，如果转成 Java 类格式也类似，但是要注意 C# 不需要像 Java 那样
+将字段设为 private 并手写 Get/Set 方法，直接使用 public 字段即可)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ErrorResponse</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">message</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">param</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">code</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>那么现在我们就拥有了可以存储这个 Json 数据的载体，接下来只需要将 Json 文件反序列化，并且将数据填充到对应的 C# 类之中</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="n">ReadAllText</span><span class="p">(</span><span class="n">path</span><span class="p">);</span><span class="c1">//从json对应的路径path中获取纯文本数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">ErrorResponse</span> <span class="n">data</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span class="p">&lt;</span><span class="n">ErrorResponse</span><span class="p">&gt;(</span><span class="n">json</span><span class="p">);</span><span class="c1">//反序列化，将纯文本数据翻译为 C# 类的实例数据</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">message</span><span class="p">);</span><span class="c1">//之后就可以自由获取里面的内容了</span>
+</span></span></code></pre></div><h3 id="2json文件的写入">
+  2，Json文件的写入
+  <a class="heading-link" href="#2json%e6%96%87%e4%bb%b6%e7%9a%84%e5%86%99%e5%85%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>读取 Json 文件的过程结束，那么假设我们需要更改 Json 文件中的数据，就可以先在读取了 Json 文件的 C# 类实例中进行修改，然后再将实例序列化存储回 Json 文件中，这样数据就被持久化保存在 Json 文件里了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">data</span><span class="p">.</span><span class="n">message</span><span class="p">=</span><span class="s">&#34;我正在更改实例数据&#34;</span><span class="p">;</span><span class="c1">//更改实例中的数据</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">newJson</span><span class="p">=</span><span class="n">JsonConvert</span><span class="p">.</span><span class="n">SerializeObject</span><span class="p">(</span><span class="n">data</span><span class="p">);</span><span class="c1">//序列化，将实例转为纯文本数据</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">File</span><span class="p">.</span><span class="n">WriteAllText</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">newJson</span><span class="p">);</span><span class="c1">//写入Json文件</span>
+</span></span></code></pre></div><p>运行后的 Json 文件内容应该是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;error&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;我正在更改实例数据&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;authentication_error&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;param&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;invalid_request_error&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
       </div>
 
 

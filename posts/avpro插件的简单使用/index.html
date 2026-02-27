@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <title>
   Avpro插件的简单使用 · NonoNoe
 </title>
@@ -18,6 +18,14 @@
   
   
     简介
+    1，MediaPlayer
+    2, Display 组件
+    3，常用接口
+      
+        1，MediaPlayer.Control
+        2，MediaPlayer.Info
+      
+    
   
 
 
@@ -40,12 +48,12 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Avpro插件的简单使用">
-  <meta name="twitter:description" content="目录简介 ↑ 返回顶部简介 链接到标题 Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
+  <meta name="twitter:description" content="目录简介 1，MediaPlayer 2, Display 组件 3，常用接口 1，MediaPlayer.Control 2，MediaPlayer.Info ↑ 返回顶部简介 链接到标题 Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
 
-<meta property="og:url" content="http://localhost:1313/posts/avpro%E6%8F%92%E4%BB%B6%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
+<meta property="og:url" content="https://NonoNoe.github.io/posts/avpro%E6%8F%92%E4%BB%B6%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Avpro插件的简单使用">
-  <meta property="og:description" content="目录简介 ↑ 返回顶部简介 链接到标题 Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
+  <meta property="og:description" content="目录简介 1，MediaPlayer 2, Display 组件 3，常用接口 1，MediaPlayer.Control 2，MediaPlayer.Info ↑ 返回顶部简介 链接到标题 Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -57,7 +65,7 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
 
 
 
-<link rel="canonical" href="http://localhost:1313/posts/avpro%E6%8F%92%E4%BB%B6%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
+<link rel="canonical" href="https://NonoNoe.github.io/posts/avpro%E6%8F%92%E4%BB%B6%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -67,7 +75,7 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
 
   
   
-  <link rel="stylesheet" href="/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -77,7 +85,7 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
   
 
 
@@ -125,7 +133,7 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/">
+    <a class="navigation-title" href="https://NonoNoe.github.io/">
       NonoNoe
     </a>
     
@@ -186,7 +194,7 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="http://localhost:1313/posts/avpro%E6%8F%92%E4%BB%B6%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
+            <a class="title-link" href="https://NonoNoe.github.io/posts/avpro%E6%8F%92%E4%BB%B6%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
               Avpro插件的简单使用
             </a>
           </h1>
@@ -201,7 +209,7 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：1 分钟
+              阅读时间：4 分钟
             </span>
           </div>
           <div class="authors">
@@ -236,6 +244,14 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
   <nav id="TableOfContents">
   <ul>
     <li><a href="#简介">简介</a></li>
+    <li><a href="#1mediaplayer">1，MediaPlayer</a></li>
+    <li><a href="#2-display-组件">2, Display 组件</a></li>
+    <li><a href="#3常用接口">3，常用接口</a>
+      <ul>
+        <li><a href="#1mediaplayercontrol">1，MediaPlayer.Control</a></li>
+        <li><a href="#2mediaplayerinfo">2，MediaPlayer.Info</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
@@ -297,7 +313,109 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
 </h2>
 <p>Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！</p>
 <p>官方文档参考速成：<a href="https://www.renderheads.com/content/docs/AVProVideo/articles/usage-loading-media.html"  class="external-link" target="_blank" rel="noopener">如何使用Avpro插件快速加载视频</a></p>
-
+<h2 id="1mediaplayer">
+  1，MediaPlayer
+  <a class="heading-link" href="#1mediaplayer">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>MediaPlayer 组件用于加载和读取视频，可以设置视频是否自动读取/自动播放/音量大小/音量平衡等，十分方便</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_AvproMediaPlayer_20260227.png" alt="组件参数参考"></p>
+<p>该组件中还可以对不同的平台进行单独设置</p>
+<p>但是读取视频时要注意路径问题：首先，Unity 打包的时候并不会自动将 Assets 目录下的文件打包进 Build ，除非该文件位于 Resources 文件夹下/ StreamingAssets 文件夹下/被显示引用， Avpro 插件的 MediaPlayer 组件读取视频时会按照选择视频时解析的路径去读取对应文件，所以一旦视频文件未能被正确打包，项目打包后便无法正常播放视频。通常为了避免这种情况，建议将视频文件放入 StreamingAssets 文件夹下后在代码中加载对应的视频，或者直接使用插件中的路径枚举读取：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">_mediaPlayer</span><span class="p">.</span><span class="n">OpenVideoFromFile</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MediaPlayer</span><span class="p">.</span><span class="n">FileLocation</span><span class="p">.</span><span class="n">RelativeToStreamingAssetsFolder</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;your_video.mp4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span><span class="c1">//读取了相对于 StreamingAssets 文件夹的路径</span>
+</span></span></code></pre></div><p>使用路径枚举的时候还可以采用 AbsolutePathOrUrl ，适用于运行时动态拼接的完整路径或者网络流媒体链接</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 本地绝对路径</span>
+</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">path</span> <span class="p">=</span> <span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">Application</span><span class="p">.</span><span class="n">streamingAssetsPath</span><span class="p">,</span> <span class="s">&#34;Media&#34;</span><span class="p">,</span> <span class="s">&#34;video.mp4&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">OpenMedia</span><span class="p">(</span><span class="n">MediaPathType</span><span class="p">.</span><span class="n">AbsolutePathOrURL</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 网络 URL</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">OpenMedia</span><span class="p">(</span><span class="n">MediaPathType</span><span class="p">.</span><span class="n">AbsolutePathOrURL</span><span class="p">,</span> <span class="s">&#34;https://example.com/video.mp4&#34;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// RTSP 流</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">OpenMedia</span><span class="p">(</span><span class="n">MediaPathType</span><span class="p">.</span><span class="n">AbsolutePathOrURL</span><span class="p">,</span> <span class="s">&#34;rtsp://192.168.1.1/stream&#34;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</span></span></code></pre></div><h2 id="2-display-组件">
+  2, Display 组件
+  <a class="heading-link" href="#2-display-%e7%bb%84%e4%bb%b6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>AVpro 插件中有两种 Display 组件： Display uGUI 和 Display IMGUI ，它们都是用于显示视频内容的组件，需要挂载 MediaPlayer 才能显示其加载的视频</p>
+<p>其中 IMGUI 基于 Unity 的旧版 IMGUI 系统, uGUI 基于新版 UGUI 系统，相比下来如今 Display uGUI 更为常用</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_AvproDisplayuGUI_20260227.png" alt="插件参考"></p>
+<p>Display 组件一定程度上替代了 RawImage 的功能，因此在使用组件时并不需要额外添加 Image/RawImage相关组件，它自己本身就能渲染视频了</p>
+<h2 id="3常用接口">
+  3，常用接口
+  <a class="heading-link" href="#3%e5%b8%b8%e7%94%a8%e6%8e%a5%e5%8f%a3">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>简单理解：Control 是 Set，Info 是 Get</p>
+<h3 id="1mediaplayercontrol">
+  1，MediaPlayer.Control
+  <a class="heading-link" href="#1mediaplayercontrol">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>这个接口主要用于控制播放器，它主动控制播放行为，主要封装的内容如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 播放控制</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Play</span><span class="p">();</span><span class="c1">//播放</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Pause</span><span class="p">();</span><span class="c1">//暂停</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span><span class="c1">//停止</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Rewind</span><span class="p">();</span><span class="c1">//回到视频第一帧</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 跳转</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Seek</span><span class="p">(</span><span class="n">timeSeconds</span><span class="p">);</span><span class="c1">//跳转到timeSeconds秒</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 音量/音频</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">SetVolume</span><span class="p">(</span><span class="m">0.8f</span><span class="p">);</span><span class="c1">//设置音量</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">SetMuted</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="c1">//是否静音</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">SetPlaybackRate</span><span class="p">(</span><span class="m">2.0f</span><span class="p">);</span>  <span class="c1">// 倍速</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 循环</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">SetLooping</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="c1">//是否循环</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 选择轨道（可以内嵌多音频/字幕轨道）</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">SetAudioTrack</span><span class="p">(</span><span class="n">trackIndex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">SetTextTrack</span><span class="p">(</span><span class="n">trackIndex</span><span class="p">);</span>
+</span></span></code></pre></div><h3 id="2mediaplayerinfo">
+  2，MediaPlayer.Info
+  <a class="heading-link" href="#2mediaplayerinfo">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>这个接口主要用于查询播放器的状态</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 时间信息</span>
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">current</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">GetCurrentTime</span><span class="p">();</span><span class="c1">//获取当前播放到的时间</span>
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">duration</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">GetDuration</span><span class="p">();</span><span class="c1">//获取视频时长</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 播放状态</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">isPlaying</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">IsPlaying</span><span class="p">();</span><span class="c1">//获取当前是否正在播放</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">isPaused</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">IsPaused</span><span class="p">();</span><span class="c1">//获取当前是否暂停</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">isFinished</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">IsFinished</span><span class="p">();</span><span class="c1">//获取当前是否播放完成</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">isBuffering</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">IsBuffering</span><span class="p">();</span><span class="c1">//播放器是否正在等待数据（通常是网络视频流媒体场景下使用的判断）</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 媒体信息</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">width</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">GetVideoWidth</span><span class="p">();</span><span class="c1">//获取视频宽度</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">height</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">GetVideoHeight</span><span class="p">();</span><span class="c1">//获取视频高度</span>
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">fps</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">GetVideoFrameRate</span><span class="p">();</span><span class="c1">//获取视频帧率</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 轨道信息</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">audioTrackCount</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">GetAudioTrackCount</span><span class="p">();</span><span class="c1">//获取音轨数量</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">textTrackCount</span> <span class="p">=</span> <span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">GetTextTrackCount</span><span class="p">();</span><span class="c1">//获取字幕轨道数量</span>
+</span></span></code></pre></div>
       </div>
 
 
@@ -349,7 +467,7 @@ Unity 的 Avpro 插件是用于视频播放的一个插件，简单好用！">
 
   
   
-  <script src="/js/coder.js"></script>
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
   
 
   

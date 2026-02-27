@@ -398,7 +398,7 @@
 <p>在 <a href="https://docs.unity.cn/cn/current/ScriptReference/SceneManagement.SceneManager.LoadScene.html"  class="external-link" target="_blank" rel="noopener">Unity 官方文档</a> 中关于 SceneManager.LoadScene 的解释里提到：使用 SceneManager.LoadScene 时，不会立即加载场景，而是在下一帧加载。这种 <strong>半异步</strong> 的行为可能会导致 <strong>帧卡顿</strong> ，并可能令人困惑，因为加载无法立即完成。</p>
 <p>因此应该采用异步加载新场景的方式解决</p>
 <p>代码参考：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">LoadLevelL</span><span class="p">()</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">LoadLevelL</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="n">StartCoroutine</span><span class="p">(</span><span class="n">LoadLevelLCo</span><span class="p">());</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>

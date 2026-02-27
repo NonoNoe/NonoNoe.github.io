@@ -34,7 +34,6 @@
     <meta property="article:tag" content="Hugo">
     <meta property="article:tag" content="Markdown">
       <meta property="og:see_also" content="https://NonoNoe.github.io/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/">
-      <meta property="og:see_also" content="https://NonoNoe.github.io/posts/test/">
 
 
 
@@ -219,18 +218,13 @@
   <h1>目录</h1>
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#部分常用语法">部分常用语法</a>
+    <li><a href="#no0-markdown-基本语法与写作习惯养成">NO.0 Markdown 基本语法与写作习惯养成</a>
       <ul>
-        <li><a href="#标题">标题</a></li>
-        <li><a href="#文字变体">文字变体</a></li>
-        <li><a href="#列表">列表</a></li>
-        <li><a href="#分割线">分割线</a></li>
-        <li><a href="#图片和外链">图片和外链</a></li>
-        <li><a href="#表格">表格</a></li>
-        <li><a href="#markdown-插入代码块">Markdown 插入代码块</a></li>
-        <li><a href="#html-语言与-markdown-的联动">HTML 语言与 Markdown 的联动</a></li>
+        <li><a href="#部分常用语法">部分常用语法</a></li>
+        <li><a href="#markdown-段首缩进">Markdown 段首缩进</a></li>
       </ul>
     </li>
+    <li><a href="#no1-认识-hugo-文章开头的各项参数">NO.1 认识 Hugo 文章开头的各项参数</a></li>
     <li><a href="#no2-发布-hugo-文章的方式">NO.2 发布 Hugo 文章的方式</a></li>
     <li><a href="#no3-hugo-魔法变量">NO.3 Hugo 魔法变量</a></li>
   </ul>
@@ -286,29 +280,29 @@
   });
 </script>
 <p><a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md001"  class="external-link" target="_blank" rel="noopener">markdown 写作格式参考</a></p>
-<h1 id="no0-markdown-基本语法与写作习惯养成">
+<h2 id="no0-markdown-基本语法与写作习惯养成">
   NO.0 Markdown 基本语法与写作习惯养成
   <a class="heading-link" href="#no0-markdown-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e4%b8%8e%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e5%85%bb%e6%88%90">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h1>
+</h2>
 <p>Markdown 基本语法可参考
 <a href="https://markdown.com.cn/"  class="external-link" target="_blank" rel="noopener">markdown 官网</a></p>
-<h2 id="部分常用语法">
+<h3 id="部分常用语法">
   部分常用语法
   <a class="heading-link" href="#%e9%83%a8%e5%88%86%e5%b8%b8%e7%94%a8%e8%af%ad%e6%b3%95">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h2>
-<h3 id="标题">
+</h3>
+<h4 id="标题">
   标题
   <a class="heading-link" href="#%e6%a0%87%e9%a2%98">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="gh"># 标题1
 </span></span></span><span class="line"><span class="cl"><span class="gh"></span>
@@ -316,13 +310,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="gu"></span>
 </span></span><span class="line"><span class="cl"><span class="gu">### 标题3
 </span></span></span></code></pre></div><hr>
-<h3 id="文字变体">
+<h4 id="文字变体">
   文字变体
   <a class="heading-link" href="#%e6%96%87%e5%ad%97%e5%8f%98%e4%bd%93">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <p><strong>加粗</strong>文字</p>
 <p><em>斜体</em>文字</p>
 <p><strong><em>加粗斜体文字</em></strong></p>
@@ -333,13 +327,13 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="ge">**</span>*加粗斜体文字***
 </span></span></code></pre></div><hr>
-<h3 id="列表">
+<h4 id="列表">
   列表
   <a class="heading-link" href="#%e5%88%97%e8%a1%a8">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <ul>
 <li>列表 1</li>
 </ul>
@@ -355,23 +349,23 @@
 </span></span><span class="line"><span class="cl"><span class="k">
 </span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">引用
 </span></span></span></code></pre></div><hr>
-<h3 id="分割线">
+<h4 id="分割线">
   分割线
   <a class="heading-link" href="#%e5%88%86%e5%89%b2%e7%ba%bf">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <p>*** （分割线 1）</p>
 <p>&mdash; （分割线 2）</p>
 <hr>
-<h3 id="图片和外链">
+<h4 id="图片和外链">
   图片和外链
   <a class="heading-link" href="#%e5%9b%be%e7%89%87%e5%92%8c%e5%a4%96%e9%93%be">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <p><img src="%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5" alt="图片名"></p>
 <p><a href="%e7%bd%91%e7%ab%99%e9%93%be%e6%8e%a5" >网站</a></p>
 <p>&lt;网站链接&gt;</p>
@@ -382,13 +376,13 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">网站链接</span><span class="p">&gt;</span>
 </span></span></code></pre></div><hr>
-<h3 id="表格">
+<h4 id="表格">
   表格
   <a class="heading-link" href="#%e8%a1%a8%e6%a0%bc">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <table>
   <thead>
       <tr>
@@ -417,13 +411,14 @@
 </span></span><span class="line"><span class="cl">| 内容1 | 内容2 | 内容3 | 内容4 |
 </span></span><span class="line"><span class="cl">| 内容5 | 内容6 | 内容7 | 内容8 |
 </span></span></code></pre></div><hr>
-<h3 id="markdown-插入代码块">
+<h4 id="markdown-插入代码块">
   Markdown 插入代码块
   <a class="heading-link" href="#markdown-%e6%8f%92%e5%85%a5%e4%bb%a3%e7%a0%81%e5%9d%97">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
+<p>这个叫做语法高亮提示</p>
 <pre><code>```python
 
 #!/usr/bin/python3
@@ -431,63 +426,86 @@ print(&quot;Hello, World!&quot;);
 
 ```
 </code></pre>
-<h3 id="html-语言与-markdown-的联动">
+<p>C#：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 播放控制</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Play</span><span class="p">();</span><span class="c1">//播放</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Pause</span><span class="p">();</span><span class="c1">//暂停</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span><span class="c1">//停止</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Rewind</span><span class="p">();</span><span class="c1">//回到视频第一帧</span>
+</span></span></code></pre></div><p>Json:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;error&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;我正在更改实例数据&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;authentication_error&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;param&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;invalid_request_error&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>PS：其实写 C# 和 Json Hugo也能正常识别，但是其他的就不一定了！还是要养成良好的写作习惯</p>
+<h4 id="html-语言与-markdown-的联动">
   HTML 语言与 Markdown 的联动
   <a class="heading-link" href="#html-%e8%af%ad%e8%a8%80%e4%b8%8e-markdown-%e7%9a%84%e8%81%94%e5%8a%a8">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
-</h3>
+</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> 换行
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">``<span class="sb">`
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">---
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">### Markdown 段首缩进
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">&amp;ensp; or &amp;#8194; 表示一个半角的空格
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">&amp;emsp; or &amp;#8195; 表示一个全角的空格
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">&amp;emsp;&amp;emsp; 两个全角的空格（用的比较多）
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">&amp;nbsp; or &amp;#160; 不断行的空白格
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">---
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">### 写作习惯推荐
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">- 好好排版
-</span></span></span><span class="line"><span class="cl"><span class="sb">  - 中英文混用时，建议在英文单词前后加上空格方便阅读
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">  - 中英文逗号/句号等最好不要混用，强迫症震怒（）
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">---
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">## NO.1 认识 Hugo 文章开头的各项参数
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">**2025.9.16 修改**：此处文章使用的 TOML 格式可能已过时，需要给时间加上引号才能通过编译，现创建文章建议使用解析器更宽松的 YAML 格式
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">**2026.2.9更新**：需要修改默认生成文章的格式的话，在本地的archrtypes文件夹中增加自己需要的格式就可以，里面的default就是默认生成文章的格式，如果添加了新的格式那么默认使用新格式生成文章
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">YAML 格式示例：(其实就是将=符号改为:符号后，再将+++改为---即可)
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">![YAML格式示例](https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//Hugo-YAML.png)
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">或者在创建文章时使用 YAML 格式：
-</span></span></span><span class="line"><span class="cl"><span class="sb">
-</span></span></span><span class="line"><span class="cl"><span class="sb">`</span>``Markdown
-</span></span><span class="line"><span class="cl">
+</span></span></code></pre></div><hr>
+<h3 id="markdown-段首缩进">
+  Markdown 段首缩进
+  <a class="heading-link" href="#markdown-%e6%ae%b5%e9%a6%96%e7%bc%a9%e8%bf%9b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>  or   表示一个半角的空格</p>
+<p>  or   表示一个全角的空格</p>
+<p>   两个全角的空格（用的比较多）</p>
+<p>  or   不断行的空白格</p>
+<hr>
+<h4 id="写作习惯推荐">
+  写作习惯推荐
+  <a class="heading-link" href="#%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e6%8e%a8%e8%8d%90">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<ul>
+<li>好好排版
+<ul>
+<li>
+<p>中英文混用时，建议在英文单词前后加上空格方便阅读</p>
+</li>
+<li>
+<p>中英文逗号/句号等最好不要混用，强迫症震怒（）</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="no1-认识-hugo-文章开头的各项参数">
+  NO.1 认识 Hugo 文章开头的各项参数
+  <a class="heading-link" href="#no1-%e8%ae%a4%e8%af%86-hugo-%e6%96%87%e7%ab%a0%e5%bc%80%e5%a4%b4%e7%9a%84%e5%90%84%e9%a1%b9%e5%8f%82%e6%95%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p><strong>2025.9.16 修改</strong>：此处文章使用的 TOML 格式可能已过时，需要给时间加上引号才能通过编译，现创建文章建议使用解析器更宽松的 YAML 格式</p>
+<p><strong>2026.2.9更新</strong>：需要修改默认生成文章的格式的话，在本地的archrtypes文件夹中增加自己需要的格式就可以，里面的default就是默认生成文章的格式，如果添加了新的格式那么默认使用新格式生成文章</p>
+<p>YAML 格式示例：(其实就是将=符号改为:符号后，再将+++改为&mdash;即可)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//Hugo-YAML.png" alt="YAML格式示例"></p>
+<p>或者在创建文章时使用 YAML 格式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">hugo new posts/my-article.md --format yaml
 </span></span></code></pre></div><p>或在站点根目录的 config.toml / config.yaml / config.json 里，添加配置：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="gh"># 如果用 config.toml
-</span></span></span><span class="line"><span class="cl"><span class="gh"></span>frontmatterFormat = &#34;yaml&#34;
+</span></span><span class="line"><span class="cl"><span class="gu">### 如果用 config.toml
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>frontmatterFormat = &#34;yaml&#34;
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="gh"># 如果用 config.yaml
-</span></span></span><span class="line"><span class="cl"><span class="gh"></span>frontmatterFormat: yaml
+</span></span><span class="line"><span class="cl"><span class="gu">### 如果用 config.yaml
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>frontmatterFormat: yaml
 </span></span></code></pre></div><hr>
 <p>以下为本篇文章在终端中输入 <ins> Hugo new posts/Hugo 文章写作指南.md </ins> 时自动生成的文章参数</p>
 <p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//HugoArticlePreference.png" alt="参数参考"></p>
@@ -638,12 +656,6 @@ print(&quot;Hello, World!&quot;);
           
             <li>
               <a href="/posts/hugo%E5%A2%9E%E5%8A%A0%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E6%A0%87%E7%AD%BE/">面向新手的Hugo文章信息添加方式</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="/posts/test/">Markdown语言测试文档</a>
             </li>
           
         
