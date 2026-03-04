@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <title>
+  Unity场景烘焙个人总结 · NonoNoe
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="NonoNoe">
+<meta name="description" content="
+  目录
+  
+  
+    简介
+    No.1 认识 Unity 中的四种光源
+      
+        四种光源的大致选择
+        光源的参数调整
+      
+    
+    No.2 LightMap 光照贴图
+  
+
+
+↑ 返回顶部
+
+
+
+
+
+  简介
+  
+    
+    链接到标题
+  
+
+总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+<meta name="keywords" content="blog,desenvolvedor,pessoal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unity场景烘焙个人总结">
+  <meta name="twitter:description" content="目录简介 No.1 认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 LightMap 光照贴图 ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+
+<meta property="og:url" content="https://NonoNoe.github.io/posts/unity%E5%9C%BA%E6%99%AF%E7%83%98%E7%84%99%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">
+  <meta property="og:site_name" content="NonoNoe">
+  <meta property="og:title" content="Unity场景烘焙个人总结">
+  <meta property="og:description" content="目录简介 No.1 认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 LightMap 光照贴图 ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-04T14:27:20+08:00">
+    <meta property="article:modified_time" content="2026-03-04T14:27:20+08:00">
+
+
+
+
+<link rel="canonical" href="https://NonoNoe.github.io/posts/unity%E5%9C%BA%E6%99%AF%E7%83%98%E7%84%99%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://NonoNoe.github.io/">
+      NonoNoe
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">博客</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">项目</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">联系我</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/en/">ENGLISH</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://NonoNoe.github.io/posts/unity%E5%9C%BA%E6%99%AF%E7%83%98%E7%84%99%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">
+              Unity场景烘焙个人总结
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-03-04T14:27:20&#43;08:00">
+                March 4, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：3 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/nononoe/">NonoNoe</a></div>
+
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#no1-认识-unity-中的四种光源">No.1 认识 Unity 中的四种光源</a>
+      <ul>
+        <li><a href="#四种光源的大致选择">四种光源的大致选择</a></li>
+        <li><a href="#光源的参数调整">光源的参数调整</a></li>
+      </ul>
+    </li>
+    <li><a href="#no2-lightmap-光照贴图">No.2 LightMap 光照贴图</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
+
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
+
+   
+  .back-to-top.show {
+    display: block;
+  }
+</style>
+
+<script>
+  
+  const btn = document.querySelector('.back-to-top');
+
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
+<h2 id="简介">
+  简介
+  <a class="heading-link" href="#%e7%ae%80%e4%bb%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>总结一下 Unity 烘焙的基本流程操作和相关基础概念</p>
+<h2 id="no1-认识-unity-中的四种光源">
+  No.1 认识 Unity 中的四种光源
+  <a class="heading-link" href="#no1-%e8%ae%a4%e8%af%86-unity-%e4%b8%ad%e7%9a%84%e5%9b%9b%e7%a7%8d%e5%85%89%e6%ba%90">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Unity Light 一共有四种不同的光源：Directional Light， Spot Light ， Point Light 和 Area Light，除了 Area Light 只能被烘焙后才能起作用以外，其他的光源都有三种模式（RealTime 实时显示效果/Backed 烘焙后才能显示效果/Mixed 二者混合）可以选择</p>
+<h3 id="四种光源的大致选择">
+  四种光源的大致选择
+  <a class="heading-link" href="#%e5%9b%9b%e7%a7%8d%e5%85%89%e6%ba%90%e7%9a%84%e5%a4%a7%e8%87%b4%e9%80%89%e6%8b%a9">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h4 id="directional-light">
+  Directional Light
+  <a class="heading-link" href="#directional-light">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>创建场景时会默认出现的光源，控制整个场景内的光线方向</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_DirectionalLight_20260304.png" alt=""></p>
+<h4 id="spot-light">
+  Spot Light
+  <a class="heading-link" href="#spot-light">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>类似于手电筒的光源，聚光灯</p>
+<h4 id="point-light">
+  Point Light
+  <a class="heading-link" href="#point-light">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>点光源</p>
+<h4 id="area-light">
+  Area Light
+  <a class="heading-link" href="#area-light">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>一整个区域都会发光，发光方向为蓝色的轴，点击 Area Light 光源查看的时候也会有一个蓝色线条指向发光方向，通常在大屏幕/窗户等物体上面使用</p>
+<p><em>注意</em>：Area Light 只会朝一个方向发光，背对的地方是不会发光的</p>
+<h3 id="光源的参数调整">
+  光源的参数调整
+  <a class="heading-link" href="#%e5%85%89%e6%ba%90%e7%9a%84%e5%8f%82%e6%95%b0%e8%b0%83%e6%95%b4">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>这里先以 Directional Light 的参数为例：</p>
+<p>General参数：</p>
+<p>Type：选择光源类(也就是上面四种光源之中选一个)</p>
+<p>Mode：RealTime/Baked/Mixed</p>
+<p>Emission 中可以通过调整 Light Appearance (Color/Filter and Temperature)</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightInspector_20260304.png" alt="Directional Light 参数参考"></p>
+<h2 id="no2-lightmap-光照贴图">
+  No.2 LightMap 光照贴图
+  <a class="heading-link" href="#no2-lightmap-%e5%85%89%e7%85%a7%e8%b4%b4%e5%9b%be">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>使用 light map 可以生成光照贴图，该贴图数据不会直接修改物体原本的材质，而是会在运行时叠加在材质上</p>
+<p>Lighting 设置相关参数：</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightingSettings1_20260304.png" alt="Scene相关参数"></p>
+<p>第一次打开项目的 Lighting 界面时要先在 Lighting Settings 中点击新建一个 Lighting Settings Asset 才能进行其余 Scene 参数的配置</p>
+<p>Realtime Lighting 仅在有光源是 Realtime 模式时</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightSettings2.png" alt="Scene相关参数2"></p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightSettings3_20260304.png" alt="Environment相关参数"></p>
+<p>Realtime Lightmaps 和Baked Lightmaps 中可以查看对应模式的贴图</p>
+<p>可参考教程<a href="https://www.youtube.com/watch?v=WFye3k4bvEc&amp;t=43s"  class="external-link" target="_blank" rel="noopener">Interior Lighting in URP (Universal Render Pipeline) | Unity 2020.2</a></p>
+<p>过程非常详细，可作为 URP 管线室内场景光源烘培的典型参考，里面也提到了如何将 Build-In 管线的素材转为 URP管线(<em>注意</em>：这个操作是不可逆的,建议在更换渲染管线之前进行备份)</p>
+<p>油管的字幕自动翻译过于诡异的话b站也有好心up搬运并附带双语字幕版<a href="https://www.bilibili.com/video/BV1NJcuzsEdg/"  class="external-link" target="_blank" rel="noopener">Unity室内烘焙URP管线</a></p>
+<p>基本流程：</p>
+<p>1，修改场景中默认的光线影响，如有必要可以去掉天空盒的光源</p>
+<p>2，增加必要的光源，比如场景内的灯光/窗户外面的光(即使已经有了 Directional Light 也最好增加，让效果看起来好一些)等</p>
+<p>3，增加反射探针，包裹整个场景(没有反射探针的话，烘焙的效果会显得比较奇怪)</p>
+<p>4，可以先调低各项烘焙参数查看大致的烘焙效果，确定后再调至高参数烘焙</p>
+<p>5，烘焙结束后，可适当增加后处理效果提升画面效果</p>
+<p>几个重要的点：</p>
+<p>1，每次重新烘焙的时候一定要把上一次烘焙的数据清除</p>
+<p>2，烘培室内场景中使用反射指针需要开启 Box Projection 选项，同时反射指针要包含整个场景</p>
+<p>3，部分屏幕/电视/玻璃等可以反射些许画面的这种物体需要反射探针和材质配合使用就可以实现，build-in 管线和 URP 管线中实现方式会有所不同</p>
+<p>4，反射探针的默认 Type 类型是 Baked，如果想要实时查看探针的反射效果需要修改为 RealTime，如果需要自定义反射贴图可选择 Custom</p>
+<p>5，反射探针的 Box Size 框住的部分代表着反射区域，如果特定区域反射的内容不太一样建议使用多个反射探针用来控制不同区域的反射</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2026
+     NonoNoe 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
