@@ -18,13 +18,20 @@
   
   
     简介
-    No.1 认识 Unity 中的四种光源
+    No.1 基础概念-认识 Unity 中的四种光源
       
         四种光源的大致选择
         光源的参数调整
       
     
-    No.2 LightMap 光照贴图
+    No.2 基础概念-Material材质和Shader渲染算法
+      
+        Rendering Mode
+        Main Maps
+      
+    
+    No.3 光照探针和反射探针
+    No.4 LightMap 光照贴图
   
 
 
@@ -47,12 +54,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Unity场景烘焙个人总结">
-  <meta name="twitter:description" content="目录简介 No.1 认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 LightMap 光照贴图 ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+  <meta name="twitter:description" content="目录简介 No.1 基础概念-认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 基础概念-Material材质和Shader渲染算法 Rendering Mode Main Maps No.3 光照探针和反射探针 No.4 LightMap 光照贴图 ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/unity%E5%9C%BA%E6%99%AF%E7%83%98%E7%84%99%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Unity场景烘焙个人总结">
-  <meta property="og:description" content="目录简介 No.1 认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 LightMap 光照贴图 ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+  <meta property="og:description" content="目录简介 No.1 基础概念-认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 基础概念-Material材质和Shader渲染算法 Rendering Mode Main Maps No.3 光照探针和反射探针 No.4 LightMap 光照贴图 ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -206,7 +213,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：3 分钟
+              阅读时间：6 分钟
             </span>
           </div>
           <div class="authors">
@@ -226,13 +233,20 @@
   <nav id="TableOfContents">
   <ul>
     <li><a href="#简介">简介</a></li>
-    <li><a href="#no1-认识-unity-中的四种光源">No.1 认识 Unity 中的四种光源</a>
+    <li><a href="#no1-基础概念-认识-unity-中的四种光源">No.1 基础概念-认识 Unity 中的四种光源</a>
       <ul>
         <li><a href="#四种光源的大致选择">四种光源的大致选择</a></li>
         <li><a href="#光源的参数调整">光源的参数调整</a></li>
       </ul>
     </li>
-    <li><a href="#no2-lightmap-光照贴图">No.2 LightMap 光照贴图</a></li>
+    <li><a href="#no2-基础概念-material材质和shader渲染算法">No.2 基础概念-Material材质和Shader渲染算法</a>
+      <ul>
+        <li><a href="#rendering-mode">Rendering Mode</a></li>
+        <li><a href="#main-maps">Main Maps</a></li>
+      </ul>
+    </li>
+    <li><a href="#no3-光照探针和反射探针">No.3 光照探针和反射探针</a></li>
+    <li><a href="#no4-lightmap-光照贴图">No.4 LightMap 光照贴图</a></li>
   </ul>
 </nav>
 </div>
@@ -293,9 +307,9 @@
   </a>
 </h2>
 <p>总结一下 Unity 烘焙的基本流程操作和相关基础概念</p>
-<h2 id="no1-认识-unity-中的四种光源">
-  No.1 认识 Unity 中的四种光源
-  <a class="heading-link" href="#no1-%e8%ae%a4%e8%af%86-unity-%e4%b8%ad%e7%9a%84%e5%9b%9b%e7%a7%8d%e5%85%89%e6%ba%90">
+<h2 id="no1-基础概念-认识-unity-中的四种光源">
+  No.1 基础概念-认识 Unity 中的四种光源
+  <a class="heading-link" href="#no1-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5-%e8%ae%a4%e8%af%86-unity-%e4%b8%ad%e7%9a%84%e5%9b%9b%e7%a7%8d%e5%85%89%e6%ba%90">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -355,18 +369,74 @@
 <p>Mode：RealTime/Baked/Mixed</p>
 <p>Emission 中可以通过调整 Light Appearance (Color/Filter and Temperature)</p>
 <p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightInspector_20260304.png" alt="Directional Light 参数参考"></p>
-<h2 id="no2-lightmap-光照贴图">
-  No.2 LightMap 光照贴图
-  <a class="heading-link" href="#no2-lightmap-%e5%85%89%e7%85%a7%e8%b4%b4%e5%9b%be">
+<h2 id="no2-基础概念-material材质和shader渲染算法">
+  No.2 基础概念-Material材质和Shader渲染算法
+  <a class="heading-link" href="#no2-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5-material%e6%9d%90%e8%b4%a8%e5%92%8cshader%e6%b8%b2%e6%9f%93%e7%ae%97%e6%b3%95">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
-<p>使用 light map 可以生成光照贴图，该贴图数据不会直接修改物体原本的材质，而是会在运行时叠加在材质上</p>
+<p>这里先介绍一些比较常用的参数，先来看一下选择了对应材质后的 Inspector 面板：</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_Material%26Shader_20260305.png" alt="Material面板"></p>
+<p>在 build-in 管线中的 3d 模型导入后默认都是采用 Standard (标准着色器) Shader</p>
+<h3 id="rendering-mode">
+  Rendering Mode
+  <a class="heading-link" href="#rendering-mode">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>此处以 build-in 管线中的材质的 Rendering Mode 为例 (在 URP 管线中略有不同)</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_MaterialRenderingMode_20260305.png" alt="Rendering Mode"></p>
+<p>Rendering Mode 默认为 Opaque (不透明)，官方文档中的解释是适用于没有透明区域的普通固体</p>
+<p>Cutout (裁切丢弃) 会根据 Cutout Threshold 阈值来判断哪些像素应该是透明的，小于阈值的部分不会被渲染，会被直接裁切丢弃，适合用于制作类似于树叶/草丛之类的需要硬镂空的场景，另外几种渲染模式中，alpha=0 的部分仍然会照常参与渲染，同时这部分的深度也不会被写进深度缓冲</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_RenderingModeCutout_20260305.png" alt="Cutout"></p>
+<p>顺带一提，在 URP 管线中，材质里不再有 Cutout 的选项了，但是可以使用 Alpha Clipping 代替的样子</p>
+<hr>
+<p>这里先引入一下深度的概念：深度 (depth) 表示像素距离相机的远近，是全局遮挡系统，深度缓冲 (Z-buffer) 主要判断物体之间的遮挡关系，用于记录深度值，深度测试是用于决定当前物体是否会被绘制，它通过比较当前片元深度和深度缓冲已记录值来决定片元是否通过，通过后再进行深度写入，深度写入决定绘制后会不会遮挡其他物体。不透明物体 (opaque) 通常需要写入深度，这样才能正确判断其遮挡关系；镂空 (Cutout) 的情况需要根据阈值具体判断，被保留的像素等同于不透明物体需要写入深度，被丢弃的像素则不写；半透明或透明材质 (Fade/Transparent) 通常测试深度之后不会写入深度</p>
+<p>在 Unity 中应该是最后绘制透明物体，如果这个时候不采用 Cutout 模式进行渲染，Fade 和 Transparent 模式不管遇到的是需要镂空还是不需要镂空的部分都不会记录深度，这样就会在绘制时造成一些穿插的问题，再细讲会延伸到计算机图形学的部分便暂时不做另外的展开</p>
+<hr>
+<p>下面两种模式通常用于处理带透明效果(但不需要镂空)的物体</p>
+<p>Fade (淡入淡出) 会让整个材质一起淡入淡出，包括高光和反射，通常用在需要让整个物体隐身/幽灵之类的效果上</p>
+<p>Transparent (透明) 适用于有透明效果的物体，会保留高光和反射效果，适用于玻璃/塑料等透明但需要保留反射效果的物体</p>
+<h3 id="main-maps">
+  Main Maps
+  <a class="heading-link" href="#main-maps">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>Albedo (反照率) 控制材质的底色和透明度，可以设置纹理</p>
+<p>Metallic (金属率) 控制材质的金属度，值越大，该物体的漫反射越明显，同时反照率颜色将越模糊，通常采用接近0或者1的值</p>
+<p>Smoothness (平滑度) 控制材质的光滑程度表现，参数值越高物体的镜面反射越明显</p>
+<hr>
+<p><em>补充</em>：</p>
+<p>漫反射 (Diffuse) 使入射光向各方向进行散射，比如像黑板就是漫反射强镜面反射弱</p>
+<p>镜面反射 (Specular Reflection) 入射光反弹更有方向性，主要体现在高光/环境倒影等上面，像金属球/电子屏幕之类的就是镜面反射强漫反射弱</p>
+<hr>
+<p>Normal Map (法线贴图) 可以为物体增加凹凸表面细节</p>
+<h2 id="no3-光照探针和反射探针">
+  No.3 光照探针和反射探针
+  <a class="heading-link" href="#no3-%e5%85%89%e7%85%a7%e6%8e%a2%e9%92%88%e5%92%8c%e5%8f%8d%e5%b0%84%e6%8e%a2%e9%92%88">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Light Probe (光照探针) 主要适用于表现动态物体受到的光照影响，使用这个方法可以替代实时光照从而减小开销，使得动态物体能受到静态光的影响</p>
+<p>关于光照探针推荐教程<a href="https://www.youtube.com/watch?v=_E0JXOZDTKA"  class="external-link" target="_blank" rel="noopener">HIGH QUALITY LIGHTING using Light Probes - Unity Tutorial</a></p>
+<p>Reflection Probe (反射探针) 最主要用于在开销不会很大的同时模拟比较好的反射效果，一个场景内也可以根据情况放置多个反射探针从而对不同物体实现不同的反射，反射探针也可以选择实时表现/烘焙后才能表现/自定义的模式。反射探针中的重要参数：Box Projection 会使当前探针根据盒体范围做视差修正，也就是仅对这个盒体内部做反射，所以一般来讲，在烘焙室内场景的时候需要勾选并将整个室内场景包裹在盒体内，这样就能得到较好的效果(不过有些情况似乎也会在室外场景开启 Box Projection，视情况决定吧，我还没这么烘焙过室外场景暂不做展开，但不得不说这个在作用于室内场景的屏幕或者玻璃等反射较强的物体上时效果很好)</p>
+<h2 id="no4-lightmap-光照贴图">
+  No.4 LightMap 光照贴图
+  <a class="heading-link" href="#no4-lightmap-%e5%85%89%e7%85%a7%e8%b4%b4%e5%9b%be">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>使用 light map 可以生成光照贴图，该贴图数据不会直接修改物体原本的材质，而是会在运行时叠加在材质上，这样可以减少静态场景的实时光照开销</p>
 <p>Lighting 设置相关参数：</p>
 <p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightingSettings1_20260304.png" alt="Scene相关参数"></p>
 <p>第一次打开项目的 Lighting 界面时要先在 Lighting Settings 中点击新建一个 Lighting Settings Asset 才能进行其余 Scene 参数的配置</p>
-<p>Realtime Lighting 仅在有光源是 Realtime 模式时</p>
+<p>Realtime Lighting 仅在有光源是 Realtime 模式时才有作用</p>
 <p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightSettings2.png" alt="Scene相关参数2"></p>
 <p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightSettings3_20260304.png" alt="Environment相关参数"></p>
 <p>Realtime Lightmaps 和Baked Lightmaps 中可以查看对应模式的贴图</p>
@@ -380,8 +450,8 @@
 <p>4，可以先调低各项烘焙参数查看大致的烘焙效果，确定后再调至高参数烘焙</p>
 <p>5，烘焙结束后，可适当增加后处理效果提升画面效果</p>
 <p>几个重要的点：</p>
-<p>1，每次重新烘焙的时候一定要把上一次烘焙的数据清除</p>
-<p>2，烘培室内场景中使用反射指针需要开启 Box Projection 选项，同时反射指针要包含整个场景</p>
+<p>1，每次重新烘焙的时候一定要把上一次烘焙的数据清除，以免上一次烘焙的效果影响本次烘焙</p>
+<p>2，烘焙室内场景中使用反射指针需要开启 Box Projection 选项，，同时反射指针要包含整个场景。Box Projection 这个选项主要是增加&quot;视差修正&quot;，也就是在观察位置变化时反射内容也会变化，这样对于室内场景的表现更加真实</p>
 <p>3，部分屏幕/电视/玻璃等可以反射些许画面的这种物体需要反射探针和材质配合使用就可以实现，build-in 管线和 URP 管线中实现方式会有所不同</p>
 <p>4，反射探针的默认 Type 类型是 Baked，如果想要实时查看探针的反射效果需要修改为 RealTime，如果需要自定义反射贴图可选择 Custom</p>
 <p>5，反射探针的 Box Size 框住的部分代表着反射区域，如果特定区域反射的内容不太一样建议使用多个反射探针用来控制不同区域的反射</p>
