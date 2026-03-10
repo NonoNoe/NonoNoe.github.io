@@ -24,14 +24,17 @@
         光源的参数调整
       
     
-    No.2 基础概念-Material材质和Shader渲染算法
+    No.2 基础概念-渲染管线
+    No.3 基础概念-Material材质和Shader渲染算法
       
         Rendering Mode
-        Main Maps
+        Main Maps 部分常用参数
+        Secondary Maps 次级贴图
       
     
-    No.3 光照探针和反射探针
-    No.4 LightMap 光照贴图
+    No.4 光照探针和反射探针
+    No.5 LightMap 光照贴图
+    No.6 插件 Bakery Lightmapper
   
 
 
@@ -54,12 +57,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Unity场景烘焙个人总结">
-  <meta name="twitter:description" content="目录简介 No.1 基础概念-认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 基础概念-Material材质和Shader渲染算法 Rendering Mode Main Maps No.3 光照探针和反射探针 No.4 LightMap 光照贴图 ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+  <meta name="twitter:description" content="目录简介 No.1 基础概念-认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 基础概念-渲染管线 No.3 基础概念-Material材质和Shader渲染算法 Rendering Mode Main Maps 部分常用参数 Secondary Maps 次级贴图 No.4 光照探针和反射探针 No.5 LightMap 光照贴图 No.6 插件 Bakery Lightmapper ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/unity%E5%9C%BA%E6%99%AF%E7%83%98%E7%84%99%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="Unity场景烘焙个人总结">
-  <meta property="og:description" content="目录简介 No.1 基础概念-认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 基础概念-Material材质和Shader渲染算法 Rendering Mode Main Maps No.3 光照探针和反射探针 No.4 LightMap 光照贴图 ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+  <meta property="og:description" content="目录简介 No.1 基础概念-认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 基础概念-渲染管线 No.3 基础概念-Material材质和Shader渲染算法 Rendering Mode Main Maps 部分常用参数 Secondary Maps 次级贴图 No.4 光照探针和反射探针 No.5 LightMap 光照贴图 No.6 插件 Bakery Lightmapper ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -213,7 +216,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：6 分钟
+              阅读时间：7 分钟
             </span>
           </div>
           <div class="authors">
@@ -239,14 +242,17 @@
         <li><a href="#光源的参数调整">光源的参数调整</a></li>
       </ul>
     </li>
-    <li><a href="#no2-基础概念-material材质和shader渲染算法">No.2 基础概念-Material材质和Shader渲染算法</a>
+    <li><a href="#no2-基础概念-渲染管线">No.2 基础概念-渲染管线</a></li>
+    <li><a href="#no3-基础概念-material材质和shader渲染算法">No.3 基础概念-Material材质和Shader渲染算法</a>
       <ul>
         <li><a href="#rendering-mode">Rendering Mode</a></li>
-        <li><a href="#main-maps">Main Maps</a></li>
+        <li><a href="#main-maps-部分常用参数">Main Maps 部分常用参数</a></li>
+        <li><a href="#secondary-maps-次级贴图">Secondary Maps 次级贴图</a></li>
       </ul>
     </li>
-    <li><a href="#no3-光照探针和反射探针">No.3 光照探针和反射探针</a></li>
-    <li><a href="#no4-lightmap-光照贴图">No.4 LightMap 光照贴图</a></li>
+    <li><a href="#no4-光照探针和反射探针">No.4 光照探针和反射探针</a></li>
+    <li><a href="#no5-lightmap-光照贴图">No.5 LightMap 光照贴图</a></li>
+    <li><a href="#no6-插件-bakery-lightmapper">No.6 插件 Bakery Lightmapper</a></li>
   </ul>
 </nav>
 </div>
@@ -346,7 +352,7 @@
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
-<p>点光源</p>
+<p>顾名思义点光源</p>
 <h4 id="area-light">
   Area Light
   <a class="heading-link" href="#area-light">
@@ -354,7 +360,7 @@
     <span class="sr-only">链接到标题</span>
   </a>
 </h4>
-<p>一整个区域都会发光，发光方向为蓝色的轴，点击 Area Light 光源查看的时候也会有一个蓝色线条指向发光方向，通常在大屏幕/窗户等物体上面使用</p>
+<p>一整个区域都会发光，发光方向为蓝色的轴，点击 Area Light 光源查看的时候也会有一个蓝色线条指向发光方向，通常在大屏幕/窗户等物体上面使用, Area Light 仅能在 Baked 后显示</p>
 <p><em>注意</em>：Area Light 只会朝一个方向发光，背对的地方是不会发光的</p>
 <h3 id="光源的参数调整">
   光源的参数调整
@@ -369,9 +375,19 @@
 <p>Mode：RealTime/Baked/Mixed</p>
 <p>Emission 中可以通过调整 Light Appearance (Color/Filter and Temperature)</p>
 <p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightInspector_20260304.png" alt="Directional Light 参数参考"></p>
-<h2 id="no2-基础概念-material材质和shader渲染算法">
-  No.2 基础概念-Material材质和Shader渲染算法
-  <a class="heading-link" href="#no2-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5-material%e6%9d%90%e8%b4%a8%e5%92%8cshader%e6%b8%b2%e6%9f%93%e7%ae%97%e6%b3%95">
+<h2 id="no2-基础概念-渲染管线">
+  No.2 基础概念-渲染管线
+  <a class="heading-link" href="#no2-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5-%e6%b8%b2%e6%9f%93%e7%ae%a1%e7%ba%bf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>渲染管线简单来说就是把各种图形处理后输出到屏幕上显示的过程</p>
+<p>Unity 内置的渲染管线有三种：Build-in (默认渲染管线，功能齐全但无法脚本化渲染流程) ， URP (性能较好同时可脚本化)， HDRP (可脚本化，通常用于高端硬件显示高清高保真图像)</p>
+<p>Build-in 管线可以通过插件 Universal RP (PackageManager 中可以直接搜索到安装) 将项目中的材质等全部转为 URP 管线可用的材质，但是这是一个不可逆的步骤，建议备份</p>
+<h2 id="no3-基础概念-material材质和shader渲染算法">
+  No.3 基础概念-Material材质和Shader渲染算法
+  <a class="heading-link" href="#no3-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5-material%e6%9d%90%e8%b4%a8%e5%92%8cshader%e6%b8%b2%e6%9f%93%e7%ae%97%e6%b3%95">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -399,9 +415,9 @@
 <p>下面两种模式通常用于处理带透明效果(但不需要镂空)的物体</p>
 <p>Fade (淡入淡出) 会让整个材质一起淡入淡出，包括高光和反射，通常用在需要让整个物体隐身/幽灵之类的效果上</p>
 <p>Transparent (透明) 适用于有透明效果的物体，会保留高光和反射效果，适用于玻璃/塑料等透明但需要保留反射效果的物体</p>
-<h3 id="main-maps">
-  Main Maps
-  <a class="heading-link" href="#main-maps">
+<h3 id="main-maps-部分常用参数">
+  Main Maps 部分常用参数
+  <a class="heading-link" href="#main-maps-%e9%83%a8%e5%88%86%e5%b8%b8%e7%94%a8%e5%8f%82%e6%95%b0">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -409,15 +425,24 @@
 <p>Albedo (反照率) 控制材质的底色和透明度，可以设置纹理</p>
 <p>Metallic (金属率) 控制材质的金属度，值越大，该物体的漫反射越明显，同时反照率颜色将越模糊，通常采用接近0或者1的值</p>
 <p>Smoothness (平滑度) 控制材质的光滑程度表现，参数值越高物体的镜面反射越明显</p>
+<h3 id="secondary-maps-次级贴图">
+  Secondary Maps 次级贴图
+  <a class="heading-link" href="#secondary-maps-%e6%ac%a1%e7%ba%a7%e8%b4%b4%e5%9b%be">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>次级贴图似乎会用于性能优化和增加细节上，暂不做展开</p>
 <hr>
 <p><em>补充</em>：</p>
 <p>漫反射 (Diffuse) 使入射光向各方向进行散射，比如像黑板就是漫反射强镜面反射弱</p>
 <p>镜面反射 (Specular Reflection) 入射光反弹更有方向性，主要体现在高光/环境倒影等上面，像金属球/电子屏幕之类的就是镜面反射强漫反射弱</p>
 <hr>
-<p>Normal Map (法线贴图) 可以为物体增加凹凸表面细节</p>
-<h2 id="no3-光照探针和反射探针">
-  No.3 光照探针和反射探针
-  <a class="heading-link" href="#no3-%e5%85%89%e7%85%a7%e6%8e%a2%e9%92%88%e5%92%8c%e5%8f%8d%e5%b0%84%e6%8e%a2%e9%92%88">
+<p>Normal Map (法线贴图) 可以为物体增加凹凸表面细节，用来存储每个高度面的朝向</p>
+<p>Height Map (高度贴图) 存储每个点的高度</p>
+<h2 id="no4-光照探针和反射探针">
+  No.4 光照探针和反射探针
+  <a class="heading-link" href="#no4-%e5%85%89%e7%85%a7%e6%8e%a2%e9%92%88%e5%92%8c%e5%8f%8d%e5%b0%84%e6%8e%a2%e9%92%88">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -425,9 +450,9 @@
 <p>Light Probe (光照探针) 主要适用于表现动态物体受到的光照影响，使用这个方法可以替代实时光照从而减小开销，使得动态物体能受到静态光的影响</p>
 <p>关于光照探针推荐教程<a href="https://www.youtube.com/watch?v=_E0JXOZDTKA"  class="external-link" target="_blank" rel="noopener">HIGH QUALITY LIGHTING using Light Probes - Unity Tutorial</a></p>
 <p>Reflection Probe (反射探针) 最主要用于在开销不会很大的同时模拟比较好的反射效果，一个场景内也可以根据情况放置多个反射探针从而对不同物体实现不同的反射，反射探针也可以选择实时表现/烘焙后才能表现/自定义的模式。反射探针中的重要参数：Box Projection 会使当前探针根据盒体范围做视差修正，也就是仅对这个盒体内部做反射，所以一般来讲，在烘焙室内场景的时候需要勾选并将整个室内场景包裹在盒体内，这样就能得到较好的效果(不过有些情况似乎也会在室外场景开启 Box Projection，视情况决定吧，我还没这么烘焙过室外场景暂不做展开，但不得不说这个在作用于室内场景的屏幕或者玻璃等反射较强的物体上时效果很好)</p>
-<h2 id="no4-lightmap-光照贴图">
-  No.4 LightMap 光照贴图
-  <a class="heading-link" href="#no4-lightmap-%e5%85%89%e7%85%a7%e8%b4%b4%e5%9b%be">
+<h2 id="no5-lightmap-光照贴图">
+  No.5 LightMap 光照贴图
+  <a class="heading-link" href="#no5-lightmap-%e5%85%89%e7%85%a7%e8%b4%b4%e5%9b%be">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
@@ -455,6 +480,17 @@
 <p>3，部分屏幕/电视/玻璃等可以反射些许画面的这种物体需要反射探针和材质配合使用就可以实现，build-in 管线和 URP 管线中实现方式会有所不同</p>
 <p>4，反射探针的默认 Type 类型是 Baked，如果想要实时查看探针的反射效果需要修改为 RealTime，如果需要自定义反射贴图可选择 Custom</p>
 <p>5，反射探针的 Box Size 框住的部分代表着反射区域，如果特定区域反射的内容不太一样建议使用多个反射探针用来控制不同区域的反射</p>
+<h2 id="no6-插件-bakery-lightmapper">
+  No.6 插件 Bakery Lightmapper
+  <a class="heading-link" href="#no6-%e6%8f%92%e4%bb%b6-bakery-lightmapper">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Bakery Lightmapper 可以显著地提升烘焙灯光的速度(据说)</p>
+<p><a href="https://geom.io/bakery/wiki/index.php?title=%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"  class="external-link" target="_blank" rel="noopener">官方使用手册中文版</a></p>
+<p><em>注意</em>：经过测试，1.96 的插件版本由于使用的是 OptiX 6.0.0，同时官方使用手册中提及了需要使用Game-Ready（标准）驱动程序，而 NVIDIA 驱动程序从 R590 分支开始就去除了对 OptiX 6.0.0 的支持，也就是说，驱动程序版本号在 59x 的就无法使用 1.96 版本的插件了</p>
+<p>目前简单总结的使用方法(由于我当前的设备无法使用插件，未能实际测试，因此该总结可能有误)：在场景内的所有灯光上添加对应的脚本并导入灯光数据(比如 Directional Light 需要添加 Bakery Direction Light ，Area Light 需要添加 Bakery Light Mesh 等)，之后在菜单栏中选择 Bakery 选项设置对应数据后烘培即可</p>
 
       </div>
 
