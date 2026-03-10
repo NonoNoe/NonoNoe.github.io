@@ -510,14 +510,12 @@ print(&quot;Hello, World!&quot;);
 <p>以下为本篇文章在终端中输入 <ins> Hugo new posts/Hugo 文章写作指南.md </ins> 时自动生成的文章参数</p>
 <p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//HugoArticlePreference.png" alt="参数参考"></p>
 <hr>
-<p><strong>draft = true</strong> 文章是否为草稿状态</p>
+<p><strong>draft = true</strong> <em>文章是否为草稿状态</em></p>
 <ul>
 <li>
 <p>true：草稿，Hugo 默认不会生成/发布</p>
 <ul>
-<li>然而实际测试时，draft 为 true 文章也正常发布了，待进一步测试中……</li>
-<li>2026.3.9 补充：上文中提及的草稿被一并发布的原因是使用了 hugo -D 命令来构建内容，这段的意思是构建时包含草稿，如果使用 hugo 命令就不会构建草稿，忘记更新这段了……</li>
-<li>顺便一提， hugo server -D 就是本地预览(带草稿), hugo server 是不带草稿的预览</li>
+<li><em>然而实际测试时，draft 为 true 文章也正常发布了，待进一步测试中……</em></li>
 </ul>
 </li>
 <li>
@@ -525,7 +523,7 @@ print(&quot;Hello, World!&quot;);
 </li>
 </ul>
 <hr>
-<p><strong>date = 2025-04-08T20:09:27+08:00</strong> 文章创建/发布时间</p>
+<p><strong>date = 2025-04-08T20:09:27+08:00</strong> <em>文章创建/发布时间</em></p>
 <p>ps：本篇文章的时间在测试时被修改过</p>
 <ul>
 <li>
@@ -539,12 +537,12 @@ print(&quot;Hello, World!&quot;);
 </li>
 </ul>
 <hr>
-<p><strong>title = &ldquo;Hugo 文章写作指南&rdquo;</strong> 文章标题（支持特殊字符和中文）</p>
+<p><strong>title = &ldquo;Hugo 文章写作指南&rdquo;</strong> <em>文章标题（支持特殊字符和中文）</em></p>
 <ul>
 <li>会显示为文章页标题</li>
 </ul>
 <hr>
-<p><strong>slug = &ldquo;1&rdquo;</strong> _自定义 URL 路径</p>
+<p><strong>slug = &ldquo;1&rdquo;</strong> <em>自定义 URL 路径</em></p>
 <ul>
 <li>
 <p>留空时 Hugo 会从 title 自动生成</p>
@@ -559,7 +557,7 @@ print(&quot;Hello, World!&quot;);
 </li>
 </ul>
 <hr>
-<p><strong>authors = [&ldquo;NonoNoe&rdquo;]</strong> 作者列表（数组格式</p>
+<p><strong>authors = [&ldquo;NonoNoe&rdquo;]</strong> <em>作者列表（数组格式）</em></p>
 <ul>
 <li>
 <p>需要与 config 中定义的作者标识匹配</p>
@@ -570,7 +568,7 @@ print(&quot;Hello, World!&quot;);
 </ul>
 <p><ins>因为作者列表是数组格式，数组格式中的字符串一定要记得加引号，否则会报错</ins></p>
 <hr>
-<p><strong>tags = [&ldquo;Hugo&rdquo;]</strong> 标签(同为数组格式)</p>
+<p><strong>tags = [&ldquo;Hugo&rdquo;]</strong> <em>标签(同为数组格式)</em></p>
 <ul>
 <li>
 <p>用于内容分类</p>
@@ -581,7 +579,7 @@ print(&quot;Hello, World!&quot;);
 </ul>
 <p><ins>如果里面需要填写中文字符串，也要记得加引号</ins></p>
 <hr>
-<p><strong>categories = []</strong> 分类目录（数组格式）</p>
+<p><strong>categories = []</strong> <em>分类目录（数组格式）</em></p>
 <ul>
 <li>
 <p>比 tags 更宽泛的分类</p>
@@ -591,7 +589,7 @@ print(&quot;Hello, World!&quot;);
 </li>
 </ul>
 <hr>
-<p><strong>externalLink = &ldquo;&rdquo;</strong> 外部链接（跳转 URL 用）</p>
+<p><strong>externalLink = &ldquo;&rdquo;</strong> <em>外部链接（跳转 URL 用）</em></p>
 <ul>
 <li>
 <p>设置后文章会直接跳转到指定链接</p>
@@ -601,7 +599,7 @@ print(&quot;Hello, World!&quot;);
 </li>
 </ul>
 <hr>
-<p><strong>series = []</strong> 系列文章分组</p>
+<p><strong>series = []</strong> <em>系列文章分组</em></p>
 <ul>
 <li>
 <p>用于关联多篇系列文章</p>
