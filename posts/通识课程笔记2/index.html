@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  通识课程笔记 · NonoNoe
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="NonoNoe">
+<meta name="description" content="
+  目录
+  
+  
+    1 Unity 生命周期
+    2 DeltaTime 增量时间详解
+    3 射线检测
+    4 Camera
+    5 C# 变量
+  
+
+
+↑ 返回顶部
+
+
+
+
+
+  1 Unity 生命周期
+  
+    
+    链接到标题
+  
+
+Camera 逻辑一般放到 LateUpdate 里面， 物理计算通常在 FixedUpdate 中， Update 每帧处理游戏逻辑">
+<meta name="keywords" content="blog,desenvolvedor,pessoal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="通识课程笔记">
+  <meta name="twitter:description" content="目录1 Unity 生命周期 2 DeltaTime 增量时间详解 3 射线检测 4 Camera 5 C# 变量 ↑ 返回顶部1 Unity 生命周期 链接到标题 Camera 逻辑一般放到 LateUpdate 里面， 物理计算通常在 FixedUpdate 中， Update 每帧处理游戏逻辑">
+
+<meta property="og:url" content="http://localhost:1313/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
+  <meta property="og:site_name" content="NonoNoe">
+  <meta property="og:title" content="通识课程笔记">
+  <meta property="og:description" content="目录1 Unity 生命周期 2 DeltaTime 增量时间详解 3 射线检测 4 Camera 5 C# 变量 ↑ 返回顶部1 Unity 生命周期 链接到标题 Camera 逻辑一般放到 LateUpdate 里面， 物理计算通常在 FixedUpdate 中， Update 每帧处理游戏逻辑">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-27T10:37:27+08:00">
+    <meta property="article:modified_time" content="2025-05-27T10:37:27+08:00">
+    <meta property="article:tag" content="Unity">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      NonoNoe
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">博客</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">项目</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">联系我</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/en/">ENGLISH</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/%E9%80%9A%E8%AF%86%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B02/">
+              通识课程笔记
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-05-27T10:37:27&#43;08:00">
+                May 27, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：2 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/nononoe/">NonoNoe</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/unity/">Unity</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/unity/">Unity</a>
+    </span></div>
+
+          <div class="series">
+ <i class="fa-solid fa-archive" aria-hidden="true"></i>
+       <a href="/series/%E6%B8%B8%E6%88%8F%E9%80%9A%E8%AF%86/">游戏通识</a></div>
+  
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-unity-生命周期">1 Unity 生命周期</a></li>
+    <li><a href="#2-deltatime-增量时间详解">2 DeltaTime 增量时间详解</a></li>
+    <li><a href="#3-射线检测">3 射线检测</a></li>
+    <li><a href="#4-camera">4 Camera</a></li>
+    <li><a href="#5-c-变量">5 C# 变量</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
+
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
+
+   
+  .back-to-top.show {
+    display: block;
+  }
+</style>
+
+<script>
+  
+  const btn = document.querySelector('.back-to-top');
+
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
+<h2 id="1-unity-生命周期">
+  1 Unity 生命周期
+  <a class="heading-link" href="#1-unity-%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Camera 逻辑一般放到 LateUpdate 里面， 物理计算通常在 FixedUpdate 中， Update 每帧处理游戏逻辑</p>
+<h2 id="2-deltatime-增量时间详解">
+  2 DeltaTime 增量时间详解
+  <a class="heading-link" href="#2-deltatime-%e5%a2%9e%e9%87%8f%e6%97%b6%e9%97%b4%e8%af%a6%e8%a7%a3">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>建议参考：
+<a href="https://blog.csdn.net/ChinarCSDN/article/details/82914420"  class="external-link" target="_blank" rel="noopener">Unity 增量时间 Time.deltaTime 详解</a></p>
+<p>省流版：无论当前帧率是多少，乘以增量时间能让每一帧的计算结果相同</p>
+<h2 id="3-射线检测">
+  3 射线检测
+  <a class="heading-link" href="#3-%e5%b0%84%e7%ba%bf%e6%a3%80%e6%b5%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h2 id="4-camera">
+  4 Camera
+  <a class="heading-link" href="#4-camera">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>切换角度&gt;30° 时会被认为是换了一个分镜</p>
+<p>第一人称的枪+手臂是单独用一个相机渲染了一层，也就是说，场景内有两个相机，另一个是负责在玩家眼睛部位观察世界的</p>
+<p>Clear flag 清除标记(unity 官网解释: Determines which parts of the screen will be cleared. This is handy when using multiple Cameras to draw different game elements. )</p>
+<p>Skybox 代表会在场景空白部分渲染一个天空盒背景(默认显示)</p>
+<p>Solid Color 渲染纯色背景</p>
+<p>Depth only 代表当前摄像机渲染层级在所有层级之上，通常用于保持当前对象不被裁剪</p>
+<p>Don&rsquo;t Clear 不清除颜色和深度缓冲区</p>
+<h2 id="5-c-变量">
+  5 C# 变量
+  <a class="heading-link" href="#5-c-%e5%8f%98%e9%87%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>参考:<a href="https://www.bilibili.com/video/BV1Pa411G7ss/"  class="external-link" target="_blank" rel="noopener">【Unity 教学】C# 内存管理 Value Type 与 Reference Type</a></p>
+<p>C# 变量可以分为三种：值类型(Value Type)，引用类型(Reference Type)，指针类型(Pointer Type)</p>
+<table>
+  <thead>
+      <tr>
+          <th>变量类型</th>
+          <th>Value Type</th>
+          <th>Reference Type</th>
+          <th>Pointer Type (不常用，暂不做讨论)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>变量概念</td>
+          <td>变量存放实际值</td>
+          <td>变量存放记忆体位置</td>
+          <td>/</td>
+      </tr>
+      <tr>
+          <td>变量内容</td>
+          <td>int,float,bool,char,enum,struct</td>
+          <td>String,Array,Class,Interface,Delegate,Object</td>
+          <td>/</td>
+      </tr>
+  </tbody>
+</table>
+<p>每开启一个新的应用程序，系统就会分配一块记忆体空间，用来存储刚刚开启的应用程序，而这个区域同时又会被划分为几个部分</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//20250919105604.png" alt="参考"></p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2026
+     NonoNoe 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
