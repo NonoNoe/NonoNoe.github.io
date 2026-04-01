@@ -23,7 +23,7 @@
     3，Rect Transform
     4，万恶之源 Layout Group 们
     5，Layout Element
-    6,比万恶之源还搞心态的 ScrollView 组件
+    6, 某些情况下比万恶之源还搞心态的 ScrollView 组件
   
 
 
@@ -46,12 +46,12 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="关于unity的UGUI——ui布局及自适应相关问题">
-  <meta name="twitter:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element 6,比万恶之源还搞心态的 ScrollView 组件 ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
+  <meta name="twitter:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element 6, 某些情况下比万恶之源还搞心态的 ScrollView 组件 ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
 
 <meta property="og:url" content="https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="关于unity的UGUI——ui布局及自适应相关问题">
-  <meta property="og:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element 6,比万恶之源还搞心态的 ScrollView 组件 ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
+  <meta property="og:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element 6, 某些情况下比万恶之源还搞心态的 ScrollView 组件 ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -208,7 +208,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              阅读时间：6 分钟
+              阅读时间：7 分钟
             </span>
           </div>
           <div class="authors">
@@ -248,7 +248,7 @@
     <li><a href="#3rect-transform">3，Rect Transform</a></li>
     <li><a href="#4万恶之源-layout-group-们">4，万恶之源 Layout Group 们</a></li>
     <li><a href="#5layout-element">5，Layout Element</a></li>
-    <li><a href="#6比万恶之源还搞心态的-scrollview-组件">6,比万恶之源还搞心态的 ScrollView 组件</a></li>
+    <li><a href="#6-某些情况下比万恶之源还搞心态的-scrollview-组件">6, 某些情况下比万恶之源还搞心态的 ScrollView 组件</a></li>
   </ul>
 </nav>
 </div>
@@ -310,6 +310,7 @@
 </h2>
 <p>之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结</p>
 <p>以及 Unity 官方的 UI 大概是有三种类型：最早期的 IMGUI (通常直接称为 GUI )，本文中会总结的 UGUI (官方文档中称为 Unity UI )，以及最新的 UI 系统 UI Toolkit (2021版本后可使用),它比较贴近于 web 前端</p>
+<p>笔记持续更新中……</p>
 <h2 id="1canvas">
   1，Canvas
   <a class="heading-link" href="#1canvas">
@@ -419,13 +420,16 @@
 <p>Preferred Width/Height 是该元素的理想尺寸</p>
 <p>Flexible Width/Height 是弹性比例，用于分配容器中的剩余空间(比如假设现在容器内有三个元素，有一个弹性比例为1，有一个为2，最后一个为3，那么这三个元素分别得到的空间是容器的1/6,2/6和3/6)，优先级最低</p>
 <p>所以可以看出 Layout Group 分配空间的顺序：先保证元素的最小尺寸，如果有足够空间，给予元素期望尺寸，最后有多余空间时按比例扩展元素</p>
-<h2 id="6比万恶之源还搞心态的-scrollview-组件">
-  6,比万恶之源还搞心态的 ScrollView 组件
-  <a class="heading-link" href="#6%e6%af%94%e4%b8%87%e6%81%b6%e4%b9%8b%e6%ba%90%e8%bf%98%e6%90%9e%e5%bf%83%e6%80%81%e7%9a%84-scrollview-%e7%bb%84%e4%bb%b6">
+<h2 id="6-某些情况下比万恶之源还搞心态的-scrollview-组件">
+  6, 某些情况下比万恶之源还搞心态的 ScrollView 组件
+  <a class="heading-link" href="#6-%e6%9f%90%e4%ba%9b%e6%83%85%e5%86%b5%e4%b8%8b%e6%af%94%e4%b8%87%e6%81%b6%e4%b9%8b%e6%ba%90%e8%bf%98%e6%90%9e%e5%bf%83%e6%80%81%e7%9a%84-scrollview-%e7%bb%84%e4%bb%b6">
     <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
     <span class="sr-only">链接到标题</span>
   </a>
 </h2>
+<p>简而言之这个组件主要用来制作可滚动的窗口，常用于背包系统等功能中，新手使用的时候非常非常<strong>非常</strong>容易出现调整不当导致整个图像显示扭曲为红叉并且撤销也改不回去的现象(个人经验，也可能是我傻哈哈哈。但总之做个记录)</p>
+<p>红叉的问题通常出现在元素被选为拉伸模式的同时，并没有足够的区域供该元素拉伸(类似于长宽都变成负数了无法显示)，从而导致原本的元素只能显示为一个红叉。</p>
+<p>这点在 ScrollView中常出现就是因为：直接右键 Create 创建一个 ScrollView 的时候，里面的 ViewPort/Content/ScrollBar 等元素也一并被创建好了(非常方便但是对于不熟练的新手可能找不到哪里出了问题)，其中以 ScrollBar 为例，里面的部分元素默认向内拉伸，这时如果将其父物体继续缩小，这个元素可能没有足够的位置拉伸，就会导致之前的问题，这个问题撤销也不一定能解决，所以搭建 UI 的过程中一定要注意那些可拉伸的元素的状态</p>
 
       </div>
 
