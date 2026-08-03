@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
   关于unity的UGUI——ui布局及自适应相关问题 · NonoNoe
 </title>
@@ -48,7 +48,7 @@
   <meta name="twitter:title" content="关于unity的UGUI——ui布局及自适应相关问题">
   <meta name="twitter:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element 6, 某些情况下比万恶之源还搞心态的 ScrollView 组件 ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
 
-<meta property="og:url" content="https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+<meta property="og:url" content="http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
   <meta property="og:site_name" content="NonoNoe">
   <meta property="og:title" content="关于unity的UGUI——ui布局及自适应相关问题">
   <meta property="og:description" content="目录0，简介 1，Canvas 2，Canvas Scaler 与 Graphic Raycaster 3，Rect Transform 4，万恶之源 Layout Group 们 5，Layout Element 6, 某些情况下比万恶之源还搞心态的 ScrollView 组件 ↑ 返回顶部0，简介 链接到标题 之前被 Unity 的 UI 布局之类的整得特别崩溃，总之是想写一篇文章稍微总结一下学到的新东西和踩过的一堆坑，就直接从最基础的开始总结">
@@ -59,12 +59,12 @@
     <meta property="article:modified_time" content="2026-02-06T15:12:54+08:00">
     <meta property="article:tag" content="Unity">
     <meta property="article:tag" content="UGUI">
-      <meta property="og:see_also" content="https://NonoNoe.github.io/posts/1/">
+      <meta property="og:see_also" content="http://localhost:1313/posts/1/">
 
 
 
 
-<link rel="canonical" href="https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+<link rel="canonical" href="http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -74,7 +74,7 @@
 
   
   
-  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
 
 
 
@@ -84,7 +84,7 @@
   
     
     
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
   
 
 
@@ -132,7 +132,7 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://NonoNoe.github.io/">
+    <a class="navigation-title" href="http://localhost:1313/">
       NonoNoe
     </a>
     
@@ -193,7 +193,7 @@
       <header>
         <div class="post-title">
           <h1 class="title">
-            <a class="title-link" href="https://NonoNoe.github.io/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+            <a class="title-link" href="http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eunity%E7%9A%84uigi%E5%B8%83%E5%B1%80%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
               关于unity的UGUI——ui布局及自适应相关问题
             </a>
           </h1>
@@ -504,7 +504,7 @@
 
   
   
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/js/coder.js"></script>
   
 
   
