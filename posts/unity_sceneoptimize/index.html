@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <title>
+  Unity3D场景优化 · NonoNoe
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="NonoNoe">
+<meta name="description" content="
+  目录
+  
+  
+    简介
+    0，通过 Profiler 和 Frame Debugger 来分析如何优化
+    1, Static
+      
+        Contribute GI (贡献 GI)
+        Occluder Static (静态遮挡器)
+        Occludee Static (静态遮蔽物)
+        Batching Static (静态合批)
+        Navigation Static (静态导航)
+        
+      
+    
+    2，LOD Group 组件和 Unity Mesh Simplier 插件辅助实现 LOD 效果
+    3,GPU 实例化
+  
+
+
+↑ 返回顶部
+
+
+
+
+
+  简介
+  
+    
+    链接到标题
+  
+
+Unity3D 场景优化学习">
+<meta name="keywords" content="blog,desenvolvedor,pessoal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unity3D场景优化">
+  <meta name="twitter:description" content="目录简介 0，通过 Profiler 和 Frame Debugger 来分析如何优化 1, Static Contribute GI (贡献 GI) Occluder Static (静态遮挡器) Occludee Static (静态遮蔽物) Batching Static (静态合批) Navigation Static (静态导航) 2，LOD Group 组件和 Unity Mesh Simplier 插件辅助实现 LOD 效果 3,GPU 实例化 ↑ 返回顶部简介 链接到标题 Unity3D 场景优化学习">
+
+<meta property="og:url" content="https://NonoNoe.github.io/posts/unity_sceneoptimize/">
+  <meta property="og:site_name" content="NonoNoe">
+  <meta property="og:title" content="Unity3D场景优化">
+  <meta property="og:description" content="目录简介 0，通过 Profiler 和 Frame Debugger 来分析如何优化 1, Static Contribute GI (贡献 GI) Occluder Static (静态遮挡器) Occludee Static (静态遮蔽物) Batching Static (静态合批) Navigation Static (静态导航) 2，LOD Group 组件和 Unity Mesh Simplier 插件辅助实现 LOD 效果 3,GPU 实例化 ↑ 返回顶部简介 链接到标题 Unity3D 场景优化学习">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-17T17:21:30+08:00">
+    <meta property="article:modified_time" content="2026-04-17T17:21:30+08:00">
+
+
+
+
+<link rel="canonical" href="https://NonoNoe.github.io/posts/unity_sceneoptimize/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://NonoNoe.github.io/">
+      NonoNoe
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">博客</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">项目</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">联系我</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/en/">ENGLISH</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://NonoNoe.github.io/posts/unity_sceneoptimize/">
+              Unity3D场景优化
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-04-17T17:21:30&#43;08:00">
+                April 17, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：3 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/nononoe/">NonoNoe</a></div>
+
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#0通过-profiler-和-frame-debugger-来分析如何优化">0，通过 Profiler 和 Frame Debugger 来分析如何优化</a></li>
+    <li><a href="#1-static">1, Static</a>
+      <ul>
+        <li><a href="#contribute-gi-贡献-gi">Contribute GI (贡献 GI)</a></li>
+        <li><a href="#occluder-static-静态遮挡器">Occluder Static (静态遮挡器)</a></li>
+        <li><a href="#occludee-static-静态遮蔽物">Occludee Static (静态遮蔽物)</a></li>
+        <li><a href="#batching-static-静态合批">Batching Static (静态合批)</a></li>
+        <li><a href="#navigation-static-静态导航">Navigation Static (静态导航)</a></li>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#2lod-group-组件和-unity-mesh-simplier-插件辅助实现-lod-效果">2，LOD Group 组件和 Unity Mesh Simplier 插件辅助实现 LOD 效果</a></li>
+    <li><a href="#3gpu-实例化">3,GPU 实例化</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
+
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
+
+   
+  .back-to-top.show {
+    display: block;
+  }
+</style>
+
+<script>
+  
+  const btn = document.querySelector('.back-to-top');
+
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
+<h2 id="简介">
+  简介
+  <a class="heading-link" href="#%e7%ae%80%e4%bb%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Unity3D 场景优化学习</p>
+<h2 id="0通过-profiler-和-frame-debugger-来分析如何优化">
+  0，通过 Profiler 和 Frame Debugger 来分析如何优化
+  <a class="heading-link" href="#0%e9%80%9a%e8%bf%87-profiler-%e5%92%8c-frame-debugger-%e6%9d%a5%e5%88%86%e6%9e%90%e5%a6%82%e4%bd%95%e4%bc%98%e5%8c%96">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h2 id="1-static">
+  1, Static
+  <a class="heading-link" href="#1-static">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>场景中物体的 Inspector 面板中会有一个 Static 选项，它用来标记当前游戏对象是静态的还是动态的，这个选项中还细分了一些选项：</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_StaticOptions_20260417.png" alt="Unity Static 选项"></p>
+<h3 id="contribute-gi-贡献-gi">
+  Contribute GI (贡献 GI)
+  <a class="heading-link" href="#contribute-gi-%e8%b4%a1%e7%8c%ae-gi">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>勾选后可以让该物体的 Mesh Renderer 参与全局光照的烘培计算，通常只有场景启用了 Baked Global Illumination 或者 Realtime Global Illumination 的设置才会起作用</p>
+<h3 id="occluder-static-静态遮挡器">
+  Occluder Static (静态遮挡器)
+  <a class="heading-link" href="#occluder-static-%e9%9d%99%e6%80%81%e9%81%ae%e6%8c%a1%e5%99%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>遮挡剔除效果的一部分，标记后该物体能够遮挡其他的物体</p>
+<h3 id="occludee-static-静态遮蔽物">
+  Occludee Static (静态遮蔽物)
+  <a class="heading-link" href="#occludee-static-%e9%9d%99%e6%80%81%e9%81%ae%e8%94%bd%e7%89%a9">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>遮挡剔除效果的一部分，标记后该物体能被其他物体所遮挡</p>
+<h3 id="batching-static-静态合批">
+  Batching Static (静态合批)
+  <a class="heading-link" href="#batching-static-%e9%9d%99%e6%80%81%e5%90%88%e6%89%b9">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>可以自动合并静态游戏对象的 mesh，通常适用于场景内完全静止的物体</p>
+<p>勾选之前需要注意：如果当前物体自身有对应的动画，而且这个动画会改变物体本身的 Transform 的话，就不能勾选静态合批了，否则会和动画冲突导致报错，如果动画没有修改 Transform 的话似乎能正常使用</p>
+<p>另外，带有透明度的材质(Transparent)本身的渲染顺序和其他的材质(比如 Standard,一般都是从近处开始渲染，但是透明材质是从远处开始渲染的)不同，所以不建议给透明材质勾选静态合批，不然显示效果可能达不到理想状态</p>
+<h3 id="navigation-static-静态导航">
+  Navigation Static (静态导航)
+  <a class="heading-link" href="#navigation-static-%e9%9d%99%e6%80%81%e5%af%bc%e8%88%aa">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>在预计算导航数据时包含游戏对象</p>
+<p>这个选项与Nav导航系统相关，但是新版 Unity 中似乎不再有这个选项(这里是由于用新版本打开了旧项目，所以 Nav 导航系统相关的选项都被保留下来了)</p>
+<h3 id="">
+  
+  <a class="heading-link" href="#">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h2 id="2lod-group-组件和-unity-mesh-simplier-插件辅助实现-lod-效果">
+  2，LOD Group 组件和 Unity Mesh Simplier 插件辅助实现 LOD 效果
+  <a class="heading-link" href="#2lod-group-%e7%bb%84%e4%bb%b6%e5%92%8c-unity-mesh-simplier-%e6%8f%92%e4%bb%b6%e8%be%85%e5%8a%a9%e5%ae%9e%e7%8e%b0-lod-%e6%95%88%e6%9e%9c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>LOD(Levels of Detail) 效果，简单来说就是在不同距离下显示不同精度的模型以减轻 GPU 渲染压力</p>
+<p>Unity 本身就自带 LOD Group 组件用来实现 LOD 效果，只要准备好对应游戏对象的高中低模，就可以实时根据摄像头和物体的距离来切换模型(距离越远精度越低)</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_LODGroup_20260417.png" alt="Unity LOD Group 组件"></p>
+<p>因为这个组件很容易上手就暂时不展开细讲了</p>
+<p>在没有提前准备好对应的高中低模的时候，我们也可以使用一个非常方便的插件来直接在场景内生成 LOD 模型： Unity Mesh Simplier (<a href="https://github.com/Whinarn/UnityMeshSimplifier"  class="external-link" target="_blank" rel="noopener">Github 链接，上面有对应使用文档教程</a>)</p>
+<p>简单使用方法省流：首先给要处理(而且根物体上面要有MeshRenderer)的物体添加 LOD Generator Helper 组件，调整各项参数后点击生成 LODS</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_LODGenerator_20260417.png" alt="LOD Generator Helper 组件"></p>
+<p>使用时要注意：如果生成了 LODS 之后觉得不满意想要重新修改的话，最好先 Destory LODS 再重新在 LOD Generator Helper 中调整参数，如果这时直接在生成的 LODS 里面修改的话似乎会让生成的 LOD 模型和原本的模型重合(?)</p>
+<h2 id="3gpu-实例化">
+  3,GPU 实例化
+  <a class="heading-link" href="#3gpu-%e5%ae%9e%e4%be%8b%e5%8c%96">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2026
+     NonoNoe 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

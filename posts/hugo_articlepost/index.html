@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <title>
+  Hugo文章写作指南 · NonoNoe
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="NonoNoe">
+<meta name="description" content="1.0">
+<meta name="keywords" content="blog,desenvolvedor,pessoal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hugo文章写作指南">
+  <meta name="twitter:description" content="1.0">
+
+<meta property="og:url" content="https://NonoNoe.github.io/posts/hugo_articlepost/">
+  <meta property="og:site_name" content="NonoNoe">
+  <meta property="og:title" content="Hugo文章写作指南">
+  <meta property="og:description" content="1.0">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-26T20:21:01+08:00">
+    <meta property="article:modified_time" content="2024-04-26T20:21:01+08:00">
+    <meta property="article:tag" content="Hugo">
+    <meta property="article:tag" content="Markdown">
+      <meta property="og:see_also" content="https://NonoNoe.github.io/posts/hugo_tag/">
+
+
+
+
+<link rel="canonical" href="https://NonoNoe.github.io/posts/hugo_articlepost/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://NonoNoe.github.io/">
+      NonoNoe
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">博客</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">项目</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">联系我</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/en/">ENGLISH</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://NonoNoe.github.io/posts/hugo_articlepost/">
+              Hugo文章写作指南
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2024-04-26T20:21:01&#43;08:00">
+                April 26, 2024
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：4 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/nononoe/">NonoNoe</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/hugo/">Hugo</a>
+      <span class="separator">•</span>
+    <a href="/categories/markdown/">Markdown</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/hugo/">Hugo</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/markdown/">Markdown</a>
+    </span></div>
+
+          <div class="series">
+ <i class="fa-solid fa-archive" aria-hidden="true"></i>
+       <a href="/series/hugo%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">Hugo使用指南</a></div>
+  
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#no0-markdown-基本语法与写作习惯养成">NO.0 Markdown 基本语法与写作习惯养成</a>
+      <ul>
+        <li><a href="#部分常用语法">部分常用语法</a></li>
+        <li><a href="#markdown-段首缩进">Markdown 段首缩进</a></li>
+      </ul>
+    </li>
+    <li><a href="#no1-认识-hugo-文章开头的各项参数">NO.1 认识 Hugo 文章开头的各项参数</a></li>
+    <li><a href="#no2-发布-hugo-文章的方式">NO.2 发布 Hugo 文章的方式</a></li>
+    <li><a href="#no3-hugo-魔法变量">NO.3 Hugo 魔法变量</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
+
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
+
+   
+  .back-to-top.show {
+    display: block;
+  }
+</style>
+
+<script>
+  
+  const btn = document.querySelector('.back-to-top');
+
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
+<p><a href="https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#md001"  class="external-link" target="_blank" rel="noopener">markdown 写作格式参考</a></p>
+<h2 id="no0-markdown-基本语法与写作习惯养成">
+  NO.0 Markdown 基本语法与写作习惯养成
+  <a class="heading-link" href="#no0-markdown-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e4%b8%8e%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e5%85%bb%e6%88%90">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Markdown 基本语法可参考
+<a href="https://markdown.com.cn/"  class="external-link" target="_blank" rel="noopener">markdown 官网</a></p>
+<h3 id="部分常用语法">
+  部分常用语法
+  <a class="heading-link" href="#%e9%83%a8%e5%88%86%e5%b8%b8%e7%94%a8%e8%af%ad%e6%b3%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h4 id="标题">
+  标题
+  <a class="heading-link" href="#%e6%a0%87%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># 标题1
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl"><span class="gu">## 标题2
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>
+</span></span><span class="line"><span class="cl"><span class="gu">### 标题3
+</span></span></span></code></pre></div><hr>
+<h4 id="文字变体">
+  文字变体
+  <a class="heading-link" href="#%e6%96%87%e5%ad%97%e5%8f%98%e4%bd%93">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><strong>加粗</strong>文字</p>
+<p><em>斜体</em>文字</p>
+<p><strong><em>加粗斜体文字</em></strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">**加粗**文字
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">*斜体*文字
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gs">**_加粗斜体文字_**</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="ge">**</span>*这也是加粗斜体文字***
+</span></span></code></pre></div><hr>
+<h4 id="列表">
+  列表
+  <a class="heading-link" href="#%e5%88%97%e8%a1%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<ul>
+<li>列表 1</li>
+</ul>
+<ol>
+<li>列表 2</li>
+</ol>
+<blockquote>
+<p>引用</p></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 列表1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">1.</span> 列表2
+</span></span><span class="line"><span class="cl"><span class="k">
+</span></span></span><span class="line"><span class="cl"><span class="k">&gt; </span><span class="ge">引用
+</span></span></span></code></pre></div><hr>
+<h4 id="分割线">
+  分割线
+  <a class="heading-link" href="#%e5%88%86%e5%89%b2%e7%ba%bf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>*** （分割线 1）</p>
+<p>&mdash; （分割线 2）</p>
+<hr>
+<h4 id="图片和外链">
+  图片和外链
+  <a class="heading-link" href="#%e5%9b%be%e7%89%87%e5%92%8c%e5%a4%96%e9%93%be">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><img src="%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5" alt="图片名"></p>
+<p><a href="%e7%bd%91%e7%ab%99%e9%93%be%e6%8e%a5" >网站</a></p>
+<p>&lt;网站链接&gt;</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">![<span class="nt">图片名</span>](<span class="na">图片链接</span>)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[<span class="nt">网站</span>](<span class="na">网站链接</span>)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">网站链接</span><span class="p">&gt;</span>
+</span></span></code></pre></div><hr>
+<h4 id="表格">
+  表格
+  <a class="heading-link" href="#%e8%a1%a8%e6%a0%bc">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<table>
+  <thead>
+      <tr>
+          <th>列 1</th>
+          <th>列 2</th>
+          <th>列 3</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>内容 1</td>
+          <td>内容 2</td>
+          <td>内容 3</td>
+      </tr>
+      <tr>
+          <td>内容 4</td>
+          <td>内容 5</td>
+          <td>内容 6</td>
+      </tr>
+  </tbody>
+</table>
+<p>该表格用:控制对齐方式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">| 左对齐 | 居中对齐 | 右对齐 | 默认(居中) |
+</span></span><span class="line"><span class="cl">|:-------|:-------:|-------:||-------|
+</span></span><span class="line"><span class="cl">| 内容1 | 内容2 | 内容3 | 内容4 |
+</span></span><span class="line"><span class="cl">| 内容5 | 内容6 | 内容7 | 内容8 |
+</span></span></code></pre></div><hr>
+<h4 id="markdown-插入代码块">
+  Markdown 插入代码块
+  <a class="heading-link" href="#markdown-%e6%8f%92%e5%85%a5%e4%bb%a3%e7%a0%81%e5%9d%97">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>这个叫做语法高亮提示</p>
+<pre><code>```python
+
+#!/usr/bin/python3
+print(&quot;Hello, World!&quot;);
+
+```
+</code></pre>
+<p>C#：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 播放控制</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Play</span><span class="p">();</span><span class="c1">//播放</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Pause</span><span class="p">();</span><span class="c1">//暂停</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span><span class="c1">//停止</span>
+</span></span><span class="line"><span class="cl"><span class="n">mediaPlayer</span><span class="p">.</span><span class="n">Control</span><span class="p">.</span><span class="n">Rewind</span><span class="p">();</span><span class="c1">//回到视频第一帧</span>
+</span></span></code></pre></div><p>Json:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;error&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;message&#34;</span><span class="p">:</span> <span class="s2">&#34;我正在更改实例数据&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;authentication_error&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;param&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;code&#34;</span><span class="p">:</span> <span class="s2">&#34;invalid_request_error&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>PS：其实写 C# 和 Json Hugo也能正常识别，但是其他的就不一定了！还是要养成良好的写作习惯</p>
+<h4 id="html-语言与-markdown-的联动">
+  HTML 语言与 Markdown 的联动
+  <a class="heading-link" href="#html-%e8%af%ad%e8%a8%80%e4%b8%8e-markdown-%e7%9a%84%e8%81%94%e5%8a%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span> 换行
+</span></span></code></pre></div><hr>
+<h3 id="markdown-段首缩进">
+  Markdown 段首缩进
+  <a class="heading-link" href="#markdown-%e6%ae%b5%e9%a6%96%e7%bc%a9%e8%bf%9b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>  or   表示一个半角的空格</p>
+<p>  or   表示一个全角的空格</p>
+<p>   两个全角的空格（用的比较多）</p>
+<p>  or   不断行的空白格</p>
+<hr>
+<h4 id="写作习惯推荐">
+  写作习惯推荐
+  <a class="heading-link" href="#%e5%86%99%e4%bd%9c%e4%b9%a0%e6%83%af%e6%8e%a8%e8%8d%90">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<ul>
+<li>好好排版
+<ul>
+<li>
+<p>中英文混用时，建议在英文单词前后加上空格方便阅读</p>
+</li>
+<li>
+<p>中英文逗号/句号等最好不要混用，强迫症震怒（）</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="no1-认识-hugo-文章开头的各项参数">
+  NO.1 认识 Hugo 文章开头的各项参数
+  <a class="heading-link" href="#no1-%e8%ae%a4%e8%af%86-hugo-%e6%96%87%e7%ab%a0%e5%bc%80%e5%a4%b4%e7%9a%84%e5%90%84%e9%a1%b9%e5%8f%82%e6%95%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p><strong>2025.9.16 修改</strong>：此处文章使用的 TOML 格式可能已过时，需要给时间加上引号才能通过编译，现创建文章建议使用解析器更宽松的 YAML 格式</p>
+<p><strong>2026.2.9更新</strong>：需要修改默认生成文章的格式的话，在本地的archrtypes文件夹中增加自己需要的格式就可以，里面的default就是默认生成文章的格式，如果添加了新的格式那么默认使用新格式生成文章</p>
+<p>YAML 格式示例：(其实就是将=符号改为:符号后，再将+++改为&mdash;即可)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//Hugo-YAML.png" alt="YAML格式示例"></p>
+<p>或者在创建文章时使用 YAML 格式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">hugo new posts/my-article.md --format yaml
+</span></span></code></pre></div><p>或在站点根目录的 config.toml / config.yaml / config.json 里，添加配置：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">### 如果用 config.toml
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>frontmatterFormat = &#34;yaml&#34;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Markdown" data-lang="Markdown"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">### 如果用 config.yaml
+</span></span></span><span class="line"><span class="cl"><span class="gu"></span>frontmatterFormat: yaml
+</span></span></code></pre></div><hr>
+<p>以下为本篇文章在终端中输入 <ins> Hugo new posts/Hugo 文章写作指南.md </ins> 时自动生成的文章参数</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//HugoArticlePreference.png" alt="参数参考"></p>
+<hr>
+<p><strong>draft = true</strong> 文章是否为草稿状态</p>
+<ul>
+<li>
+<p>true：草稿，Hugo 默认不会生成/发布</p>
+<ul>
+<li>然而实际测试时，draft 为 true 文章也正常发布了，待进一步测试中……</li>
+<li>2026.3.9 补充：上文中提及的草稿被一并发布的原因是使用了 hugo -D 命令来构建内容，这段的意思是构建时包含草稿，如果使用 hugo 命令就不会构建草稿，忘记更新这段了……</li>
+<li>顺便一提， hugo server -D 就是本地预览(带草稿), hugo server 是不带草稿的预览</li>
+</ul>
+</li>
+<li>
+<p>false：正式文章，会被发布</p>
+</li>
+</ul>
+<hr>
+<p><strong>date = 2025-04-08T20:09:27+08:00</strong> 文章创建/发布时间</p>
+<p>ps：本篇文章的时间在测试时被修改过</p>
+<ul>
+<li>
+<p>格式：ISO 8601 标准时间格式</p>
+</li>
+<li>
+<p>+08:00 表示东八区（中国时区）</p>
+</li>
+<li>
+<p>影响文章排序和发布时间判断</p>
+</li>
+</ul>
+<hr>
+<p><strong>title = &ldquo;Hugo 文章写作指南&rdquo;</strong> 文章标题（支持特殊字符和中文）</p>
+<ul>
+<li>会显示为文章页标题</li>
+</ul>
+<hr>
+<p><strong>slug = &ldquo;1&rdquo;</strong> _自定义 URL 路径</p>
+<ul>
+<li>
+<p>留空时 Hugo 会从 title 自动生成</p>
+<ul>
+<li>像标题这样写，最后会显示为:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//Hugo_slug_1.png" alt="slug1"></p>
+<ul>
+<li>不填写，自动生成的显示结果:</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//Hugo_slug_2.png" alt="slug2"></p>
+</li>
+</ul>
+<hr>
+<p><strong>authors = [&ldquo;NonoNoe&rdquo;]</strong> 作者列表（数组格式</p>
+<ul>
+<li>
+<p>需要与 config 中定义的作者标识匹配</p>
+</li>
+<li>
+<p>支持多作者：[作者 1, 作者 2]</p>
+</li>
+</ul>
+<p><ins>因为作者列表是数组格式，数组格式中的字符串一定要记得加引号，否则会报错</ins></p>
+<hr>
+<p><strong>tags = [&ldquo;Hugo&rdquo;]</strong> 标签(同为数组格式)</p>
+<ul>
+<li>
+<p>用于内容分类</p>
+</li>
+<li>
+<p>一篇文章可以有多个标签</p>
+</li>
+</ul>
+<p><ins>如果里面需要填写中文字符串，也要记得加引号</ins></p>
+<hr>
+<p><strong>categories = []</strong> 分类目录（数组格式）</p>
+<ul>
+<li>
+<p>比 tags 更宽泛的分类</p>
+</li>
+<li>
+<p>示例：[&ldquo;技术&rdquo;, &ldquo;计算机图形学&rdquo;]</p>
+</li>
+</ul>
+<hr>
+<p><strong>externalLink = &ldquo;&rdquo;</strong> 外部链接（跳转 URL 用）</p>
+<ul>
+<li>
+<p>设置后文章会直接跳转到指定链接</p>
+</li>
+<li>
+<p>留空表示正常生成文章页</p>
+</li>
+</ul>
+<hr>
+<p><strong>series = []</strong> 系列文章分组</p>
+<ul>
+<li>
+<p>用于关联多篇系列文章</p>
+</li>
+<li>
+<p>示例：[&ldquo;图形学入门&rdquo;]</p>
+</li>
+</ul>
+<p><ins>被关联的文章会显示在文章底部，如下所示</ins></p>
+<p>参考</p>
+<p><a href="https://www.jianshu.com/p/65ab196bef04"  class="external-link" target="_blank" rel="noopener">Markdown 代码块与语法高亮</a></p>
+<hr>
+<h2 id="no2-发布-hugo-文章的方式">
+  NO.2 发布 Hugo 文章的方式
+  <a class="heading-link" href="#no2-%e5%8f%91%e5%b8%83-hugo-%e6%96%87%e7%ab%a0%e7%9a%84%e6%96%b9%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>hugo -D</p>
+<p>文章草稿会被一起发布，去掉后缀则反之</p>
+<h2 id="no3-hugo-魔法变量">
+  NO.3 Hugo 魔法变量
+  <a class="heading-link" href="#no3-hugo-%e9%ad%94%e6%b3%95%e5%8f%98%e9%87%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Hugo 模板系统提供了一些内置变量可直接使用，通常使用 {{}} 包裹</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Hugo_PageVariables_20260209.png" alt=""></p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3 id="参见-hugo使用指南">
+        参见 Hugo使用指南
+        <a class="heading-link" href="#%e5%8f%82%e8%a7%81-hugo%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97">
+          <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+          <span class="sr-only">链接到标题</span>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+            <li>
+              <a href="/posts/hugo_tag/">面向新手的Hugo文章信息添加方式</a>
+            </li>
+          
+        
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2026
+     NonoNoe 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

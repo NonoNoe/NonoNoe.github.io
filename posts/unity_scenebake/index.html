@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <title>
+  Unity场景烘焙个人总结 · NonoNoe
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="NonoNoe">
+<meta name="description" content="
+  目录
+  
+  
+    简介
+    No.1 基础概念-认识 Unity 中的四种光源
+      
+        四种光源的大致选择
+        光源的参数调整
+      
+    
+    No.2 基础概念-渲染管线
+    No.3 基础概念-Material材质和Shader渲染算法
+      
+        Rendering Mode
+        Main Maps 部分常用参数
+        Secondary Maps 次级贴图
+      
+    
+    No.4 光照探针和反射探针
+    No.5 LightMap 光照贴图
+    No.6 插件 Bakery Lightmapper
+  
+
+
+↑ 返回顶部
+
+
+
+
+
+  简介
+  
+    
+    链接到标题
+  
+
+总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+<meta name="keywords" content="blog,desenvolvedor,pessoal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unity场景烘焙个人总结">
+  <meta name="twitter:description" content="目录简介 No.1 基础概念-认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 基础概念-渲染管线 No.3 基础概念-Material材质和Shader渲染算法 Rendering Mode Main Maps 部分常用参数 Secondary Maps 次级贴图 No.4 光照探针和反射探针 No.5 LightMap 光照贴图 No.6 插件 Bakery Lightmapper ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+
+<meta property="og:url" content="https://NonoNoe.github.io/posts/unity_scenebake/">
+  <meta property="og:site_name" content="NonoNoe">
+  <meta property="og:title" content="Unity场景烘焙个人总结">
+  <meta property="og:description" content="目录简介 No.1 基础概念-认识 Unity 中的四种光源 四种光源的大致选择 光源的参数调整 No.2 基础概念-渲染管线 No.3 基础概念-Material材质和Shader渲染算法 Rendering Mode Main Maps 部分常用参数 Secondary Maps 次级贴图 No.4 光照探针和反射探针 No.5 LightMap 光照贴图 No.6 插件 Bakery Lightmapper ↑ 返回顶部简介 链接到标题 总结一下 Unity 烘焙的基本流程操作和相关基础概念">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-04T14:27:20+08:00">
+    <meta property="article:modified_time" content="2026-03-04T14:27:20+08:00">
+
+
+
+
+<link rel="canonical" href="https://NonoNoe.github.io/posts/unity_scenebake/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://NonoNoe.github.io/">
+      NonoNoe
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">博客</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">项目</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">联系我</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/en/">ENGLISH</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://NonoNoe.github.io/posts/unity_scenebake/">
+              Unity场景烘焙个人总结
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-03-04T14:27:20&#43;08:00">
+                March 4, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：7 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/nononoe/">NonoNoe</a></div>
+
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#no1-基础概念-认识-unity-中的四种光源">No.1 基础概念-认识 Unity 中的四种光源</a>
+      <ul>
+        <li><a href="#四种光源的大致选择">四种光源的大致选择</a></li>
+        <li><a href="#光源的参数调整">光源的参数调整</a></li>
+      </ul>
+    </li>
+    <li><a href="#no2-基础概念-渲染管线">No.2 基础概念-渲染管线</a></li>
+    <li><a href="#no3-基础概念-material材质和shader渲染算法">No.3 基础概念-Material材质和Shader渲染算法</a>
+      <ul>
+        <li><a href="#rendering-mode">Rendering Mode</a></li>
+        <li><a href="#main-maps-部分常用参数">Main Maps 部分常用参数</a></li>
+        <li><a href="#secondary-maps-次级贴图">Secondary Maps 次级贴图</a></li>
+      </ul>
+    </li>
+    <li><a href="#no4-光照探针和反射探针">No.4 光照探针和反射探针</a></li>
+    <li><a href="#no5-lightmap-光照贴图">No.5 LightMap 光照贴图</a></li>
+    <li><a href="#no6-插件-bakery-lightmapper">No.6 插件 Bakery Lightmapper</a></li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
+
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
+
+   
+  .back-to-top.show {
+    display: block;
+  }
+</style>
+
+<script>
+  
+  const btn = document.querySelector('.back-to-top');
+
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
+<h2 id="简介">
+  简介
+  <a class="heading-link" href="#%e7%ae%80%e4%bb%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>总结一下 Unity 烘焙的基本流程操作和相关基础概念</p>
+<h2 id="no1-基础概念-认识-unity-中的四种光源">
+  No.1 基础概念-认识 Unity 中的四种光源
+  <a class="heading-link" href="#no1-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5-%e8%ae%a4%e8%af%86-unity-%e4%b8%ad%e7%9a%84%e5%9b%9b%e7%a7%8d%e5%85%89%e6%ba%90">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Unity Light 一共有四种不同的光源：Directional Light， Spot Light ， Point Light 和 Area Light，除了 Area Light 只能被烘焙后才能起作用以外，其他的光源都有三种模式（RealTime 实时显示效果/Backed 烘焙后才能显示效果/Mixed 二者混合）可以选择</p>
+<h3 id="四种光源的大致选择">
+  四种光源的大致选择
+  <a class="heading-link" href="#%e5%9b%9b%e7%a7%8d%e5%85%89%e6%ba%90%e7%9a%84%e5%a4%a7%e8%87%b4%e9%80%89%e6%8b%a9">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h4 id="directional-light">
+  Directional Light
+  <a class="heading-link" href="#directional-light">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>创建场景时会默认出现的光源，控制整个场景内的光线方向</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_DirectionalLight_20260304.png" alt=""></p>
+<h4 id="spot-light">
+  Spot Light
+  <a class="heading-link" href="#spot-light">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>类似于手电筒的光源，聚光灯</p>
+<h4 id="point-light">
+  Point Light
+  <a class="heading-link" href="#point-light">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>顾名思义点光源</p>
+<h4 id="area-light">
+  Area Light
+  <a class="heading-link" href="#area-light">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>一整个区域都会发光，发光方向为蓝色的轴，点击 Area Light 光源查看的时候也会有一个蓝色线条指向发光方向，通常在大屏幕/窗户等物体上面使用, Area Light 仅能在 Baked 后显示</p>
+<p><em>注意</em>：Area Light 只会朝一个方向发光，背对的地方是不会发光的</p>
+<h3 id="光源的参数调整">
+  光源的参数调整
+  <a class="heading-link" href="#%e5%85%89%e6%ba%90%e7%9a%84%e5%8f%82%e6%95%b0%e8%b0%83%e6%95%b4">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>这里先以 Directional Light 的参数为例：</p>
+<p>General参数：</p>
+<p>Type：选择光源类(也就是上面四种光源之中选一个)</p>
+<p>Mode：RealTime/Baked/Mixed</p>
+<p>Emission 中可以通过调整 Light Appearance (Color/Filter and Temperature)</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightInspector_20260304.png" alt="Directional Light 参数参考"></p>
+<h2 id="no2-基础概念-渲染管线">
+  No.2 基础概念-渲染管线
+  <a class="heading-link" href="#no2-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5-%e6%b8%b2%e6%9f%93%e7%ae%a1%e7%ba%bf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>渲染管线简单来说就是把各种图形处理后输出到屏幕上显示的过程</p>
+<p>Unity 内置的渲染管线有三种：Build-in (默认渲染管线，功能齐全但无法脚本化渲染流程) ， URP (性能较好同时可脚本化)， HDRP (可脚本化，通常用于高端硬件显示高清高保真图像)</p>
+<p>Build-in 管线可以通过插件 Universal RP (PackageManager 中可以直接搜索到安装) 将项目中的材质等全部转为 URP 管线可用的材质，但是这是一个不可逆的步骤，建议备份</p>
+<h2 id="no3-基础概念-material材质和shader渲染算法">
+  No.3 基础概念-Material材质和Shader渲染算法
+  <a class="heading-link" href="#no3-%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5-material%e6%9d%90%e8%b4%a8%e5%92%8cshader%e6%b8%b2%e6%9f%93%e7%ae%97%e6%b3%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>这里先介绍一些比较常用的参数，先来看一下选择了对应材质后的 Inspector 面板：</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_Material%26Shader_20260305.png" alt="Material面板"></p>
+<p>在 build-in 管线中的 3d 模型导入后默认都是采用 Standard (标准着色器) Shader</p>
+<h3 id="rendering-mode">
+  Rendering Mode
+  <a class="heading-link" href="#rendering-mode">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>此处以 build-in 管线中的材质的 Rendering Mode 为例 (在 URP 管线中略有不同)</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_MaterialRenderingMode_20260305.png" alt="Rendering Mode"></p>
+<p>Rendering Mode 默认为 Opaque (不透明)，官方文档中的解释是适用于没有透明区域的普通固体</p>
+<p>Cutout (裁切丢弃) 会根据 Cutout Threshold 阈值来判断哪些像素应该是透明的，小于阈值的部分不会被渲染，会被直接裁切丢弃，适合用于制作类似于树叶/草丛之类的需要硬镂空的场景，另外几种渲染模式中，alpha=0 的部分仍然会照常参与渲染，同时这部分的深度也不会被写进深度缓冲</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//Unity_RenderingModeCutout_20260305.png" alt="Cutout"></p>
+<p>顺带一提，在 URP 管线中，材质里不再有 Cutout 的选项了，但是可以使用 Alpha Clipping 代替的样子</p>
+<hr>
+<p>这里先引入一下深度的概念：深度 (depth) 表示像素距离相机的远近，是全局遮挡系统，深度缓冲 (Z-buffer) 主要判断物体之间的遮挡关系，用于记录深度值，深度测试是用于决定当前物体是否会被绘制，它通过比较当前片元深度和深度缓冲已记录值来决定片元是否通过，通过后再进行深度写入，深度写入决定绘制后会不会遮挡其他物体。不透明物体 (opaque) 通常需要写入深度，这样才能正确判断其遮挡关系；镂空 (Cutout) 的情况需要根据阈值具体判断，被保留的像素等同于不透明物体需要写入深度，被丢弃的像素则不写；半透明或透明材质 (Fade/Transparent) 通常测试深度之后不会写入深度</p>
+<p>在 Unity 中应该是最后绘制透明物体，如果这个时候不采用 Cutout 模式进行渲染，Fade 和 Transparent 模式不管遇到的是需要镂空还是不需要镂空的部分都不会记录深度，这样就会在绘制时造成一些穿插的问题，再细讲会延伸到计算机图形学的部分便暂时不做另外的展开</p>
+<hr>
+<p>下面两种模式通常用于处理带透明效果(但不需要镂空)的物体</p>
+<p>Fade (淡入淡出) 会让整个材质一起淡入淡出，包括高光和反射，通常用在需要让整个物体隐身/幽灵之类的效果上</p>
+<p>Transparent (透明) 适用于有透明效果的物体，会保留高光和反射效果，适用于玻璃/塑料等透明但需要保留反射效果的物体</p>
+<h3 id="main-maps-部分常用参数">
+  Main Maps 部分常用参数
+  <a class="heading-link" href="#main-maps-%e9%83%a8%e5%88%86%e5%b8%b8%e7%94%a8%e5%8f%82%e6%95%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>Albedo (反照率) 控制材质的底色和透明度，可以设置纹理</p>
+<p>Metallic (金属率) 控制材质的金属度，值越大，该物体的漫反射越明显，同时反照率颜色将越模糊，通常采用接近0或者1的值</p>
+<p>Smoothness (平滑度) 控制材质的光滑程度表现，参数值越高物体的镜面反射越明显</p>
+<h3 id="secondary-maps-次级贴图">
+  Secondary Maps 次级贴图
+  <a class="heading-link" href="#secondary-maps-%e6%ac%a1%e7%ba%a7%e8%b4%b4%e5%9b%be">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>次级贴图似乎会用于性能优化和增加细节上，暂不做展开</p>
+<hr>
+<p><em>补充</em>：</p>
+<p>漫反射 (Diffuse) 使入射光向各方向进行散射，比如像黑板就是漫反射强镜面反射弱</p>
+<p>镜面反射 (Specular Reflection) 入射光反弹更有方向性，主要体现在高光/环境倒影等上面，像金属球/电子屏幕之类的就是镜面反射强漫反射弱</p>
+<hr>
+<p>Normal Map (法线贴图) 可以为物体增加凹凸表面细节，用来存储每个高度面的朝向</p>
+<p>Height Map (高度贴图) 存储每个点的高度</p>
+<h2 id="no4-光照探针和反射探针">
+  No.4 光照探针和反射探针
+  <a class="heading-link" href="#no4-%e5%85%89%e7%85%a7%e6%8e%a2%e9%92%88%e5%92%8c%e5%8f%8d%e5%b0%84%e6%8e%a2%e9%92%88">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Light Probe (光照探针) 主要适用于表现动态物体受到的光照影响，使用这个方法可以替代实时光照从而减小开销，使得动态物体能受到静态光的影响</p>
+<p>关于光照探针推荐教程<a href="https://www.youtube.com/watch?v=_E0JXOZDTKA"  class="external-link" target="_blank" rel="noopener">HIGH QUALITY LIGHTING using Light Probes - Unity Tutorial</a></p>
+<p>Reflection Probe (反射探针) 最主要用于在开销不会很大的同时模拟比较好的反射效果，一个场景内也可以根据情况放置多个反射探针从而对不同物体实现不同的反射，反射探针也可以选择实时表现/烘焙后才能表现/自定义的模式。反射探针中的重要参数：Box Projection 会使当前探针根据盒体范围做视差修正，也就是仅对这个盒体内部做反射，所以一般来讲，在烘焙室内场景的时候需要勾选并将整个室内场景包裹在盒体内，这样就能得到较好的效果(不过有些情况似乎也会在室外场景开启 Box Projection，视情况决定吧，我还没这么烘焙过室外场景暂不做展开，但不得不说这个在作用于室内场景的屏幕或者玻璃等反射较强的物体上时效果很好)</p>
+<h2 id="no5-lightmap-光照贴图">
+  No.5 LightMap 光照贴图
+  <a class="heading-link" href="#no5-lightmap-%e5%85%89%e7%85%a7%e8%b4%b4%e5%9b%be">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>使用 light map 可以生成光照贴图，该贴图数据不会直接修改物体原本的材质，而是会在运行时叠加在材质上，这样可以减少静态场景的实时光照开销</p>
+<p>Lighting 设置相关参数：</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightingSettings1_20260304.png" alt="Scene相关参数"></p>
+<p>第一次打开项目的 Lighting 界面时要先在 Lighting Settings 中点击新建一个 Lighting Settings Asset 才能进行其余 Scene 参数的配置</p>
+<p>Realtime Lighting 仅在有光源是 Realtime 模式时才有作用</p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightSettings2.png" alt="Scene相关参数2"></p>
+<p><img src="https://cdn.jsdelivr.net/gh//NonoNoe/imgTest@master//UnityLight_LightSettings3_20260304.png" alt="Environment相关参数"></p>
+<p>Realtime Lightmaps 和Baked Lightmaps 中可以查看对应模式的贴图</p>
+<p>可参考教程<a href="https://www.youtube.com/watch?v=WFye3k4bvEc&amp;t=43s"  class="external-link" target="_blank" rel="noopener">Interior Lighting in URP (Universal Render Pipeline) | Unity 2020.2</a></p>
+<p>过程非常详细，可作为 URP 管线室内场景光源烘培的典型参考，里面也提到了如何将 Build-In 管线的素材转为 URP管线(<em>注意</em>：这个操作是不可逆的,建议在更换渲染管线之前进行备份)</p>
+<p>油管的字幕自动翻译过于诡异的话b站也有好心up搬运并附带双语字幕版<a href="https://www.bilibili.com/video/BV1NJcuzsEdg/"  class="external-link" target="_blank" rel="noopener">Unity室内烘焙URP管线</a></p>
+<p>基本流程：</p>
+<p>1，修改场景中默认的光线影响，如有必要可以去掉天空盒的光源</p>
+<p>2，增加必要的光源，比如场景内的灯光/窗户外面的光(即使已经有了 Directional Light 也最好增加，让效果看起来好一些)等</p>
+<p>3，增加反射探针，包裹整个场景(没有反射探针的话，烘焙的效果会显得比较奇怪)</p>
+<p>4，可以先调低各项烘焙参数查看大致的烘焙效果，确定后再调至高参数烘焙</p>
+<p>5，烘焙结束后，可适当增加后处理效果提升画面效果</p>
+<p>几个重要的点：</p>
+<p>1，每次重新烘焙的时候一定要把上一次烘焙的数据清除，以免上一次烘焙的效果影响本次烘焙</p>
+<p>2，烘焙室内场景中使用反射指针需要开启 Box Projection 选项，，同时反射指针要包含整个场景。Box Projection 这个选项主要是增加&quot;视差修正&quot;，也就是在观察位置变化时反射内容也会变化，这样对于室内场景的表现更加真实</p>
+<p>3，部分屏幕/电视/玻璃等可以反射些许画面的这种物体需要反射探针和材质配合使用就可以实现，build-in 管线和 URP 管线中实现方式会有所不同</p>
+<p>4，反射探针的默认 Type 类型是 Baked，如果想要实时查看探针的反射效果需要修改为 RealTime，如果需要自定义反射贴图可选择 Custom</p>
+<p>5，反射探针的 Box Size 框住的部分代表着反射区域，如果特定区域反射的内容不太一样建议使用多个反射探针用来控制不同区域的反射</p>
+<h2 id="no6-插件-bakery-lightmapper">
+  No.6 插件 Bakery Lightmapper
+  <a class="heading-link" href="#no6-%e6%8f%92%e4%bb%b6-bakery-lightmapper">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Bakery Lightmapper 可以显著地提升烘焙灯光的速度(据说)</p>
+<p><a href="https://geom.io/bakery/wiki/index.php?title=%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C"  class="external-link" target="_blank" rel="noopener">官方使用手册中文版</a></p>
+<p><em>注意</em>：经过测试，1.96 的插件版本由于使用的是 OptiX 6.0.0，同时官方使用手册中提及了需要使用Game-Ready（标准）驱动程序，而 NVIDIA 驱动程序从 R590 分支开始就去除了对 OptiX 6.0.0 的支持，也就是说，驱动程序版本号在 59x 的就无法使用 1.96 版本的插件了</p>
+<p>目前简单总结的使用方法(由于我当前的设备无法使用插件，未能实际测试，因此该总结可能有误)：在场景内的所有灯光上添加对应的脚本并导入灯光数据(比如 Directional Light 需要添加 Bakery Direction Light ，Area Light 需要添加 Bakery Light Mesh 等)，之后在菜单栏中选择 Bakery 选项设置对应数据后烘培即可</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2026
+     NonoNoe 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

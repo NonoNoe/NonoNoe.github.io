@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <title>
+  笔试错题收集 · NonoNoe
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="NonoNoe">
+<meta name="description" content="
+  目录
+  
+  
+    0，常考常错常忘
+      
+        时间/空间复杂度
+        数据元素的存储结构
+        数组的存取
+        队列的各种情况判定
+        输出受限的双向队列
+        常见排序算法的稳定性
+        有序数组合并时间复杂度
+        二叉树相关概念
+        堆/栈/队列
+        LIFO 与 FILO , LILO 与 FIFO
+        大根堆/小根堆
+        Linux 中的查找
+        for 循环和 foreach 循环
+        C# 中常用的容器类
+      
+    
+    1，小数点精度设置
+    2，二叉树编号
+    3，前中后缀表达式
+      
+        前缀表达式
+        中缀表达式
+        后缀表达式
+      
+    
+    4， C# 小知识
+      
+        C# 各类修饰符
+        C# 中的 GC 机制
+        C# 装箱与拆箱
+        C# ref 与 out
+        C# Console 输出
+      
+    
+    5，Unity 小知识
+      
+        Unity C# 线程与协程
+        Unity 的 PlayerPrefs 类
+        Unity 中 Image 和 RawImage 的区别
+        localPosition 与 position
+        Unity 生命周期
+        对象池
+        值/引用类型的存放位置
+      
+    
+  
+
+
+↑ 返回顶部
+
+
+
+
+
+  0，常考常错常忘
+  
+    
+    链接到标题
+  
+
+
+
+  时间/空间复杂度
+  
+    
+    链接到标题
+  
+
+空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
+<meta name="keywords" content="blog,desenvolvedor,pessoal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="笔试错题收集">
+  <meta name="twitter:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO 与 FILO , LILO 与 FIFO 大根堆/小根堆 Linux 中的查找 for 循环和 foreach 循环 C# 中常用的容器类 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 4， C# 小知识 C# 各类修饰符 C# 中的 GC 机制 C# 装箱与拆箱 C# ref 与 out C# Console 输出 5，Unity 小知识 Unity C# 线程与协程 Unity 的 PlayerPrefs 类 Unity 中 Image 和 RawImage 的区别 localPosition 与 position Unity 生命周期 对象池 值/引用类型的存放位置 ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
+
+<meta property="og:url" content="https://NonoNoe.github.io/posts/algorithm/">
+  <meta property="og:site_name" content="NonoNoe">
+  <meta property="og:title" content="笔试错题收集">
+  <meta property="og:description" content="目录0，常考常错常忘 时间/空间复杂度 数据元素的存储结构 数组的存取 队列的各种情况判定 输出受限的双向队列 常见排序算法的稳定性 有序数组合并时间复杂度 二叉树相关概念 堆/栈/队列 LIFO 与 FILO , LILO 与 FIFO 大根堆/小根堆 Linux 中的查找 for 循环和 foreach 循环 C# 中常用的容器类 1，小数点精度设置 2，二叉树编号 3，前中后缀表达式 前缀表达式 中缀表达式 后缀表达式 4， C# 小知识 C# 各类修饰符 C# 中的 GC 机制 C# 装箱与拆箱 C# ref 与 out C# Console 输出 5，Unity 小知识 Unity C# 线程与协程 Unity 的 PlayerPrefs 类 Unity 中 Image 和 RawImage 的区别 localPosition 与 position Unity 生命周期 对象池 值/引用类型的存放位置 ↑ 返回顶部0，常考常错常忘 链接到标题 时间/空间复杂度 链接到标题 空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-14T09:23:53+08:00">
+    <meta property="article:modified_time" content="2025-03-14T09:23:53+08:00">
+    <meta property="article:tag" content="题库">
+
+
+
+
+<link rel="canonical" href="https://NonoNoe.github.io/posts/algorithm/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.7763f8bc6341ecf82378e867c285e1549abb063a899be313ccd25dbfcd24fa7d.css" integrity="sha256-d2P4vGNB7PgjeOhnwoXhVJq7BjqJm&#43;MTzNJdv80k&#43;n0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://NonoNoe.github.io/">
+      NonoNoe
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">博客</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">项目</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">联系我</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/en/">ENGLISH</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://NonoNoe.github.io/posts/algorithm/">
+              笔试错题收集
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-03-14T09:23:53&#43;08:00">
+                March 14, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：9 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/nononoe/">NonoNoe</a></div>
+
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/%E9%A2%98%E5%BA%93/">题库</a>
+    </span></div>
+
+          <div class="series">
+ <i class="fa-solid fa-archive" aria-hidden="true"></i>
+       <a href="/series/%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3/">算法相关</a></div>
+  
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <div class="my-toc">
+  <h1>目录</h1>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0常考常错常忘">0，常考常错常忘</a>
+      <ul>
+        <li><a href="#时间空间复杂度">时间/空间复杂度</a></li>
+        <li><a href="#数据元素的存储结构">数据元素的存储结构</a></li>
+        <li><a href="#数组的存取">数组的存取</a></li>
+        <li><a href="#队列的各种情况判定">队列的各种情况判定</a></li>
+        <li><a href="#输出受限的双向队列">输出受限的双向队列</a></li>
+        <li><a href="#常见排序算法的稳定性">常见排序算法的稳定性</a></li>
+        <li><a href="#有序数组合并时间复杂度">有序数组合并时间复杂度</a></li>
+        <li><a href="#二叉树相关概念">二叉树相关概念</a></li>
+        <li><a href="#堆栈队列">堆/栈/队列</a></li>
+        <li><a href="#lifo-与-filo--lilo-与-fifo">LIFO 与 FILO , LILO 与 FIFO</a></li>
+        <li><a href="#大根堆小根堆">大根堆/小根堆</a></li>
+        <li><a href="#linux-中的查找">Linux 中的查找</a></li>
+        <li><a href="#for-循环和-foreach-循环">for 循环和 foreach 循环</a></li>
+        <li><a href="#c-中常用的容器类">C# 中常用的容器类</a></li>
+      </ul>
+    </li>
+    <li><a href="#1小数点精度设置">1，小数点精度设置</a></li>
+    <li><a href="#2二叉树编号">2，二叉树编号</a></li>
+    <li><a href="#3前中后缀表达式">3，前中后缀表达式</a>
+      <ul>
+        <li><a href="#前缀表达式">前缀表达式</a></li>
+        <li><a href="#中缀表达式">中缀表达式</a></li>
+        <li><a href="#后缀表达式">后缀表达式</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-c-小知识">4， C# 小知识</a>
+      <ul>
+        <li><a href="#c-各类修饰符">C# 各类修饰符</a></li>
+        <li><a href="#c-中的-gc-机制">C# 中的 GC 机制</a></li>
+        <li><a href="#c-装箱与拆箱">C# 装箱与拆箱</a></li>
+        <li><a href="#c-ref-与-out">C# ref 与 out</a></li>
+        <li><a href="#c-console-输出">C# Console 输出</a></li>
+      </ul>
+    </li>
+    <li><a href="#5unity-小知识">5，Unity 小知识</a>
+      <ul>
+        <li><a href="#unity-c-线程与协程">Unity C# 线程与协程</a></li>
+        <li><a href="#unity-的-playerprefs-类">Unity 的 PlayerPrefs 类</a></li>
+        <li><a href="#unity-中-image-和-rawimage-的区别">Unity 中 Image 和 RawImage 的区别</a></li>
+        <li><a href="#localposition-与-position">localPosition 与 position</a></li>
+        <li><a href="#unity-生命周期">Unity 生命周期</a></li>
+        <li><a href="#对象池">对象池</a></li>
+        <li><a href="#值引用类型的存放位置">值/引用类型的存放位置</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<a href="#" class="back-to-top">↑ 返回顶部</a>
+
+<style>
+   
+  .back-to-top {
+    position: fixed;
+     
+    bottom: 20px;
+     
+    right: 80px;
+     
+    background-color: #3c3c3c;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: none;
+     
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease;
+  }
+
+   
+  .back-to-top:hover {
+    background-color: #b4b4b4;
+    color: rgb(255, 255, 255);
+  }
+
+   
+  .back-to-top.show {
+    display: block;
+  }
+</style>
+
+<script>
+  
+  const btn = document.querySelector('.back-to-top');
+
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) { 
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+</script>
+<h2 id="0常考常错常忘">
+  0，常考常错常忘
+  <a class="heading-link" href="#0%e5%b8%b8%e8%80%83%e5%b8%b8%e9%94%99%e5%b8%b8%e5%bf%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<hr>
+<h3 id="时间空间复杂度">
+  时间/空间复杂度
+  <a class="heading-link" href="#%e6%97%b6%e9%97%b4%e7%a9%ba%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>空间复杂度指的是随着输入规模 n 的增长，程序额外占用的内存大小的增长趋势。</p>
+<p>只考虑与输入规模 n 有关的额外内存。</p>
+<p>常数个额外变量（无论有几个）都算作 O(1)</p>
+<p>eg.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">nums</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</span></span></code></pre></div><p>该段代码创建了一个大小为 n 的数组，所以空间复杂度是 n</p>
+<p>该代码初始化所有元素的操作相当于一个隐性的 for 循环，所以时间复杂度是<strong>O(n)</strong></p>
+<hr>
+<h3 id="数据元素的存储结构">
+  数据元素的存储结构
+  <a class="heading-link" href="#%e6%95%b0%e6%8d%ae%e5%85%83%e7%b4%a0%e7%9a%84%e5%ad%98%e5%82%a8%e7%bb%93%e6%9e%84">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>逻辑结构是数据元素之间的关系，存储结构是数据元素及其关系在计算机中的存储方式。</p>
+<p>存储结构有顺序、链式、索引、散列四种，逻辑结构有<strong>线性</strong>和<strong>非线性</strong>结构。</p>
+<p>二叉树是<strong>逻辑结构</strong>，树属于逻辑结构中的<strong>非线性结构</strong>。</p>
+<p><strong>双向链表</strong>、<em>哈希表</em>、<em><strong>循环队列</strong></em>都是存储结构分别属于<strong>链式</strong>、<em>散列</em>和<em><strong>顺序</strong></em>。</p>
+<hr>
+<h3 id="数组的存取">
+  数组的存取
+  <a class="heading-link" href="#%e6%95%b0%e7%bb%84%e7%9a%84%e5%ad%98%e5%8f%96">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>数组的存取 ≠ 插入/删除，存取速度与下标数值无关，存就是给 a[i]赋值，取就是读出 a[i]的值，永远是 O(1)</p>
+<p>在二维数组行序为主序存储时,元素在内存中按照先行后列的顺序连续存储。对于 A[i][j],其地址计算公式为:</p>
+<p>基地址 + (i-1)*n + (j-1)</p>
+<hr>
+<h3 id="队列的各种情况判定">
+  队列的各种情况判定
+  <a class="heading-link" href="#%e9%98%9f%e5%88%97%e7%9a%84%e5%90%84%e7%a7%8d%e6%83%85%e5%86%b5%e5%88%a4%e5%ae%9a">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>在循环队列中,正确判断<strong>队满</strong>的条件是(rear+1)%n == front。</p>
+<p>因为循环队列需要牺牲一个存储空间来区分队空和队满状态,当队列满时,队尾指针 rear 再前进一个位置就会与队头指针 front 重合。</p>
+<p>判断<strong>队空</strong>的条件是 rear%n == front</p>
+<p>队列中只有一个元素时，(front+1)%n == rear</p>
+<p>rear = (front + 队列中元素个数) % 数组长度</p>
+<p>enqueue 将元素（item）插入队列的末尾，dequeue 将队列的第一个元素（即最先插入队列的元素）移除并返回其值</p>
+<p>在使用链表实现的队列中，入队和出队操作的平均时间复杂度分别是多少？</p>
+<hr>
+<h3 id="输出受限的双向队列">
+  输出受限的双向队列
+  <a class="heading-link" href="#%e8%be%93%e5%87%ba%e5%8f%97%e9%99%90%e7%9a%84%e5%8f%8c%e5%90%91%e9%98%9f%e5%88%97">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>(牛客队列原题)已知输入序列为 abcd 经过输出受限的双向队列后能得到的输出序列有()</p>
+<p>此处的<strong>输出受限的双向队列</strong>指：可以在两端输入，只能在一端输出</p>
+<hr>
+<h3 id="常见排序算法的稳定性">
+  常见排序算法的稳定性
+  <a class="heading-link" href="#%e5%b8%b8%e8%a7%81%e6%8e%92%e5%ba%8f%e7%ae%97%e6%b3%95%e7%9a%84%e7%a8%b3%e5%ae%9a%e6%80%a7">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>不稳定：</p>
+<p>堆排序，快速排序，希尔排序，直接选择排序</p>
+<p>稳定：</p>
+<p>基数排序，冒泡排序，直接插入排序，折半插入排序，归并排序</p>
+<hr>
+<h3 id="有序数组合并时间复杂度">
+  有序数组合并时间复杂度
+  <a class="heading-link" href="#%e6%9c%89%e5%ba%8f%e6%95%b0%e7%bb%84%e5%90%88%e5%b9%b6%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>合并 m 个长度为 n 的有序数组的最优时间复杂度确实是 O(mn(logm))</p>
+<hr>
+<h3 id="二叉树相关概念">
+  二叉树相关概念
+  <a class="heading-link" href="#%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9b%b8%e5%85%b3%e6%a6%82%e5%bf%b5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>结点的度：一个节点的子树的个数</p>
+<p>叶节点：度为 0 的结点</p>
+<p>二叉树最小深度：dmin​=⌈log2​(n+1)⌉ (⌈x⌉表示向上取整)</p>
+<p>深度为 k 的二叉树至多有 2^k-1 个结点</p>
+<p>树的节点数=度*对应结点个数+根节点</p>
+<h4 id="二叉树的不同形态">
+  二叉树的不同形态
+  <a class="heading-link" href="#%e4%ba%8c%e5%8f%89%e6%a0%91%e7%9a%84%e4%b8%8d%e5%90%8c%e5%bd%a2%e6%80%81">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p><strong>哈夫曼树</strong>：给定 N 个权值作为 N 个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为哈夫曼树(Huffman Tree)。</p>
+<p>给定 n 个带权结点，其 Huffman 树的结构不是唯一的</p>
+<p>在哈夫曼编码中,要满足前缀编码的要求,即任何一个字符的编码都不能是另一个字符编码的前缀。同时,哈夫曼树是一个满二叉树,所有的字符编码都是叶子节点。</p>
+<p>哈夫曼树带权路径计算有两种方式：1，按 Huffman（最小对合并）逐步合并</p>
+<p><img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//20250917122625.png" alt="最小对合并"></p>
+<p>2，权 × 深度</p>
+<p><strong>平衡二叉树</strong>：它的左子树和右子树的深度之差(平衡因子)的绝对值不超过 1，且它的左子树和右子树都是一颗平衡二叉树。</p>
+<p><strong>满二叉树</strong>：如果一个二叉树的层数为 k，结点总数是(2^k)-1 ，它就是满二叉树。</p>
+<p><strong>完全二叉树</strong>：与满二叉树相似，但最后一行相比满二叉树并不完整</p>
+<p><strong>二叉搜索树</strong>：非空左子树的所有键值小于其根结点的键值；非空右子树的所有键值大于其根结点的键值；左、右子树都是二叉搜索树</p>
+<hr>
+<h3 id="堆栈队列">
+  堆/栈/队列
+  <a class="heading-link" href="#%e5%a0%86%e6%a0%88%e9%98%9f%e5%88%97">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p><strong>堆</strong>是一种特殊的完全二叉树</p>
+<p><strong>栈</strong>中有 n 个元素时，这几个元素能组成的出栈序列有
+<img src="https://cdn.jsdelivr.net/gh/NonoNoe/imgTest@master//nInStack.png" width="200" style="vertical-align: middle;" /> 个</p>
+<p><strong>队列</strong>状况判定条件</p>
+<p>队空:front=rear</p>
+<p>队满:(front=(rear+1)modmaxSize)</p>
+<p>最大有效元素个数:maxSize - 1</p>
+<h3 id="lifo-与-filo--lilo-与-fifo">
+  LIFO 与 FILO , LILO 与 FIFO
+  <a class="heading-link" href="#lifo-%e4%b8%8e-filo--lilo-%e4%b8%8e-fifo">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>LIFO (Last In, First Out)</p>
+<p>“后进先出” → 最后放进去的元素最先出来。</p>
+<p>👉 常用在栈 (stack) 的描述里。</p>
+<p>FILO (First In, Last Out)</p>
+<p>“先进后出” → 最先放进去的元素最后出来。</p>
+<p>👉 和 LIFO 是同一个规则，只是从“第一个进去的元素”的角度来描述。</p>
+<hr>
+<p>同理得</p>
+<p>FIFO 先进先出(队列)</p>
+<p>LILO 后进后出</p>
+<h3 id="大根堆小根堆">
+  大根堆/小根堆
+  <a class="heading-link" href="#%e5%a4%a7%e6%a0%b9%e5%a0%86%e5%b0%8f%e6%a0%b9%e5%a0%86">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>可参考:<a href="https://zhuanlan.zhihu.com/p/681331225"  class="external-link" target="_blank" rel="noopener">【堆 - 专题】堆排序，大根堆，小根堆</a></p>
+<p>子节点均大于等于根节点的堆叫做<strong>小根堆</strong>，反之为<strong>大根堆</strong></p>
+<p>将关键字依次插入小根堆中，按层序从左至右插入，遇到结点值比根节点小时上浮即可</p>
+<hr>
+<h3 id="linux-中的查找">
+  Linux 中的查找
+  <a class="heading-link" href="#linux-%e4%b8%ad%e7%9a%84%e6%9f%a5%e6%89%be">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>(牛客查找原题)</p>
+<p>Linux 中，有文本文件 file.txt，想要查找出包含 &ldquo;test&rdquo; 或 &ldquo;taste&rdquo; 两个单词的行并显示对应行号，下面命令正确的是(grep -n &rsquo;t[ae]st&rsquo; file.txt)</p>
+<h3 id="for-循环和-foreach-循环">
+  for 循环和 foreach 循环
+  <a class="heading-link" href="#for-%e5%be%aa%e7%8e%af%e5%92%8c-foreach-%e5%be%aa%e7%8e%af">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>for 循环遍历速度快于 foreach 循环</p>
+<p>不建议在 Unity 中的 Update() 函数中使用 foreach 循环，容易遗留内存垃圾</p>
+<p>foreach 是只读的,在 foreach 中修改数据会报错</p>
+<h3 id="c-中常用的容器类">
+  C# 中常用的容器类
+  <a class="heading-link" href="#c-%e4%b8%ad%e5%b8%b8%e7%94%a8%e7%9a%84%e5%ae%b9%e5%99%a8%e7%b1%bb">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>List(列表)，HashTable(哈希表)，Dictionary(字典)，Stack(栈)，Queue(队列)</p>
+<h2 id="1小数点精度设置">
+  1，小数点精度设置
+  <a class="heading-link" href="#1%e5%b0%8f%e6%95%b0%e7%82%b9%e7%b2%be%e5%ba%a6%e8%ae%be%e7%bd%ae">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">fixed</span><span class="o">&lt;&lt;</span><span class="n">setprecision</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</span></span></code></pre></div><p>设置输出精度为小数点后 n 位（四舍五入），该设置会对此后的所有 cout 输出产生影响</p>
+<p>如果需要直接截断小数点后 n 位，并不四舍五入，可采用以下方式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">trunc</span><span class="p">(</span><span class="n">count</span><span class="o">*</span><span class="mf">1e9</span><span class="p">)</span><span class="o">/</span><span class="mf">1e9</span><span class="p">;</span>
+</span></span></code></pre></div><p>trunc 函数只能截断小数部分保留整数部分，此处将 count 的小数点后 9 位转为整数，截断后再将数值缩回原位，从而达成直接截断的效果</p>
+<hr>
+<h2 id="2二叉树编号">
+  2，二叉树编号
+  <a class="heading-link" href="#2%e4%ba%8c%e5%8f%89%e6%a0%91%e7%bc%96%e5%8f%b7">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>(牛客二叉树专项练习)将一颗有 100 个结点的完全二叉树从根这一层开始，每一层从左到右依次对结点进行编号，根节点编号为 1 ，求编号为 98 的节点的父节点编号</p>
+<p>在完全二叉树中,对于任意一个编号为 n 的节点:</p>
+<ul>
+<li>
+<p>其左子节点的编号为 2n</p>
+</li>
+<li>
+<p>其右子节点的编号为 2n+1</p>
+</li>
+<li>
+<p>其父节点的编号为⌊n/2⌋(向下取整)</p>
+</li>
+</ul>
+<hr>
+<h2 id="3前中后缀表达式">
+  3，前中后缀表达式
+  <a class="heading-link" href="#3%e5%89%8d%e4%b8%ad%e5%90%8e%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="前缀表达式">
+  前缀表达式
+  <a class="heading-link" href="#%e5%89%8d%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>前缀表达式是运算符在前操作符在后的式子，实际上类似于二叉树的先序遍历 (eg.*+ab+cd)</p>
+<h3 id="中缀表达式">
+  中缀表达式
+  <a class="heading-link" href="#%e4%b8%ad%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>中缀表达式的格式和我们平时所写所看的表达式格式相同，同时也类似于二叉树的中序遍历</p>
+<h3 id="后缀表达式">
+  后缀表达式
+  <a class="heading-link" href="#%e5%90%8e%e7%bc%80%e8%a1%a8%e8%be%be%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>后缀表达式的运算符放在两个操作符的后面，类似于二叉树的后续遍历 (eg.ab+cd+*)</p>
+<hr>
+<h2 id="4-c-小知识">
+  4， C# 小知识
+  <a class="heading-link" href="#4-c-%e5%b0%8f%e7%9f%a5%e8%af%86">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="c-各类修饰符">
+  C# 各类修饰符
+  <a class="heading-link" href="#c-%e5%90%84%e7%b1%bb%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h4 id="访问修饰符">
+  访问修饰符
+  <a class="heading-link" href="#%e8%ae%bf%e9%97%ae%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>Public:公有的，对其访问没有限制</p>
+<p>Internal:内部的，同一个程序集中的所有类都可以访问</p>
+<p>Private:私有的，只有在声明它们的类或结构中才能访问</p>
+<p>Protected:受保护的，只能在它的类和派生类中访问</p>
+<h4 id="类修饰符">
+  类修饰符
+  <a class="heading-link" href="#%e7%b1%bb%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>abstract:可以被指示一个类只能作为其它类的基类</p>
+<p>sealed:指示一个类不能被继承</p>
+<p>static：修饰类时表示该类是静态类，不能够实例化该类的对象,该类的成员为静态</p>
+<h4 id="成员修饰符">
+  成员修饰符
+  <a class="heading-link" href="#%e6%88%90%e5%91%98%e4%bf%ae%e9%a5%b0%e7%ac%a6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>abstract:指示该方法或属性没有实现</p>
+<p>const:指定域或局部变量的值不能被改动</p>
+<p>event:声明一个事件</p>
+<p>extern:指示方法在外部实现</p>
+<p>override:对由基类继承成员的新实现</p>
+<p>readonly:指示一个域只能在声明时以及相同类的内部被赋值</p>
+<p>Partial：在整个同一程序集中定义分部类和结构</p>
+<p>Virtual：用于修饰方法、属性、索引器或事件声明，并且允许在派生类中重写这些对象</p>
+<p>New：作修饰符，隐藏从基类成员继承的成员，在不使用 new 修饰符的情况下隐藏成员是允许的，但会生成警告。作运算符，用于创建对象和调用构造函数</p>
+<hr>
+<h3 id="c-中的-gc-机制">
+  C# 中的 GC 机制
+  <a class="heading-link" href="#c-%e4%b8%ad%e7%9a%84-gc-%e6%9c%ba%e5%88%b6">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>参考:</p>
+<p><a href="https://xiaoy.blog.csdn.net/article/details/129391838"  class="external-link" target="_blank" rel="noopener">【Unity 面试篇】Unity 面试题总结甄选 ｜ C#基础篇 | ❤️ 持续更新 ❤️</a></p>
+<p><a href="https://www.cnblogs.com/yinhe6/articles/18710308"  class="external-link" target="_blank" rel="noopener">C#垃圾回收机制(GC)基础到进阶</a></p>
+<p>GC (垃圾回收机制，Garbage Collection) 是.net 框架中负责自动管理和内存释放的重要特性，将不再使用的对象所占的内存资源回收</p>
+<p>C# 内部有两个内存管理池:堆内存和栈内存</p>
+<p>然而 GC 操作容易引起性能问题</p>
+<p>栈由编译器自动管理，GC 不管栈，GC 只管理托管堆内存</p>
+<hr>
+<h3 id="c-装箱与拆箱">
+  C# 装箱与拆箱
+  <a class="heading-link" href="#c-%e8%a3%85%e7%ae%b1%e4%b8%8e%e6%8b%86%e7%ae%b1">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>C# 中的数据类型主要分为值类型和引用类型(值类型:整数/浮点数/布尔等 引用类型:类/数组/字符串等)</p>
+<p>装箱：值类型转换为对象类型</p>
+<p>拆箱：之前由值类型转换而来的对象类型再转回值类型</p>
+<p>只有装过箱的数据才能拆箱</p>
+<p>装箱拆箱会带来性能问题，应尽量避免装箱拆箱操作</p>
+<p>参考:</p>
+<p><a href="https://www.runoob.com/note/1198"  class="external-link" target="_blank" rel="noopener">C# 装箱和拆箱</a></p>
+<p><a href="https://blog.csdn.net/caifox/article/details/150147643"  class="external-link" target="_blank" rel="noopener">C# 程序设计基础之 - 装箱与拆箱</a></p>
+<hr>
+<h3 id="c-ref-与-out">
+  C# ref 与 out
+  <a class="heading-link" href="#c-ref-%e4%b8%8e-out">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>可参考:<a href="https://zhuanlan.zhihu.com/p/463771455"  class="external-link" target="_blank" rel="noopener">【唐老狮】C#——ref 和 out</a></p>
+<p>ref 和 out 的功能是将参数按引用传递</p>
+<p>ref 要求参数在调用前初始化</p>
+<p>out 要求方法体内为参数赋值</p>
+<p><em>ref 和 out 类似于 C++ 中的引用</em></p>
+<hr>
+<h3 id="c-console-输出">
+  C# Console 输出
+  <a class="heading-link" href="#c-console-%e8%be%93%e5%87%ba">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;键1的值是{myDict[1]}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;键1的值是&#34;</span><span class="p">+</span><span class="n">myDict</span><span class="p">[</span><span class="m">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//两种写法的输出结果相同，$ 是 C# 中的一个语法糖，表示插值字符串</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//它允许字符串中直接嵌入变量或表达式，语法格式为 $&#34;文本 {变量或表达式} 文本&#34;</span>
+</span></span></code></pre></div><hr>
+<h2 id="5unity-小知识">
+  5，Unity 小知识
+  <a class="heading-link" href="#5unity-%e5%b0%8f%e7%9f%a5%e8%af%86">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="unity-c-线程与协程">
+  Unity C# 线程与协程
+  <a class="heading-link" href="#unity-c-%e7%ba%bf%e7%a8%8b%e4%b8%8e%e5%8d%8f%e7%a8%8b">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>Unity 中除了负责绘制 UI /获取游戏对象等的主线程以外，还有多线程与协程</p>
+<p>协程是伪异步，并不是真正的异步执行，属于生命周期的一部分，同一时间只会有一个协程运行，其余协程按顺序开启，也就是与生命周期并发执行</p>
+<p>线程是真异步，与脚本生命周期并行运行，一个 CPU 在同一时刻只能运行一个线程，但是多个 CPU 在同一时刻就可以运行多个线程。</p>
+<p>错题回顾：在 OnDestroy() 内启动协程，协程会怎样？</p>
+<p>当对象正在被销毁时，它的 MonoBehaviour 生命周期已结束，此时 Unity 不会启动新的协程（即便调用 StartCoroutine()，也不会执行）。</p>
+<p>参考</p>
+<p><a href="https://blog.csdn.net/iiiiiiimp/article/details/130061403"  class="external-link" target="_blank" rel="noopener">Unity 协程和线程的区别深入理解(附实验展示)</a></p>
+<hr>
+<h3 id="unity-的-playerprefs-类">
+  Unity 的 PlayerPrefs 类
+  <a class="heading-link" href="#unity-%e7%9a%84-playerprefs-%e7%b1%bb">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>PlayerPrefs 类是 U3d 自带的一个用于本地数据持久化保存的类，可存储整型/浮点型/字符串数据</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C#" data-lang="C#"><span class="line"><span class="cl"><span class="c1">//存储整型数据</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//(数据被存入内存中，当游戏正常关闭时，Unity会自动将数据存储在硬盘中)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//(未正常关闭游戏时数据会丢失)</span>
+</span></span><span class="line"><span class="cl"><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">SetInt</span><span class="p">(</span><span class="s">&#34;intKey&#34;</span><span class="p">,</span><span class="m">999</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//读取整型数据</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">intVal</span> <span class="p">=</span> <span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">GetInt</span><span class="p">(</span><span class="s">&#34;intKey&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//删除所有存储数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">DeleteAll</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//根据名字删除单个存储数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">DeleteKey</span><span class="p">(</span><span class="s">&#34;intKey&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//根据名字查找单个存储数据</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">exist</span> <span class="p">=</span> <span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">HasKey</span><span class="p">(</span><span class="s">&#34;intKey&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//即时存储数据，马上将数据存储到硬盘中</span>
+</span></span><span class="line"><span class="cl"><span class="n">PlayerPrefs</span><span class="p">.</span><span class="n">Save</span><span class="p">();</span>
+</span></span></code></pre></div><p>参考</p>
+<p><a href="https://www.cnblogs.com/ElecSheep/p/16666120.html"  class="external-link" target="_blank" rel="noopener">【Unity 数据持久化】PlayerPrefs 的 存、读、删</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/51753555"  class="external-link" target="_blank" rel="noopener">Unity 本地持久化类 Playerprefs 使用详解</a></p>
+<hr>
+<h3 id="unity-中-image-和-rawimage-的区别">
+  Unity 中 Image 和 RawImage 的区别
+  <a class="heading-link" href="#unity-%e4%b8%ad-image-%e5%92%8c-rawimage-%e7%9a%84%e5%8c%ba%e5%88%ab">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>省流:做没有额外图像处理的背景之类的用 RawImage</p>
+<hr>
+<h3 id="localposition-与-position">
+  localPosition 与 position
+  <a class="heading-link" href="#localposition-%e4%b8%8e-position">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>子物体的 localPosition 是相对于父物体的，而 position 是世界坐标</p>
+<hr>
+<h3 id="unity-生命周期">
+  Unity 生命周期
+  <a class="heading-link" href="#unity-%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>Script Execution Order 是 Unity 唯一允许开发者显式控制生命周期顺序的入口。</p>
+<hr>
+<h3 id="对象池">
+  对象池
+  <a class="heading-link" href="#%e5%af%b9%e8%b1%a1%e6%b1%a0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>对象池适合管理生命周期短但需要重复出现的对象，可以有效减少 GC (垃圾回收) 的触发</p>
+<hr>
+<h3 id="值引用类型的存放位置">
+  值/引用类型的存放位置
+  <a class="heading-link" href="#%e5%80%bc%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%ad%98%e6%94%be%e4%bd%8d%e7%bd%ae">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>【值类型是否在栈上】取决于它被放在哪</p>
+<p>【引用类型的内容】一定在堆上，但引用本身可能在栈上</p>
+<p>方法中的局部变量默认存放在栈上</p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+  
+</section>
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2026
+     NonoNoe 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
